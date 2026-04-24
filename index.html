@@ -3,132 +3,202 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Philanthropic Foundation · Mauritius</title>
+<title>The Philanthropic Foundation · Institutional Infrastructure for African Capital · Mauritius</title>
+<meta name="description" content="The Philanthropic Foundation is a Mauritius-registered institution providing the governance architecture, regulated investment vehicles, and convening platforms that connect global capital to African opportunities. Reg. No. 679.">
+<meta name="keywords" content="African capital, blended finance, DFI, institutional investors, Mauritius foundation, MCTF, African Circuit, climate fund, pan-African conferences, family office Africa">
+<meta name="robots" content="index, follow">
+<meta name="author" content="The Philanthropic Foundation">
+<link rel="canonical" href="https://www.philanthropicfoundation.net/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.philanthropicfoundation.net/">
+<meta property="og:title" content="The Philanthropic Foundation · Institutional Infrastructure for African Capital">
+<meta property="og:description" content="A Mauritius-registered institution connecting global capital to African opportunities through regulated structures, curated relationships, and on-the-ground programmes. Reg. No. 679.">
+<meta property="og:image" content="https://www.philanthropicfoundation.net/og-image.jpg">
+<meta property="og:locale" content="en_GB">
+<meta property="og:locale:alternate" content="fr_FR">
+<meta property="og:site_name" content="The Philanthropic Foundation">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Philanthropic Foundation · Mauritius">
+<meta name="twitter:description" content="Institutional infrastructure for African capital. Regulated investment fund, pan-African conference circuit, DFI & LP network.">
+<meta name="twitter:image" content="https://www.philanthropicfoundation.net/og-image.jpg">
+
+<!-- Schema.org Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "The Philanthropic Foundation",
+  "alternateName": "Philanthropic Foundation Mauritius",
+  "url": "https://www.philanthropicfoundation.net",
+  "description": "A Mauritius-registered foundation providing institutional infrastructure for African capital — through regulated investment vehicles, pan-African financial conferences, and DFI and LP relationships built across four continents.",
+  "foundingDate": "2021",
+  "legalName": "The Philanthropic Foundation",
+  "identifier": "Reg. No. 679",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "10th Floor, Standard Chartered Tower, 19 Cybercity",
+    "addressLocality": "Ebene",
+    "postalCode": "72201",
+    "addressCountry": "MU"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "email": "admin@philanthropicfoundation.net",
+    "contactType": "institutional enquiries"
+  },
+  "sameAs": []
+}
+</script>
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@200;300;400;500;600;700&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
 :root{
-  --ink:#08131C;
-  --ink2:#112233;
-  --teal:#0A7070;
-  --teal2:#0D9090;
-  --gold:#C09A3C;
-  --gold2:#E8C870;
-  --cream:#F7F3EC;
-  --cream2:#EDE7DA;
-  --white:#FDFCFA;
-  --grey:#8A9BA8;
-  --line:rgba(192,154,60,.18);
+  --ink:#08131C;--ink2:#112233;--teal:#0A7070;--teal2:#0D9090;
+  --gold:#C09A3C;--gold2:#E8C870;--cream:#F7F3EC;--cream2:#EDE7DA;
+  --white:#FDFCFA;--grey:#8A9BA8;--line:rgba(192,154,60,.18);
 }
 html{scroll-behavior:smooth;}
 body{font-family:'Manrope',sans-serif;background:var(--white);color:var(--ink);overflow-x:hidden;cursor:none;}
 
-#dot{width:6px;height:6px;background:var(--gold);border-radius:50%;position:fixed;top:0;left:0;pointer-events:none;z-index:9999;transition:width .25s,height .25s,background .25s;mix-blend-mode:multiply;}
-#dot.x{width:40px;height:40px;background:var(--teal);opacity:.15;mix-blend-mode:normal;}
+/* ── CURSOR ── */
+#cursor-ring{
+  width:36px;height:36px;border:2px solid var(--gold);border-radius:50%;
+  position:fixed;top:0;left:0;pointer-events:none;z-index:9999;
+  transform:translate(-50%,-50%);
+  transition:width .25s,height .25s,border-color .25s,background .25s,opacity .25s;
+  opacity:0;
+}
+#cursor-dot{
+  width:6px;height:6px;background:var(--gold);border-radius:50%;
+  position:fixed;top:0;left:0;pointer-events:none;z-index:9999;
+  transform:translate(-50%,-50%);
+  transition:width .15s,height .15s,background .15s;
+}
+#cursor-ring.hover{
+  width:56px;height:56px;
+  border-color:var(--teal);
+  background:rgba(10,112,112,.08);
+}
+#cursor-dot.hover{
+  width:4px;height:4px;
+  background:var(--teal);
+}
 
-/* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:500;padding:28px 72px;display:flex;justify-content:space-between;align-items:center;transition:padding .4s,background .4s;border-bottom:1px solid transparent;}
-nav.scrolled{padding:16px 72px;background:rgba(8,19,28,.97);backdrop-filter:blur(20px);border-bottom-color:rgba(255,255,255,.06);}
+/* ── NAV ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:500;padding:26px 72px;display:flex;justify-content:space-between;align-items:center;transition:padding .4s,background .4s;border-bottom:1px solid transparent;}
+nav.scrolled{padding:15px 72px;background:rgba(8,19,28,.97);backdrop-filter:blur(20px);border-bottom-color:rgba(255,255,255,.06);}
 .logo{display:flex;align-items:center;gap:12px;text-decoration:none;}
-.logo img{height:38px;width:auto;object-fit:contain;}
+.logo img{height:36px;width:auto;object-fit:contain;}
 .logo-rule{width:1px;height:20px;background:rgba(255,255,255,.18);}
 .logo-text{display:flex;flex-direction:column;gap:1px;}
-.logo-name{font-family:'EB Garamond',serif;font-size:16px;font-weight:400;color:#fff;letter-spacing:.03em;line-height:1;}
+.logo-name{font-family:'EB Garamond',serif;font-size:15px;font-weight:400;color:#fff;letter-spacing:.03em;line-height:1;}
 .logo-name span{color:var(--gold);}
-.logo-sub{font-family:'DM Mono',monospace;font-size:8px;letter-spacing:.12em;color:rgba(255,255,255,.3);text-transform:uppercase;}
-.nav-links{display:flex;gap:36px;list-style:none;}
-.nav-links a{font-size:11px;font-weight:400;letter-spacing:.1em;color:rgba(255,255,255,.45);text-decoration:none;text-transform:uppercase;transition:color .2s;}
+.logo-sub{font-family:'DM Mono',monospace;font-size:7.5px;letter-spacing:.12em;color:rgba(255,255,255,.3);text-transform:uppercase;}
+.nav-links{display:flex;gap:28px;list-style:none;}
+.nav-links a{font-size:10px;font-weight:400;letter-spacing:.1em;color:rgba(255,255,255,.45);text-decoration:none;text-transform:uppercase;transition:color .2s;}
 .nav-links a:hover{color:#fff;}
-.nav-btn{background:transparent;border:1px solid rgba(192,154,60,.5);color:var(--gold);padding:10px 24px;font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;transition:all .2s;}
+.nav-btn{background:transparent;border:1px solid rgba(192,154,60,.5);color:var(--gold);padding:9px 22px;font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;transition:all .2s;white-space:nowrap;}
 .nav-btn:hover{background:var(--gold);color:var(--ink);}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:none;padding:4px;background:none;border:none;}
+.hamburger span{display:block;width:22px;height:1.5px;background:rgba(255,255,255,.6);transition:all .3s;}
+.hamburger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg);}
+.hamburger.open span:nth-child(2){opacity:0;}
+.hamburger.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg);}
+.mobile-menu{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(8,19,28,.98);z-index:400;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:28px;opacity:0;pointer-events:none;transition:opacity .3s;}
+.mobile-menu.open{opacity:1;pointer-events:all;}
+.mobile-menu a{font-family:'EB Garamond',serif;font-size:30px;font-weight:400;color:rgba(255,255,255,.7);text-decoration:none;letter-spacing:.02em;transition:color .2s;}
+.mobile-menu a:hover{color:#fff;}
+.mobile-menu .mob-cta{font-family:'Manrope',sans-serif;font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;background:var(--gold);color:var(--ink);padding:14px 40px;margin-top:8px;}
 
-/* HERO */
+/* ── HERO ── */
 #hero{height:100vh;min-height:700px;background:var(--ink);display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;}
 .hero-mesh{position:absolute;inset:0;background:radial-gradient(ellipse 70% 70% at 75% 30%,rgba(10,112,112,.2) 0%,transparent 60%),radial-gradient(ellipse 50% 60% at 15% 85%,rgba(192,154,60,.09) 0%,transparent 50%);animation:mesh 14s ease-in-out infinite alternate;}
-@keyframes mesh{from{opacity:.7}to{opacity:1}}
 .hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.02) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.02) 1px,transparent 1px);background-size:80px 80px;}
 .hero-vline{position:absolute;left:72px;top:0;bottom:0;width:1px;background:linear-gradient(180deg,transparent,rgba(192,154,60,.25) 30%,rgba(192,154,60,.25) 70%,transparent);}
-
-.hero-content{position:relative;z-index:2;padding:120px 72px 56px 136px;max-width:1100px;}
+.hero-content{position:relative;z-index:2;padding:130px 72px 56px 136px;max-width:1100px;}
 .h-label{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:5px;color:var(--gold);text-transform:uppercase;margin-bottom:20px;display:flex;align-items:center;gap:14px;opacity:0;animation:rise .8s .2s forwards;}
 .h-label::before{content:'';width:24px;height:1px;background:var(--gold);}
-h1{font-family:'EB Garamond',serif;font-size:clamp(36px,4vw,60px);font-weight:400;color:#fff;line-height:1.1;letter-spacing:-.01em;max-width:720px;opacity:0;animation:rise .9s .4s forwards;}
+h1{font-family:'EB Garamond',serif;font-size:clamp(36px,4vw,62px);font-weight:400;color:#fff;line-height:1.08;letter-spacing:-.01em;max-width:740px;opacity:0;animation:rise .9s .4s forwards;}
 h1 em{font-style:italic;color:var(--gold);}
 .h-sub{font-size:14px;font-weight:300;color:rgba(255,255,255,.42);line-height:1.9;max-width:480px;margin-top:20px;opacity:0;animation:rise .9s .6s forwards;}
 .h-actions{margin-top:32px;display:flex;gap:18px;align-items:center;opacity:0;animation:rise .9s .75s forwards;}
-.btn-primary{background:var(--gold);color:var(--ink);padding:13px 32px;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;transition:background .2s;}
+.btn-primary{background:var(--gold);color:var(--ink);padding:13px 32px;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;transition:background .2s;display:inline-block;}
 .btn-primary:hover{background:var(--gold2);}
 .btn-secondary{color:rgba(255,255,255,.45);font-size:11px;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.18);padding-bottom:2px;transition:color .2s;}
 .btn-secondary:hover{color:#fff;}
-
 .hero-stats{position:relative;z-index:2;padding:24px 136px;border-top:1px solid rgba(255,255,255,.06);display:flex;gap:56px;opacity:0;animation:rise 1s .9s forwards;}
-.hstat{}
 .hstat-val{font-family:'EB Garamond',serif;font-size:32px;color:#fff;line-height:1;}
 .hstat-val sup{font-size:15px;color:var(--gold);}
 .hstat-lbl{font-family:'DM Mono',monospace;font-size:8px;letter-spacing:2.5px;color:rgba(255,255,255,.28);text-transform:uppercase;margin-top:5px;}
 
-@keyframes rise{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
-
-/* TICKER */
-.ticker{background:var(--gold);padding:13px 0;overflow:hidden;}
-.ticker-track{display:flex;animation:ticker 35s linear infinite;white-space:nowrap;}
+/* ── TICKER ── */
+.ticker{background:var(--gold);padding:12px 0;overflow:hidden;}
+.ticker-track{display:flex;animation:ticker 40s linear infinite;white-space:nowrap;}
 .ticker-item{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:3.5px;text-transform:uppercase;color:rgba(8,19,28,.6);padding:0 48px;}
 .ticker-sep{color:rgba(8,19,28,.25);}
-@keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
-/* SECTION COMMONS */
+/* ── COMMONS ── */
 section{padding:100px 0;}
 .wrap{max-width:1200px;margin:0 auto;padding:0 72px;}
 .s-eyebrow{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:3px;color:var(--teal);text-transform:uppercase;margin-bottom:14px;}
 .s-eyebrow.gold{color:var(--gold);}
-h2{font-family:'EB Garamond',serif;font-size:clamp(36px,4vw,56px);font-weight:400;color:var(--ink);line-height:1.08;}
+h2{font-family:'EB Garamond',serif;font-size:clamp(34px,4vw,54px);font-weight:400;color:var(--ink);line-height:1.08;}
 h2.inv{color:#fff;}
 h2 em{font-style:italic;color:var(--teal);}
 h2.inv em{color:rgba(255,255,255,.5);}
 .s-lead{font-size:16px;font-weight:300;color:#5a6e7a;line-height:1.85;max-width:580px;margin-top:14px;}
 .s-lead.inv{color:rgba(255,255,255,.55);}
-
-/* reveal */
 .rv{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease;}
 .rv.in{opacity:1;transform:none;}
 .rv.d1{transition-delay:.1s;}.rv.d2{transition-delay:.2s;}.rv.d3{transition-delay:.3s;}.rv.d4{transition-delay:.4s;}
 
+/* ── MISSION ── */
+#mission{background:var(--ink);}
+.mission-cols{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;}
+.mission-lead{font-size:16px;font-weight:300;color:rgba(255,255,255,.55);line-height:1.9;margin-bottom:22px;}
+.mp{display:flex;gap:18px;align-items:flex-start;padding:24px 0;border-bottom:1px solid rgba(255,255,255,.06);}
+.mp:first-of-type{border-top:1px solid rgba(255,255,255,.06);}
+.mp-bar{width:2px;background:var(--gold);opacity:.45;flex-shrink:0;align-self:stretch;}
+.mp-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;color:var(--gold);text-transform:uppercase;margin-bottom:6px;}
+.mp-title{font-size:14px;font-weight:600;color:#fff;margin-bottom:6px;line-height:1.3;}
+.mp-text{font-size:13px;font-weight:300;color:rgba(255,255,255,.4);line-height:1.8;}
+
 /* ── WHAT WE DO ── */
 #what{background:var(--white);}
-.what-intro{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;margin-bottom:72px;}
-.what-intro-left p{font-size:16px;font-weight:300;color:#5a6e7a;line-height:1.85;margin-bottom:20px;}
-.what-intro-left p strong{color:var(--ink);font-weight:600;}
-.what-intro-right{padding-top:8px;}
+.what-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;margin-top:48px;}
+.what-left p{font-size:16px;font-weight:300;color:#5a6e7a;line-height:1.85;margin-bottom:20px;}
+.what-left p strong{color:var(--ink);font-weight:600;}
 .network-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:3px;color:var(--teal);text-transform:uppercase;margin-bottom:20px;}
-.network-items{display:flex;flex-direction:column;gap:0;}
-.net-item{display:flex;align-items:flex-start;gap:16px;padding:16px 0;border-bottom:1px solid var(--line);}
+.net-item{display:flex;align-items:flex-start;gap:16px;padding:13px 0;border-bottom:1px solid var(--line);}
 .net-item:first-child{border-top:1px solid var(--line);}
-.net-dot{width:7px;height:7px;border-radius:50%;background:var(--gold);flex-shrink:0;margin-top:7px;}
+.net-dot{width:7px;height:7px;border-radius:50%;background:var(--gold);flex-shrink:0;margin-top:6px;}
 .net-text{font-size:14px;font-weight:600;color:var(--ink);line-height:1.3;}
 .net-sub{font-size:13px;font-weight:300;color:#5a6e7a;margin-top:3px;}
-
-/* how it works - 3 step flow */
-.how-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;}
-.how-card{background:var(--cream);padding:44px 40px;position:relative;border-right:1px solid var(--cream2);}
+.how-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:52px;}
+.how-card{background:var(--cream);padding:44px 36px;position:relative;border-right:1px solid var(--cream2);}
 .how-card:last-child{border-right:none;}
 .how-card::after{content:'';position:absolute;top:50%;right:-1px;transform:translateY(-50%);width:0;height:0;border-top:10px solid transparent;border-bottom:10px solid transparent;border-left:10px solid var(--cream2);z-index:1;}
 .how-card:last-child::after{display:none;}
 .how-num{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:3px;color:var(--teal);text-transform:uppercase;margin-bottom:20px;}
 .how-icon{width:48px;height:48px;margin-bottom:20px;}
-.how-title{font-size:15px;font-weight:600;color:var(--ink);margin-bottom:12px;letter-spacing:.01em;line-height:1.4;}
+.how-title{font-size:15px;font-weight:600;color:var(--ink);margin-bottom:12px;line-height:1.4;}
 .how-text{font-size:14px;font-weight:300;color:#5a6e7a;line-height:1.8;}
 
 /* ── PROGRAMMES ── */
 #programmes{background:var(--cream);}
-.prog-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:52px;align-items:stretch;}
-.prog-card{background:var(--white);padding:0;overflow:hidden;transition:transform .3s,box-shadow .3s;display:flex;flex-direction:column;}
+.prog-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:52px;}
+.prog-card{background:var(--white);overflow:hidden;transition:transform .3s,box-shadow .3s;display:flex;flex-direction:column;}
 .prog-card:hover{transform:translateY(-4px);box-shadow:0 24px 60px rgba(8,19,28,.08);}
 .prog-top{padding:44px 44px 32px;flex:1;}
 .prog-stripe{height:3px;background:var(--teal);margin-bottom:28px;}
 .prog-stripe.gold{background:var(--gold);}
 .prog-tag{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2.5px;color:var(--teal);text-transform:uppercase;margin-bottom:14px;}
 .prog-tag.gold{color:var(--gold);}
-.prog-title{font-family:'EB Garamond',serif;font-size:32px;font-weight:400;color:var(--ink);line-height:1.15;margin-bottom:14px;}
+.prog-title{font-family:'EB Garamond',serif;font-size:30px;font-weight:400;color:var(--ink);line-height:1.15;margin-bottom:14px;}
 .prog-desc{font-size:15px;font-weight:300;color:#5a6e7a;line-height:1.85;}
 .prog-bottom{padding:28px 44px 40px;display:flex;flex-direction:column;gap:16px;border-top:1px solid var(--cream2);}
 .prog-stats{display:flex;gap:32px;}
@@ -139,219 +209,183 @@ h2.inv em{color:rgba(255,255,255,.5);}
 .prog-link{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);text-decoration:none;transition:gap .2s;padding-top:4px;}
 .prog-link.gold{color:var(--gold);}
 .prog-link:hover{gap:14px;}
+.uc-badge{display:inline-flex;align-items:center;gap:10px;padding:10px 16px;border:1px solid var(--line);background:var(--cream);}
+.uc-dot{width:7px;height:7px;border-radius:50%;background:var(--gold);}
+.uc-text{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;color:#8A9BA8;text-transform:uppercase;}
 
 /* ── WHO WE WORK WITH ── */
 #network{background:var(--ink);padding:90px 0;}
-.network-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.06);margin-top:56px;}
+.nc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.06);margin-top:56px;}
 .nc{background:var(--ink);padding:38px 32px;transition:background .3s;}
 .nc:hover{background:rgba(10,112,112,.12);}
 .nc-icon{width:28px;height:28px;margin-bottom:18px;display:block;}
 .nc-title{font-size:15px;font-weight:600;color:#fff;letter-spacing:.02em;margin-bottom:10px;}
-.nc-text{font-size:14px;font-weight:300;color:rgba(255,255,255,.55);line-height:1.75;}
-.nc-examples{margin-top:14px;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:1.5px;color:rgba(192,154,60,.65);text-transform:uppercase;line-height:1.9;}
+.nc-text{font-size:14px;font-weight:300;color:rgba(255,255,255,.5);line-height:1.75;}
+
+/* ── TIMELINE ── */
+#journey{background:var(--ink);border-top:1px solid rgba(255,255,255,.06);}
+.tl-track{position:relative;margin-top:64px;padding-left:180px;}
+.tl-track::before{content:'';position:absolute;left:148px;top:8px;bottom:8px;width:1px;background:linear-gradient(180deg,transparent,rgba(192,154,60,.3) 10%,rgba(192,154,60,.3) 90%,transparent);}
+.tl-item{position:relative;display:flex;align-items:flex-start;gap:40px;padding-bottom:52px;}
+.tl-item:last-child{padding-bottom:0;}
+.tl-year{position:absolute;left:-180px;width:132px;text-align:right;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2.5px;color:rgba(255,255,255,.25);text-transform:uppercase;padding-top:4px;}
+.tl-active .tl-year{color:var(--gold);}
+.tl-future .tl-year{color:rgba(255,255,255,.15);}
+.tl-dot{width:9px;height:9px;border-radius:50%;background:rgba(192,154,60,.35);border:1px solid rgba(192,154,60,.5);flex-shrink:0;margin-top:5px;position:relative;z-index:1;}
+.tl-active .tl-dot{background:var(--gold);border-color:var(--gold);box-shadow:0 0 0 4px rgba(192,154,60,.15);}
+.tl-future .tl-dot{background:transparent;border-color:rgba(255,255,255,.12);}
+.tl-title{font-size:15px;font-weight:600;color:#fff;letter-spacing:.02em;margin-bottom:10px;line-height:1.3;}
+.tl-active .tl-title{color:var(--gold2);}
+.tl-future .tl-title{color:rgba(255,255,255,.4);}
+.tl-text{font-size:14px;font-weight:300;color:rgba(255,255,255,.45);line-height:1.85;max-width:520px;}
+.tl-future .tl-text{color:rgba(255,255,255,.25);}
+.tl-text+.tl-text{margin-top:0;}
+
+/* ── FOUNDER QUOTE ── */
+#founder{background:var(--ink);border-top:1px solid rgba(255,255,255,.06);padding:100px 0;}
+.founder-inner{max-width:860px;margin:0 auto;text-align:center;}
+.founder-rule{display:flex;align-items:center;justify-content:center;gap:20px;margin-bottom:36px;}
+.founder-rule span{display:block;width:40px;height:1px;background:rgba(192,154,60,.35);}
+.founder-role{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:4px;color:var(--gold);text-transform:uppercase;}
+blockquote{font-family:'EB Garamond',serif;font-size:clamp(20px,3vw,30px);font-weight:400;color:#fff;line-height:1.55;font-style:italic;letter-spacing:-.01em;margin-bottom:40px;}
+.founder-name{font-family:'EB Garamond',serif;font-size:18px;font-weight:500;color:#fff;letter-spacing:.03em;}
+.founder-title{font-family:'DM Mono',monospace;font-size:8.5px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;margin-top:4px;}
+.founder-creds{font-family:'Manrope',sans-serif;font-size:12px;font-weight:300;color:rgba(255,255,255,.3);margin-top:8px;letter-spacing:.04em;}
 
 /* ── GOVERNANCE ── */
 #governance{background:var(--white);}
 .gov-layout{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;margin-top:52px;}
-.gov-table{display:flex;flex-direction:column;}
-.gov-row{display:grid;grid-template-columns:160px 1fr;gap:20px;padding:18px 0;border-bottom:1px solid var(--line);align-items:baseline;}
+.gov-row{display:grid;grid-template-columns:150px 1fr;gap:16px;padding:16px 0;border-bottom:1px solid var(--line);align-items:baseline;}
 .gov-row:first-child{border-top:1px solid var(--line);}
-.gov-key{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;color:#8A9BA8;text-transform:uppercase;}
+.gov-key{font-family:'DM Mono',monospace;font-size:9.5px;letter-spacing:2px;color:#8A9BA8;text-transform:uppercase;}
 .gov-val{font-size:14px;font-weight:300;color:var(--ink);line-height:1.65;}
-.gov-val strong{color:var(--teal);font-weight:600;}
-.gov-right{display:flex;flex-direction:column;gap:18px;}
+.gov-val a{color:var(--teal);text-decoration:none;font-weight:600;}
+.gov-right{display:flex;flex-direction:column;gap:16px;}
 .gov-highlight{background:var(--ink);padding:36px;}
 .gov-hl-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2.5px;color:var(--gold);text-transform:uppercase;margin-bottom:14px;}
-.gov-hl-text{font-family:'EB Garamond',serif;font-size:20px;color:rgba(255,255,255,.85);line-height:1.6;font-style:italic;}
-.gov-hl-attr{font-size:12px;font-weight:300;color:rgba(255,255,255,.4);margin-top:16px;}
-.gov-badge{background:var(--cream);padding:28px 32px;display:flex;gap:16px;align-items:flex-start;}
-.gov-badge-icon{font-size:20px;flex-shrink:0;margin-top:2px;}
-.gov-badge-title{font-size:13px;font-weight:600;color:var(--ink);margin-bottom:6px;letter-spacing:.02em;}
-.gov-badge-text{font-size:14px;font-weight:300;color:#5a6e7a;line-height:1.75;}
+.gov-hl-text{font-family:'EB Garamond',serif;font-size:19px;color:rgba(255,255,255,.85);line-height:1.6;font-style:italic;}
+.gov-badge{background:var(--cream);padding:26px 28px;display:flex;gap:14px;align-items:flex-start;}
+.gov-badge-icon{width:32px;height:32px;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;}
+.gov-badge-title{font-size:13px;font-weight:600;color:var(--ink);margin-bottom:6px;}
+.gov-badge-text{font-size:13px;font-weight:300;color:#5a6e7a;line-height:1.75;}
+.gov-badge-text a{color:var(--teal);text-decoration:none;}
+
+/* ── OPERATING STANDARDS ── */
+#standards{background:var(--cream);}
+.std-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:52px;}
+.std-card{background:var(--white);padding:36px 32px;}
+.std-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2.5px;color:var(--teal);text-transform:uppercase;margin-bottom:14px;}
+.std-title{font-size:14px;font-weight:600;color:var(--ink);margin-bottom:10px;line-height:1.4;}
+.std-text{font-size:13px;font-weight:300;color:#5a6e7a;line-height:1.8;}
+
+/* ── SDG ── */
+.sdg-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-top:52px;}
+.sdg-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);padding:32px 28px;transition:background .3s;}
+.sdg-card:hover{background:rgba(255,255,255,.07);}
+.sdg-num{width:44px;height:44px;border-radius:4px;display:flex;align-items:center;justify-content:center;font-family:'EB Garamond',serif;font-size:22px;font-weight:600;color:#fff;margin-bottom:16px;flex-shrink:0;}
+.sdg-title{font-size:13px;font-weight:600;color:#fff;margin-bottom:10px;line-height:1.4;letter-spacing:.01em;}
+.sdg-text{font-size:13px;font-weight:300;color:rgba(255,255,255,.45);line-height:1.8;}
+.fw-tag{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:1.5px;color:rgba(255,255,255,.5);padding:6px 14px;border:1px solid rgba(255,255,255,.1);text-transform:uppercase;}
 
 /* ── CONTACT ── */
-#contact{background:var(--cream);padding:100px 0;}
+#contact{background:var(--white);padding:100px 0;}
 .contact-layout{display:grid;grid-template-columns:1fr 1.1fr;gap:80px;align-items:start;}
-.contact-left p{font-size:15px;font-weight:300;color:#5a6e7a;line-height:1.85;margin-top:18px;max-width:400px;}
-.cinfo{margin-top:40px;display:flex;flex-direction:column;gap:24px;}
+.cinfo{margin-top:40px;display:flex;flex-direction:column;gap:22px;}
 .cinfo-row{display:flex;gap:16px;align-items:flex-start;}
 .cinfo-dot{width:8px;height:8px;background:var(--gold);border-radius:50%;flex-shrink:0;margin-top:6px;}
 .cinfo-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2.5px;color:#8A9BA8;text-transform:uppercase;margin-bottom:5px;}
 .cinfo-val{font-size:14px;font-weight:300;color:var(--ink);line-height:1.6;}
 .cinfo-val a{color:var(--teal);text-decoration:none;}
-.contact-form{background:var(--white);padding:44px;}
-.form-hed{font-family:'EB Garamond',serif;font-size:24px;color:var(--ink);margin-bottom:28px;}
+.contact-form{background:var(--cream);padding:44px;}
+.form-hed{font-family:'EB Garamond',serif;font-size:26px;color:var(--ink);margin-bottom:28px;}
 .fg{margin-bottom:18px;}
 .fg label{display:block;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;color:#8A9BA8;text-transform:uppercase;margin-bottom:8px;}
-.fg input,.fg select,.fg textarea{width:100%;background:var(--cream);border:1px solid transparent;padding:13px 16px;font-family:'Manrope',sans-serif;font-size:14px;font-weight:300;color:var(--ink);outline:none;transition:border-color .2s;}
-.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--teal);background:var(--white);}
+.fg input,.fg select,.fg textarea{width:100%;background:var(--white);border:1px solid transparent;padding:13px 16px;font-family:'Manrope',sans-serif;font-size:14px;font-weight:300;color:var(--ink);outline:none;transition:border-color .2s;-webkit-appearance:none;}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--teal);}
 .fg textarea{resize:vertical;min-height:100px;}
 .fg-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
-.form-btn{background:var(--ink);color:#fff;border:none;padding:16px;font-family:'Manrope',sans-serif;font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;transition:background .2s;width:100%;margin-top:4px;}
+.form-btn{background:var(--ink);color:#fff;border:none;padding:16px;font-family:'Manrope',sans-serif;font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;cursor:none;transition:background .2s;width:100%;margin-top:4px;}
 .form-btn:hover{background:var(--teal);}
 
-/* FOOTER */
-footer{background:var(--ink2);padding:56px 0;border-top:1px solid rgba(255,255,255,.07);}
-.foot-inner{display:flex;justify-content:space-between;align-items:center;}
+/* ── FOOTER ── */
+footer{background:var(--ink2);padding:52px 0;border-top:1px solid rgba(255,255,255,.07);}
+.foot-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px;}
 .foot-logo{display:flex;align-items:center;gap:12px;}
-.foot-logo img{height:32px;width:auto;object-fit:contain;opacity:.6;}
-.foot-logo-text{font-family:'EB Garamond',serif;font-size:18px;color:rgba(255,255,255,.5);}
+.foot-logo img{height:30px;width:auto;object-fit:contain;opacity:.55;}
+.foot-logo-text{font-family:'EB Garamond',serif;font-size:17px;color:rgba(255,255,255,.5);}
 .foot-logo-text span{color:var(--gold);}
-.foot-copy{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;color:rgba(255,255,255,.3);text-transform:uppercase;}
-.foot-links{display:flex;gap:28px;}
-.foot-links a{font-size:12px;font-weight:300;letter-spacing:.06em;color:rgba(255,255,255,.4);text-decoration:none;text-transform:uppercase;transition:color .2s;}
-.foot-links a:hover{color:rgba(255,255,255,.85);}
+.foot-copy{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;color:rgba(255,255,255,.25);text-transform:uppercase;text-align:center;}
+.foot-links{display:flex;gap:24px;flex-wrap:wrap;}
+.foot-links a{font-size:11px;font-weight:300;letter-spacing:.06em;color:rgba(255,255,255,.35);text-decoration:none;text-transform:uppercase;transition:color .2s;}
+.foot-links a:hover{color:rgba(255,255,255,.8);}
 
-/* PARTNER STRIP */
-.partner-strip{display:flex;align-items:center;justify-content:center;gap:2px;flex-wrap:wrap;}
-.partner-slot{flex:0 0 calc(16.666% - 2px);}
-.partner-placeholder{border:1px dashed rgba(10,112,112,.25);background:rgba(255,255,255,.5);padding:28px 20px;display:flex;align-items:center;justify-content:center;min-height:80px;transition:border-color .2s,background .2s;}
-.partner-placeholder:hover{border-color:var(--teal);background:#fff;}
-.partner-ph-inner{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;color:rgba(10,112,112,.4);text-transform:uppercase;}
-.partner-slot img{width:100%;height:60px;object-fit:contain;filter:grayscale(1);opacity:.5;transition:opacity .2s,filter .2s;}
-.partner-slot img:hover{filter:grayscale(0);opacity:1;}
+/* ── ANIMATIONS ── */
+@keyframes rise{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+@keyframes mesh{from{opacity:.7}to{opacity:1}}
+@keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
-/* Hamburger */
-.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:none;border:none;}
-.hamburger span{display:block;width:22px;height:1.5px;background:rgba(255,255,255,.6);transition:all .3s;}
-.hamburger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg);}
-.hamburger.open span:nth-child(2){opacity:0;}
-.hamburger.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg);}
-
-/* Mobile menu drawer */
-.mobile-menu{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(8,19,28,.98);z-index:400;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:32px;opacity:0;pointer-events:none;transition:opacity .3s;}
-.mobile-menu.open{opacity:1;pointer-events:all;}
-.mobile-menu a{font-family:'EB Garamond',serif;font-size:32px;font-weight:400;color:rgba(255,255,255,.7);text-decoration:none;letter-spacing:.02em;transition:color .2s;}
-.mobile-menu a:hover{color:#fff;}
-.mobile-menu .mob-cta{font-family:'Manrope',sans-serif;font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;background:var(--gold);color:var(--ink);padding:14px 40px;margin-top:8px;}
-
-
+/* ── RESPONSIVE ── */
 @media(max-width:900px){
-  /* Nav */
-  nav{padding:20px 32px;}
-  nav.scrolled{padding:14px 32px;}
-  .nav-links{display:none;}
-  .nav-btn{display:none;}
-
-  /* Hamburger */
-  .hamburger{display:flex;}
-
-  /* Global */
-  .wrap{padding:0 32px;}
-  section{padding:72px 0;}
-
-  /* Hero */
+  nav{padding:20px 32px;}nav.scrolled{padding:14px 32px;}
+  .nav-links{display:none;}.nav-btn{display:none;}.hamburger{display:flex;}
+  .wrap{padding:0 32px;}section{padding:72px 0;}
   .hero-content{padding:100px 32px 48px 32px;}
-  h1{font-size:clamp(34px,7vw,56px);}
-  .h-sub{font-size:13px;max-width:100%;}
-  .hero-stats{padding:24px 32px;gap:32px;flex-wrap:wrap;}
   .hero-vline{display:none;}
-
-  /* What */
-  .what-intro{grid-template-columns:1fr;gap:48px;}
-
-  /* How */
+  .hero-stats{padding:24px 32px;gap:28px;flex-wrap:wrap;}
+  .mission-cols{grid-template-columns:1fr;gap:40px;}
+  .what-grid{grid-template-columns:1fr;gap:40px;}
   .how-grid{grid-template-columns:1fr;gap:2px;}
-  .how-card::after{display:none;}
-  .how-card{border-right:none;border-bottom:1px solid var(--cream2);}
-  .how-card:last-child{border-bottom:none;}
-
-  /* Programmes */
+  .how-card::after{display:none;}.how-card{border-right:none;border-bottom:1px solid var(--cream2);}.how-card:last-child{border-bottom:none;}
   .prog-grid{grid-template-columns:1fr;gap:2px;}
-
-  /* Network */
-  .network-grid{grid-template-columns:1fr 1fr;}
-
-  /* Governance */
+  .nc-grid{grid-template-columns:1fr 1fr;}
+  .tl-track{padding-left:120px;}.tl-track::before{left:88px;}.tl-year{left:-120px;width:80px;font-size:8px;}
   .gov-layout{grid-template-columns:1fr;gap:40px;}
-
-  /* Contact */
+  .std-grid{grid-template-columns:1fr 1fr;}
+  .sdg-grid{grid-template-columns:1fr 1fr;}
   .contact-layout{grid-template-columns:1fr;gap:48px;}
-
-  /* Footer */
-  .foot-inner{flex-direction:column;gap:20px;text-align:center;}
-  .foot-links{justify-content:center;flex-wrap:wrap;}
+  .foot-inner{flex-direction:column;align-items:center;text-align:center;}
+  .foot-links{justify-content:center;}
 }
-
-/* ── MOBILE 600px ── */
 @media(max-width:600px){
-  /* Nav */
-  nav{padding:16px 20px;}
-  nav.scrolled{padding:12px 20px;}
-  .logo-sub{display:none;}
-  .logo-rule{display:none;}
-
-  /* Global */
-  .wrap{padding:0 20px;}
-  section{padding:56px 0;}
-
-  /* Hero */
+  nav{padding:16px 20px;}nav.scrolled{padding:12px 20px;}
+  .logo-sub{display:none;}.logo-rule{display:none;}
+  .wrap{padding:0 20px;}section{padding:56px 0;}
   .hero-content{padding:90px 20px 40px 20px;}
   h1{font-size:clamp(30px,8vw,44px);line-height:1.12;}
-  .h-label{font-size:8px;letter-spacing:3px;}
-  .h-sub{font-size:13px;}
-  .h-actions{flex-direction:column;align-items:flex-start;gap:14px;}
+  .h-sub{font-size:13px;}.h-actions{flex-direction:column;align-items:flex-start;gap:14px;}
   .btn-primary{width:100%;text-align:center;padding:14px 24px;}
-  .hero-stats{padding:20px;gap:20px;}
-  .hstat-val{font-size:24px;}
-  .hstat-lbl{font-size:7px;}
-
-  /* Ticker */
+  .hero-stats{padding:20px;gap:20px;}.hstat-val{font-size:24px;}
   .ticker-item{padding:0 28px;font-size:8px;}
-
-  /* What */
-  .what-intro{gap:36px;}
-  .what-intro-left p{font-size:14px;}
-  h2{font-size:clamp(28px,7vw,42px);}
-  .s-lead{font-size:14px;}
-
-  /* How */
-  .how-card{padding:32px 24px;}
-  .how-title{font-size:13px;}
-
-  /* Programmes */
-  .prog-top{padding:32px 28px 24px;}
-  .prog-bottom{padding:20px 28px 32px;}
-  .prog-stats{gap:20px;flex-wrap:wrap;}
-  .prog-title{font-size:24px;}
-  .prog-providers{gap:4px;}
-
-  /* Network */
-  .network-grid{grid-template-columns:1fr;}
-  .nc{padding:28px 24px;}
-
-  /* Governance */
-  .gov-row{grid-template-columns:1fr;gap:4px;padding:14px 0;}
-  .gov-key{font-size:8px;}
-  .gov-highlight{padding:28px 24px;}
-  .gov-hl-text{font-size:17px;}
-  .gov-badge{padding:20px;}
-
-  /* Founder quote */
-  #founder blockquote{font-size:clamp(18px,5vw,24px);}
-
-  /* Contact */
-  .contact-form{padding:28px 20px;}
-  .fg-row{grid-template-columns:1fr;}
-  .cinfo{gap:18px;}
-
-  /* Footer */
-  .foot-logo-text{font-size:13px;}
-  .foot-copy{font-size:7px;}
-  .foot-links{gap:14px;}
-  .foot-links a{font-size:9px;}
+  .prog-top{padding:32px 28px 24px;}.prog-bottom{padding:20px 28px 32px;}
+  .nc-grid{grid-template-columns:1fr;}.nc{padding:28px 24px;}
+  .tl-track{padding-left:0;}.tl-track::before{left:3px;}
+  .tl-item{padding-left:28px;padding-bottom:40px;}
+  .tl-year{position:relative;left:auto;width:auto;text-align:left;margin-bottom:8px;display:block;}
+  .tl-dot{position:absolute;left:0;margin-top:0;}
+  .gov-row{grid-template-columns:1fr;gap:4px;}.gov-key{font-size:8px;}
+  .std-grid{grid-template-columns:1fr;}
+  .sdg-grid{grid-template-columns:1fr 1fr;}
+  .contact-form{padding:28px 20px;}.fg-row{grid-template-columns:1fr;}
+  .foot-copy{font-size:7px;letter-spacing:1px;}
 }
 </style>
 </head>
 <body>
-<div id="dot"></div>
+
+<!-- CURSOR -->
+<div id="cursor-ring"></div>
+<div id="cursor-dot"></div>
 
 <!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu">
+  <a href="#mission" onclick="closeMob()">Mission</a>
   <a href="#what" onclick="closeMob()">What We Do</a>
   <a href="#programmes" onclick="closeMob()">Programmes</a>
-  <a href="#network" onclick="closeMob()">Who We Work With</a>
+  <a href="#network" onclick="closeMob()">Our Network</a>
+  <a href="#journey" onclick="closeMob()">Our Journey</a>
   <a href="#governance" onclick="closeMob()">Governance</a>
+  <a href="#standards" onclick="closeMob()">Standards</a>
+  <a href="#sdg" onclick="closeMob()">SDGs</a>
   <a href="#contact" onclick="closeMob()">Contact</a>
   <a href="#contact" class="mob-cta" onclick="closeMob()">Get in Touch</a>
 </div>
@@ -359,21 +393,23 @@ footer{background:var(--ink2);padding:56px 0;border-top:1px solid rgba(255,255,2
 <!-- NAV -->
 <nav id="nav">
   <a href="#" class="logo">
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAAD3CAYAAADykopzAAAvaUlEQVR4nO2daXeiShCG32Z3iWad5P//uizGXQQE+n6Q6ikajGZiornWc86cjIqAiVVdXavSWkMQhMvEOfUNCIJwOkQBCMIFIwpAEC4YUQCCcMGIAhCEC0YUgCBcMKIABOGC8b56AskjEITvQyn1vecXARaEy0W2AIJwwcgWQBDOGNkCCILwbXxpCyDKQxB+N5/aApDAi+ALws/w3VuAvQqAC7utALTW336DgnDJuK77reffqwCUUkjTFEEQoCxLbDYbKKWQ57kIvyD8AK7rwnEcKKXgOM5RlcJBWwClFJRS8DwPSim4rouyLKGUku2AIHwjk8kEvu/D932jBI7J3iiA1hppmiKKIvNYVn5B+DH08/OziqIIQRDA932zEB+DvVEArbX5R4/5T0EQvpenpyedpinyPEdZlkeVwb0KgDSN/VMQhJ/j8fFR2wrgGLK4VwEURVG7KCGKQBB+ll2y+BX2OgHLsjT/XNc1PgD+UxCE74EvtCT8P6oAXNc1/+wbanssCML3cGzhBw7YAnyH1hEE4d+gkPyxkHJgQbhgRAEIwgUjCkAQLhhRAIJwwYgCEIQLRhSAIFwwogAE4YIRBSAIF4woAEG4YEQBCMIFIwpAEC4YUQCCcMGIAhCEC0YUgCBcMKIABOGC+fUKYFefgjRNUZblD9+NcI7keQ4AyLKs9nxRFKe4nbPiy9OBTw1rkFjTBGEYnuR+hPPD87Zf8yAIas+7rnvx7ax+vQXgOA7SND31bQi/kNfX11Pfwsn59QoAAOI4PvUtCL+QP3/+XHyfu1+/BQAA3/drj+M4Vo7jSC9DwZj/eZ4jCAKkaYperydfior/hQLgzr7X11f158+fE96NcE4URWG6Wiulan6Al5cX9fj4eMK7Oz2/XgForY2WB7ZmXVEUCtj6B8QCuGzSNEW32zVt7R3n76738fFRA7hoR+CvVwA0rZhDj/M8rykH4fLodrsA/oYCyRIAgOfnZ/X09HSyezsH/hfSQX9cm2POURd+L2VZwvO8hjX49PR08RbA/yIKIAjCvyEKQBAuGFEAgnDBiAIQhAtGFIAgXDCiAAThghEFIAgXjCiAH2A+n5v/U9ryZrMxcek0TbFYLOg4bf/j7wG22Y/0HNU7tGU8ShaksI//RSLQOZNlGQaDAcqyhNYajuMgSRLkeQ7f9zWw7V3wUf8Cx3E0AKRpqnzfh1IKRVGYApddUMabIOxCFMA3Q6nIcRyj3+8DAKIo+qelud/v6+l0qjzPM+cShK8gW4BvxnEcFEVhBHa9Xn94/Hq9VkVRqKIoVFmW6vn5ubaMX19f636/r7Msq20tCCmBFj6DKIAfgPee29e8pNPpaNd1dZ7ncBwHT09PmE6nDVs+CAKdJMnxb1a4KEQB/ABBEICE9e7u7qDlOQxDDUBvNhtcX18jSRL18vJSUwRV6XNtxZd9v/AZRAH8EFEUAVuvfivj8ViNx+OG9Pq+r8fjMaIowt3dHdI0rR1TFEVr92PZBgiHIArgm8nzvLX99Pv7uwKg8jxXANTt7S36/T42m42yTf7b21sNQHuehyAIMJlMzOsUXRCEf0EUwAFQ3J0LGjnbaPUtyxJlWSLPcyRJgtfXV+R5jjiO4bouxfQNd3d3yLIMnueZcwRBAMdx0O12USmGGtTXnppcAMBqtarVupdlCaWUbAWEg5Aw4IHYQmUL2GKxwHA41I7jwPM8MvkxGAwa54rjWHW7XRPDJ+XheZ7pX0eXAVMcm80GQRDUYv88OUiEXvgsYgHsgQSLhMsOs5ETbjgc7rXDF4uFAqC63S601iYb0PO8WvdaEuqiKPD6+mqkOssy5HleE/SnpyctoT/hXxEF8EnsldbzvMZUIgBqNBqpOI7NgavVSnU6HQAwWwPf942wl2WJzWYDsiCAbUsz3rueN7T86J7ofIKwD9kC7IELly1oZVmaNF2GKssS9/f3ADPfe70eCaXmKz6Z81UHY0VCnuc5bQ0Uzxxsa3LKLRR+r4KwD7EA9rBrX00mPIccd/Z7Xl5eVJZlbcqihuu6erPZoCgKkMefD7Tct82wlZUg7EMUwCfgAkYmO7Fer5XjOMiyrFVpBEFgJJJCf0mSKACqCgni5eVFlWVpnIAvLy8YDAbmfaPRSJHDkENhRjtKIQj7EAXwj2ita/H9TqdjJs/keV4TwGoABQAgSRKjKKIoQp7nuLu7AwD18PDAPfyavw8AbSt27vdl3y98FlEAe+DCxp1wjuM0KvJoPkHb9oCIokg7jqMri0B7nqefn58B/PXyY0fGYOVzwGazwdvbWy0ZiK5LP+15iYLQhiiAI+L7PpbLJXzfr5n8dkWfTTWgQkdRpKlHgM3b25sZeBoEAR4eHsxxdhhQLALhUEQB/CN2YlCaptBak1VgpPH19VVVAm6YzWZqNBp9qBTG47Gq8gYAADc3N+a63DEIbCMJSikZgyZ8GlEAX4ArgDAMdfXYCPtkMlH2DPrNZqOCIMD9/X3t+arSj+r/1e3tLa6urlrDf9y6mM1mipyGkgkofBZRAMelJtQ3NzeNHAGlFDqdTkP4K0cgnp6eaIWvKRLyKUyn09oJr66uao+lOEj4DKIA/hG2BTh02VWonH78ybe3N/X4+GgiCpPJpLbCv729qZubG+OAvL6+Nq+laWr8AlQWzKcl78ocFARCviFfZLFYAB8ogSRJ1HK5rBX1EHEcq4eHB2RZRqu2tqwGRXv/Sqhr53Bd1+Qm8G2AUkocgMJBiAI4kF0FN1dXVyjLEtxhB2zr/bXWynVd9Pv9NptcRVGEOI4RBIFuaRSq8jyH53lIkgRpmtZeXK/X6qPx57vCkILAEQVwILtq7IuigOM4uLq6wmw2Mwe4rgulFCaTSe341WqlUFkMjuPobrfbcBKWZanoHHmeI4oiahEGYLstoPvZVadgtxn/yC9AW4h9x/zr6zxPQRTTeSEK4IvwVbjX6+H9/V2laaqur69RlmWtmm88HisqCrJX9NlspsqyVFV1IQCYUmG7+2+32zX9Bui4XdBru5QXCSQprF3n26UAsyxrNCHhPglSTHQMJSjZn184DRI4PgJFUcB1XXieR2m9ANAo/rm9vQXwt+afVukkSdRwOGycV2uNNE1r9QCTyUTZnn8ANWFTStUmBpHQUYUhNR3hzUeKokBRFCangI7fl1vAm5rQ9R3Hgb09UUqBCp0qi+ag8wvfi/z2jwC1BnMcB2VZoigKJElSC9FprRW1+vZ9v7YCBkFQE0ASJtd1G/0EO50OPM9DmqZGgXAn4C6yLIPrurVuQqSIOp2OUQa0pdl3Tt6CzHGcnREH7oz0fR++75umJiL8p0e2AF+EWnnxfa7nebUknpeXF7NnJ+Gyuwpx4eSNRHlIcDQaKXo+DMPGfpoqFNfrNZbLJWazGVDNFwyCQFNvwvl8bq5JTUro3m1Tf19OAd86AFvnI597SEqvLEuTwUi/A+H0iAI4EmQF2AIBAA8PD0YxkKLYVWQEgGoJANTrCO7v7zU5BtM0he/7lBikAWjHcbTv+7rT6eh+v6939Q8YDAbadV2tlNKTyQTL5dKUMfN7IUvkI58AfW7aXtAqT/MLaSZCkiTmM9GMxH1DUoTvRxTAFyGBIeGu+viZ16mFN6/UK4rCrIbU849WyM1mY5TDZrMxJcBEFEXa8zxNg0N4YtBH2ENFiJubG93v9011In2GPM9NnsFHHn5u1dB7V6sVABiLI4oiXYVCNf/svLuxcBpEARwBElrP81AURc3zPxwOzb6a2oC7rlubEES9AIMggOd5pqyY+gMmSaLm8/lBNvNisVBJkqjNZqOKolBaawVAPT4+Issylee5yvNc8WajHMdxtOu62vM8PZ/P94b/iqLAZDIBvcd1Xd3r9Xa+wXVd3el0zGcUTosogCNAK3aaprUv9ng8VhT64t54LlBkMtPz5Hyj7QR5zQeDAdI0NVWEq9WK8gVUWZYqyzJVlqW6uroy53Rdt+Yn8H3fKKDKslBpmqqiKBQfNkIMBgMj1EopzasQqelJHMdtNQ+GyWRiOh4xtOd5JioAAHzOoYQIfw5RAEeABDUMQ/DEnrZwnU2bM4w/R8oA2G4zqtRg1e12wesAaKgIVxxAfS4hJfuQYy7Pc4RhCNd1UYUhFQBVJSs1CIJAL5dL07NQKVVzdgIAKSU6z83Njd4xD1H7vm+2UFEUGcEPw1CKmn4IUQBHYFfuvd2VZ5ewf+QR5yY4j9vTyk4Wxmq1wnq9NuPHSQGUZYkoilA1JW2E36jHII9M9Ho9oBLizWZTu7l+v6/f39+RpmnjM6/Xa6WUMlZQr9fb6Xugj6eUQpIkxjHIQ6rC9yO/5S9CgmbH9oHDpvXsC7nR63EcG8FqE5CyLNHpdHSv19Pr9RpBEJBQURjQvIeE3fM8E8PflQVI7cr5FuHPnz86DMPGeHJSZtyP8fDwAHxcMamjKEJRFGar1DZLUfgeRAF8EXv152E7rhB4FICzKyZubQN0t9s1pcTc4UiCxrcbFF6zrqW5AqHXKB2YWxTEZrMxkYDhcNiYV2jXMURRpN/f3/H29oayLDGZTLBYLDAajRDHsSqKYpciqA0/oYEpkivw/Ugq1hehfTew3btys/+jsd32II82aDXkJjuZ8qQA+Mq9Xq9Vt9vVd3d3erlcKrtpaaVAFDUWpZRdnvFHpcn8s5C/oLqP1tJmgu/3edYhQ83n81p6M4BGTYI0Nf0ZxAI4EiTsdmadjf3cPh+AnS5LmYfAVsB4am2326Wx4+j3+7qyQGontzsKkRVBXv0gCBCGoancI2uCJhBXMX4zz2Bfb8PlcqksP4BuG5hKKc7cF2H3PhSOjyiAL8LTZ+M4riW3HNKU4zNpt8BfoeDbC74d4MVI5FDjXv3r62udZZlZYamIiYSPknloFabPQwqi1+uZSMLd3R3u7++xXq/NoJPq/4YwDPH4+FjbPqzX69bx5+RTICWww4IQjogogC/Cvej2as2FlZu4XDFEUWRMfdsSaLMM6L00gIT29WTKVwU+qjq3pgQjDtUXtCmctko+AMZhSPdlNSk1n4WXKQNb5ygVIpF10ul0tP27iuPYvNd2LgrfhyiAL0KCR3nwbQ0vwjA0lXuUM0/EcWySf0jAeJ3+ZrNBlmU1xyLl3tPKzRWI53m1/TN5+2FtBY7lZEvTtFZSXGFO/Pz8bBSE5ZOoaZ9Op2PyFKIoMrUEwvciCuCLcG+6LVB2Asxms2mE8Hq9nqZ9uda6VrZLDj9eERhFUaP8lrz19H++glIdvs2xEm1oJacEJPta9DolHWFHSFCGmp4GUQBfxB7Macfn7bRfyvfn6bHX19f67e3NrOBkITiO03DakQONsv1or5ymqYml2+9pi63v6x9wKPZMAluAu92uyTw8BIo4cKUmfB+iAL4IrXBkittWQFvRy2azwd3dHdI0NQdXo740X92r42ptwCkzkE8RLsuS9wDUNImoakyKMAwb97VrivFn4Z2AKCWZQ9ZImzDz+YZUCQnAbG2E70cUwBfhq3Wb159WXp5sQ6tk5SBT0+m0FibLsgxpmtZCisDfJiD2/thxHCRJgqr81nB3d2cckd9lWvPPTTF8SkcGYPbzQF0ZrlYrxecb8qIoQKYc/RSiAL4I/1KTAHCBjqJIk2lOKztv+xUEAa6urlCV7dLrWilFMwcAbLsB0TUAmHRbuj5vK54kiUqSpHa8bYkcM8RGOfwEb/TR6XRqr7F6g5pG4i3IqKOQzDb4fkQBfBG7KSYAXF9f147hKzN9qcnZV71OocKaEuCxflrxKYuP/AXVMTXhD8PQVNeRT8EW+GOtsLSV4MLKcxGm02ltm7TDIamAv0qKchLECvh+RAEcAV7JRoLKZwQAIBPdtMvme1zq/V+ZwLUWYPT/brdrzu/7vrkOHzqyWq0UmdzUdZiakdjtt9oajv4LZNXwCABf8SlBiuARDTqEd1Wi9/CfwvchCuCLUOYcUC/sGQ6HNU9/FEWat80Gmrn+q9WKhKfxzb+6utKUa0Cxd611TdGQz4AUEoUckySpmdwvLy9quVwexcvOvfttU4qvr691t9tFHMeN1Z9ve4TTIArgi9j7X7535aYwACilNKXtktDz9/KhIG2psq7rgkp9q2NqlgSFAqnjL92bnVn3+PiIY7Xl4slLH4X6qIEJsdlslOT6nx5RAEeCrADeSLN6ribIb29vtYpAx3HMeymURwlA9nsB6E6nY0xq3/epeQeArQVBuf3A374BvHHoarVS5H84ZqiNt0XXWqMaiApgu/2pMhrN8dwpKpwO+QscAW76kzebt8wGE+SHhwfNQ3OUe0/pvby9F4BarkCF7vV6tVAbbTXu7+817zvQ1qmo1+sZC+JYKzDPf6AqQp72S9WKnU6ntv+Xkt/TIwrgi1D7bBJYHg2gApqyLGt7dWqk0VYazPflH6TPmghBnufUJxBAvRkI691fyzOg/xwrFMiLg9ocd1Vij7nuYrFQi8VCOgOfAaIAvkibI4324YTjOBgMBrA67+pqco+pI+Axe/ITkEKxe/NR+jCv0gP+muDUm4967ll8W8J9W1WkPfq8mpwk2X5ngCiAL0IrHo8E2E03ga1g2pl9Nzc3mvLkyVyn6j3yJZAFYYcIge12YjQa1RKG6D745J4qGafRGOQYYUDetJT/Dj44t6LKP+H0iAI4ErYlwB+TIFfZezVB9DxP81TZtgYh/FxlWSp7XBhvzd3tdo0y4b4IpVStQ+/19bW2tyB0zc+kDZOi4VWOzInZen56n3B6RAF8M9wRR74C7iGv0MDfJh/AdoXm+QK82vDx8bH1WvP5XFEDDqqqo3soisKMJyc8z9PU6YcnMfFBJ4dCVkyapqYjsf058zxXu5qjCqdBFMA3w4WJwn79fh+LxaImHMvlEsBfL/r19XVjtbQeq/F4XDvHYDDQs9nMOPfIFCcBb9tGkJVAlgI3zQ/Zo1NHJH4+sniq/oEAtlOS+PnEAjgPRAF8M5SUw1e8NE1xdXVVKxrq9/t6vV6bkV4c7tGnFRsAbm5uYE/xGQ6HOssyk5jDi4eAZrst6gJMx9jVffsgYed5/PP5HADw+PhYm5FI/o6PtgjCzyJ/hW+GtwynuHsQBCiKolE0RHFyWlXJKchXWC6gVWy9cc0gCDQJ7z5TmywOu6GJ3bpsF3ZLcQBk4Zjn4zhWXODtvojC6RAF8M3wIRc0+cYyt1sHZ5Kg21Vx9uMd5wCqQSAUYty1n4+iCEEQ1M5JlsMhZjptL6iJB+VF2I5JKoDSWh+tEEn4OqIAfgDuXOPdfFgzzYYSyPO8NpjDvMCy7j5qRAo0Iwzj8bgWk6+Sk/TLy0ttcCjd6yEKgPocWvdprjGdThXN/gP+WgniAzgPRAF8M2mamnbXNI2HnHNlWZq+AFQTT3iep9saY3DBJO9+5XBrlaiqF4Hu9Xr69va2th8YDoca2O7V1+t1zRkIHDbXIAgCUwrc1nuw1+shiiLjgyCFJUlA54EogG+G9eqr5b6TmU/dgapGHzUh9n1fTyaTWt4/DyuSsNomdUv9wF7oPvi5SMHQVsLGDk8qpRCGYc3CsPP9afafcB6IAjgDsixDHMfwPK8RHry9vdW9Xk+naQr6x7cErDGIea5yIKrX11e7ElGtViu1Wq2UnZDEtxbcsUdVgzR0hBcQ8ciE67qg1GZiOBz+429E+CnEDjsxm83GbBG01ri6ukJZlqoa622glZWEmurrqVMQVwpUTVgl/iiqNLy+vjarr72i2xWNHArfkdlObcCoM9F6vcbV1ZXmAp+mqbKrAoXzQxTAiWlrJlKtwCrLskYLrT9//vDHCtjO2uMzCZfLJYbDoRHktvFgu1KXyazn4UB7v07nmkwmuLm50Xw0OT+Gb3+E80S2ACeG9t48cYe88dWkIPXBnl4DW2uAJ/jQe6nZKC9RJiVjWwC8qIlnHPLORRRtqGL8+ubmppFksFwuVZ7nimcBCueLKIATQw5ALvgUMw/D0EwSKopilyLQNE+PMgup7VhRFAjDsJY8ZGcIspOYn3Yh02w24xWJteIjznK5VP1+H57nod/vf6qWQDgNogBOjJ0SS/kBRVEYAaJtQRiGKMvSHiQCpZSeTqcmK3A4HGpy3PGMQqA+q68Nvv9PkgRKKXS7XRNO/OizkC+DIgeyBTh/RAGcEeRVp1WaBIib4VWPv9rEYGBb3svNbrImKO+AVnWqE2i7Nv9ZliV1F9K+79cEP01TlWWZms/ndu4C1uu1iRxI08/zRxTAGWKn4bZ55ytHXK0ikCf6UFgRqI8CJwuD5+pX59YANK30juM0EoeqLYiiqsbBYGBef319Vaz5CL9H4YwRBfDLub29RRzHDd8AFRxRGbA9cfczufjVWDIVhiGSJDF+CQ4JftuAVOF8EQXwP6AKATayCLklQXF7YLs94FOHsixTVcswBUDZGYn39/eatyLn1YPE1dXVh6PRhfNEFMAvh5J82iYK8QIcvvLbOf5Uz09Ox7bGIdTJmPb34/G4cS92e3CxBM4fUQC/HIrVJ0mCsixrnYdXq1VtDiEJuD1GnKwDPpgEQKM2AVWVolLKePwJ3glZVv7fgyiAXw4VB3U6HdNujL/Gs/qCIGgMCZ3NZopy/ElBUHJSlerbqFJM07TmRJxOp4p6AgCiAH4Tkgr8y+ExfnpM9Ho9Te3AqVTXTuLp9/u1gaV0Dp4wlGWZ4inJYRjqp6cnfp3WLsi8U7Bwnshf55dDcX5SAnbyDU/x5dN5gG3mHr2foA5Cvu8bZRIEwc5+A8A2zEiJRVzoxRI4f0QB/A8goaW+AXaS0Hq9rvUUAIAkSVSv12s46njkgAR5s9mg1+vBTvwhut2u6UFY9TUw90Uc2mNQ+FlEAfxyeHcdqtm3EnC03aNvsVgonhy0D1IEfBKxzfv7u2kDTucNgsA4FO2Ow4BYCOeAKIBfDs/2o/Zcdp4/37+PRiPV7XbRVsLbBhdSu4CI1yQ8PDxoUhCUeFRdu/Ye3nJMwoSnRxTAL4c3/aTHfK+fJIldM1CrCzj0/MB2f899AXYo8PX1FXEcm8GmdE88wsBrDYTTIwrgl0NC1ul0TO0/p627D3Fobz5SGHa0IIoizRXMnz9/dBiG4P4Aug53TvLuyMJpEQXwy+ErLeXqE3EcKysqoKIoMiv/IfUAJKQ0o8COMtjnoL6ASZIYhyApoc1mw5ORJER4Bshf4H8An89HKbtAc4Wfz+coy9Lsyw9pzc19AFRezKnChbWKRC70NAqM5hzwbENpGHJ6RAH8coqi2Fl2azvtBoOBWbHbagJ2nYMSeyi8t16vjcAHQaDteYO+7+uqial2XVcHQaArv4TRJrzfgXA6RAGcEXzKDtB0lNlhM9ZAtDH+azweq7YwG582ZPcJ5PAhpPP5HEVRmJJfW7F0u9226UatLBYLkywkPoDTIwrgDCBB8H0fSilsNhuTimvvse1RXNy7zodyDAYDuK6LyWRi3ssLduwJQ9TfvyxLrNdrk1y0Wq0wHA5Ng1EexiNWqxWUUo2ZBkmSNLoGrddr87nEB3B65C9wJpAZrZSqhekorm8PGOWOPy7YBBshbuYJ2M1AqZCIKvwoWafT6SAMQ8znc/R6PYxGIwAwZj1XNMA2QchxHFxdXWG5XCoAKo5jFUWR5l2DAOD+/h6LxUKmA50JogBODM0L5DF1MrNpb2/n1tMQD+6h5wNCR6ORslfX4XBojqfqPwrrceVBXvzlckktvzRvHrKL5+dncy8ANHdGVijyHVTDT6Rn4BkgCuDE8C49tBenn5vNBuv1GsvlEr7va+rbp5TSruvqanqQrgaQGoG7urpq7NN5fN7zvNaeg8BWUaRpin6/v1fop9Open9/VwDw+PgIALUVfzweqyzLFOUKdDqd2lxD6Rl4eqQc+MTQ6kt77OVyibu7Ow38HaRJ7b53YQtrGIZm+8AUgaZhnd1u16TrkqWRpiniOEaWZXh8fNwp/NR/sNvt6uvra3NcS1qvIt8B8Nd64c1J7ExC4ecRBXBi+Ey+MAz1V0Njo9FI3d/f15x8BI0DB4DJZKJofNhqtUKv19t57dVqpXzfx2w2w8PDw17LQGutsixDGIZmtBiFHWnVlxDgeSBbgBPDyniPUhp3d3dnkm4+4ubmRqdpiizL0Ov1Wq89Ho/VYrFQvV5PB0GgDxH+JEkUTSQCYOYDkMlfFIUZOPKZzsTC9yAK4MRorfeuhlXVncqyTC0Wi0ZojYjj2PTspw5AH5GmaWtzT+L29rZ1DBjvO0g8Pz+roihUGIaN1mBUpQhstzpk+tt+CuHnEQVwYqoKuw+PqfbaOggCfXV11QitEbTqj8djKKUaE33aeHp6OsjyGI/HKk1T9fLyotqGgj49PTUGmki9//kjCuDEVM06vnyel5cXVQn8QWE7YFsafOi5b29vdRiG2nYQVt2HjNTzHoWS6HP+yF/oxFCrrqoFt8rzXMVx3BjOAQBlWarFYqGKolB2269dnvv5fK7W67VaLBZqNpspfp22AaFvb29qNpsddO6iKBTt6yl7sc35KJwvEgU4MRTiI/Pd87xaiS/HcRxN1sK+/fN8PldXV1fo9/u13n70f8/zoLWmeX/GD/Hw8LDXdE+SRNkhvLaR48L5IxbAmUAjtYG/bbU/w2g0UkmSmBFfg8GgsRqTkuHJOGEYmt59SZKYfH9Yk4FQWQ0AFM0N4I49uy24FPr8DkQBnAGUtMNTfqvy2w9t6dVqpShCcH9/jzAMjSlOtHX9pUq8NE2NsAZBgCiKjCVAo8bSNDXbEV6ExC0UnsFI/4TfgSiAM4A3yeSCVYXTzMqutTZ7eACq1+sZRx7tvynkxpVAW4kx1ePz4iO+clNtQRiGtXAenZc3E6HQI1kc9qwB4XwRH8AZQKsuVeQRtHrz/fauBB97/80fc2H8SDD5loHn6fP/2/3+hN+N/BUF4YIRBSAIF4woAEG4YEQBCMIFIwpAEC4YUQCCcMGIAhCEC0YUwAHYefm8/z4lxvCxV0B98OZms6mdgzfz5AM66Bh6TAk4/Ly8+WeWZbXe/nQvdG3eQpy6DtMxdC16rLU276NsPnqNOgfTuflnaRsztmvqDz+fTZ7ntdepSEr4XkQB7GGz2ZjkHN6Kmx67rovNZmPGXpGwU7FNURTwfR+e59Vy8Kkwh1Jz0zQ1yTV81BdQz+G3x4HTQBDK6ON1BL7vm/9TMhEJN6Xz8tkAdG7KKnRd18z4o3MHQWCKlegeAJjuwpRWbDc5ieMYruuaGYMk7Ov12vy+XNdFlmWmNTlXdsL3IApgD77v02qmPc/Ts9kM4/EYr6+vZvVjK6L2fV97nqd5rz9eH89LZrXWmM/nQNVrn1pykyDy+Xr0mN7Hx3HZ2YOe5xlFVJaladmdZRk8z9NKKe04jtZaG2VEggfACGKe50ZxKKVqVo3ruqaxaBzHteEiBLX/AlA7D08/pmlD/LPQdQ6ZXSh8DfkNHwAfhMEbaxKdTqdRtJOmKVzXhed5iOMY3W4XAOC67rbKRilVFAV4d5+q046yz0MDOwillGkisl6vTUlxHMeIosis7p1OB9PpFE9PT7ooClU19azdJw0bsZ8jRUJWjOd5tSafpDy4kDqOU6sX4FWCNFuwupYGtmXFQRDQgNHGPATpK/D9iAVwAKPRqPZNtHvite1XHceB53lIksQIyXK5NK+7rqs9z8Pb21vtXEVRGBOdmmtSqy1ahfkqy1uGd7tdYyHQ89S6O8uynSW6tC1YLpdGeGl150LOtxd81ab3x3EM4G9xEIDaABDXdc0xwNYqoClHZBVQlSL3bwjfhyiAA+j1erXHNzc3tcedTkfbX1Zqz5XnOYIgQJIktT3tdDpVvKae4PvyqlcgTdXVfA8ObBVK1dRTA9AvLy+1iUFgnYZ3jPbWAHTVQxC+75v7mUwmWCwWeHl5wcvLCwCYbcJ0OiVLRtPsQaWUsXLG4zEJunYcR1PjUa21OQbY+jHISkrTFM/Pz3AcR89mM2ku8kO0TpDl0P6Qry785zmwXC7t4RgKwFHukfbp3PSP41jleV4z37XWqprc0yCOY9XtdjEej3F7e1u7z9FoBN7DrzoPsLtNuKI+/m0vTiYTxRSUOSbLMrVcLu3r185bFIXZotiMRiN1d3eH5XKJtk7BZVmqzWYDe24gMZvNVBAE6HQ6td9jWZbodDqt16UZB1+FphGzsuvGd+WMMff6/Pys+v0+oig6mn9ELIA92Ptces4ea/WRoul2u7ooiobwbTabxnQcGtTBsbcJfBW1ubm50W3txPbdI/bMJbi/v9dpmrYKP7AdIf7RYjIcDnWn0wFvaZ7nOfr9/k6lc2hzU+HfEQVwANzjDmz33XwW32q12ruKtJm0bQ002+LnnPl8vteqaavVD4IAbe28990j8f7+rj667vX1dWMbRGPEOHw7Ja3DTo8ogAMYDof2U7UBmL1eb2/iStsX3XXdxvvCMGz4HPhEHjtHoA2a/muzWCw+NgFaVvA8z9V4PFZ3d3cfXhNoNiuxFcpyuawpJ9/32xSgeWI8Hp+7ef7rEQWwh9Vq1UhImc/n6u3tTSVJoqgl1749WZtAUtjLhnvK29jXjcf3/cYWJcuyvQNI2lZ4rTVub28Puq79uv176/f7tWtsNpvGPWmtSVGpQ+cWCP+OKIA9tK3uURTh4eHBxNyB3a26iLZR2BQb5xRFUbuevQru2yLQMfZYMNd1904Basu8I4HdZVVwbAVgK0WaH0CUZdmwdhzHMTkO0nbs+5Hf8B601g1HXRzHWC6XNVN8XzSlzTHHh2ja19z1PlqNPyKKotYege/v7x+a1G1KjITY87xPj/PmfhK6B/55KI2aEwSBXq1WGI/HmE6nn7qe8HlEAewhz/PGqtvr9WoDN+yVrY02C8B13UZmoeu6tVXxz58/tdd939c8oWjXPbcMBtV3d3ef9qpT4hG1LreTogiaCryL5XKpANTCgIPBQPu+30is6vV6+vb2Vvf7/c/ervBJRAHsgRfUEFT0QoqBz8Mj7C91WZY14RmNRqosSyMYwDbO23YsJ0kSZQsGD609Pz8rZnqb55fLZWOcGOfl5UUBwOvrqzlmMpkoSjwi4W6LyxdFodqsDn4euuckScz5aZrxzc1N7fdASC3A9yOJQHvgffSBvxWAdN40TRGGIarkHPM+fm3Kn6fnAZiMPXIE8uu03Tfl0VPqLLBVTlXyjjmO7o+n7dI98vPa90vv5T39N5tNIw+Crkc/KcmGipwcxzF/h+Vyqfr9vskgpIw/2vZQRIOu5zhOrbbB/mz/iiQC7UYsgD3YQy48z6sJJ32Zoyiq+QTITF+v16bCjQSKhJ9/Ka0vaM3hRiXF9BpXQCQgRVGYoh3Kxefly1mW1RQSCT/dc1Up2JghQO+hyAQfB8aFl082IqIoqpUtA3U/A90v/x3z2gZJB/5+RAEcCRJs8gWQgPEvNH35kyQxgkeanM3kA/DXZ8DLdEmg7QIdWin5hB+yOmibEgSBaRBC1XxcCfHrAVsLgQsgZR8ul0vzGem+kiRBURSN8OVqtTJWCi+dpijFvsiJ8P2IAvgivJtPWZZ4f3/HfD5HlmV4eXnBfD7Hcrk0AktCZ5twtukNwAgmbbnsPgFk0pOg0paCK4jKQtEA9Pv7u3kv7enJciBsc5+qE4Gtcuj3+zUFQgrFdV10u12kaaq01mq9XitKoKJ8fwCmcYpwHogC+CJsBdWu6+qnpyc9GAz0bDbD4+OjHgwGut/va3IcUs088LcbDlDv+sN9LLx9GPDXw08CSKs6nZveS2W4XLh5HgCZ3qQseBkysLVgXNfVvES4um89m83MvdH7+XaDBJ4mHpOCskuZP4oaCD+DKIAvQuW7doydklns4/jjTqdT87CTE45WWH4sN+/JB0Bdebj1QP37SNHY+3LejovakgGoDRTlNfy3t7faTj2mHgPcH8J9FnQ83+MDWwVCio7ajAmnRRTAFyFBtUNzZA7TYzLlF4sFnp+f4Xmefn5+rvUCBLaCNJ1O8fr6yk1sDfzdPiRJgtfXV6rT1wA0b+vl+z5eX1+BqkeADe3J5/M5ZrMZXl9fzcrMJgHzUmIURVFLzKECqSzLsFwu6bEejUYmWhEEAbIsw3g8xnw+x/v7u7lfafZxHkgY8AjkeY7393c8Pj6ae5jP5ypNU1xfX5tVrwrlNX7hb29v6v7+nu7VvD6dThWttqPRSHW7XXS73Z1/sKIoVLWqfvRHVbBCS7Q1qK6HLMtqCiBNU8V8CQC29f+V4mq91mq1otyAfffy7UgYcDdiAXwRMnPtP8hgMNAPDw/a932ttd4p/MC22q8tx5+EH9jWxn/UBwDYmvfUWPRQBoNB7Xp2w1GgPSffcRyyMlqhzMGP2NW3QPg5RAF8EfqSf2RpsGaYBsq8I9rSie1swH3WWpqmteu8vb2poihq56i6EBtsi2K9XjfKjSnCwbMEgWaaMn/95uZG28VDu7IbhdMhCuCL5HkOrXVDwPmXPUkS2Pn7dhYej9kTdkecfSumUqoWi+92u41VeDAYmJTjNrrdbqPoh87BBb7Ng2/7Qey8APv+xQI4PaIAvggf1MEZDodI01Qtl0s1GAwaCsJeHdfrdUOAeI4/v9ZH7GujlSRJLRxoWyJxHDfujWfyEW3WyGKxqD226/ltxfLZ6kLh+IgC+CIkCPaKrrVGGIZGcA4RXntV5U1HgaaAtd0Lb0+2Xq8b57S3AI+Pj41z2MJNeQX2FqDt+hy7j4Jt4cjkn9MjCuAI8FRXgpJjer0edrX/5rSZ6zbcYbcLvn+/v7/XbX0BOG2lzvYxlMDDtwCe5zWsB25ZJEmi7BXeVoKSCnx6RAF8EcqIs7vl8nRfVlNvBIYL0/Pzs2rrF/BZqq699tO1+7J7+9ltvJMkaWxFJpNJI313Mpm0lgaz8za2DXY/AjvaIPw8ogC+CDkA1+t1wzymngFUK18V5NSOm06n6unpyRyPD+LStjlvZx9GUYQkSZDn+c5zVGb3ztfZhGJzzGAwaFg4Nzc3lHWoeNuyqoW5ouk+HLt7stQEnB5RAF+EqgCjKCLBo39wHMd8ySnMV43cUlpr0/iSwmxsJLeyzqW01qqa1mueGw6HKIpCVUpFRVHE+xSqLMvMa/Q+msNHz1fZiirLMpXnuer3+7zngAKgKP+gUgqK2n3T1ONqEIkCoB4eHsyMwiAIQJ8zTVPV6/VQhSVVmqYfthkXfgbJBBT+90gm4G7EAhCEC0YUgCBcMKIABOGCEQUgCBeMKABBuGBEAQjCBSMKQBAumF+vAKghB/Hy8qKowaW0nRKAv/URvG27sOXXKwDXdWsFLUEQmKaZMl1W4JOSyrJsndF4yfwvhq/xP+rNzY3O81xRTrvMlxOoYCuOY4RhKFWIjF8vHVmWNVpYeZ6nRfAFjuM4jSrHt7c39fDwcKI7Og9+vZSQyS8In+Xh4UHj/GsBvpVfv0m2B24Iwie4+C/Or7cAmPArqv7LskwqAQUA2y1ip9OB67pmAjJNPgrD8OKtx1+vAFzXNaOwqEMvOQX5SC3hMvF934T/aIR5URTYN2PhUvj1CgD46+m3vbviCBQI/t2QKMBffr0PQBCEf0cUgCBcMKIABOGCEQUgCBeMKABBuGBEAQjCBSMKQBAuGFEAgnDBiAIQhAtGFIAgXDCiAAThghEFIAgXjCgAQbhgRAEIwgUjCkAQLpi9BfPUVcf+KQjCcbHnWPyErO21AMqyND3VOaIIBOHr0AAbEn6llPln8/T0pPnxxxh8s1cBeJ5nWikB20k8WmvkeQ7qvS8Iwr/BhXjfovr8/KzomGNNvdq7BSjL0lgBSinTY0/abQnC1/nM9CpuHRxr6tXBZyGTgxpv5nne2BYIgnAcfmq25d5l3HEc8w/4u/KLBSAIx8MW+LbtAPni6Nhj+OH2SnFRFCiKwrTepmm8ZVnCcRxxBgrCETgkyvYd8rZXAfi+jyRJsFqtMBwONVkC0m9fEI7LPuEmZ/yuKMG/sNcHoLVGGIZQSuH5+VmWe0E4Eb7vw/M8OI7zc2FA8vz7vo8oikQJCMIJGI/Hyvf9o1sBap8WIacD+QE2m435/094KQXh/w7J0dPTk6ZYPwk35eH4vm8mYR/TD7BXAZCpQfkA/J8M4BSEr6GUMgqAZwMSnucZK/zY+3/gAAXAsVMQRQEIwvFok0Uu8McWfuBAC4AuLgjC/4u9YcBdWumj1wVB+Bz2AvtTC+9/1TuI1Z699p4AAAAASUVORK5CYII=" alt="Philanthropic Foundation">
+    <img src="data:image/png;base64,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" alt="The Philanthropic Foundation">
     <span class="logo-rule"></span>
     <div class="logo-text">
       <span class="logo-name">The <span>Philanthropic</span> Foundation</span>
-      <span class="logo-sub">Mauritius · Est. 2021</span>
+      <span class="logo-sub">Mauritius · Reg. No. 679 · Est. 2021</span>
     </div>
   </a>
   <ul class="nav-links">
-    <li><a href="#what">What We Do</a></li>
+    <li><a href="#mission">Mission</a></li>
     <li><a href="#programmes">Programmes</a></li>
-    <li><a href="#network">Who We Work With</a></li>
+    <li><a href="#network">Network</a></li>
     <li><a href="#governance">Governance</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a href="#standards">Standards</a></li>
+    <li><a href="#sdg">SDGs</a></li>
   </ul>
   <a href="#contact" class="nav-btn">Get in Touch</a>
+  <button id="lang-toggle" onclick="toggleLang()" style="background:none;border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.5);padding:7px 14px;font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;cursor:none;transition:all .2s;margin-left:8px;" onmouseenter="this.style.borderColor='rgba(192,154,60,.5)';this.style.color='var(--gold)'" onmouseleave="this.style.borderColor='rgba(255,255,255,.2)';this.style.color='rgba(255,255,255,.5)'">FR</button>
   <button class="hamburger" id="hamburger" onclick="toggleMob()" aria-label="Menu">
     <span></span><span></span><span></span>
   </button>
@@ -385,151 +421,107 @@ footer{background:var(--ink2);padding:56px 0;border-top:1px solid rgba(255,255,2
   <div class="hero-grid"></div>
   <div class="hero-vline"></div>
   <div class="hero-content">
-    <div class="h-label">Registered in Mauritius · Founded 2021</div>
-    <h1>The institutional home<br>for <em>African capital</em><br>to move with confidence.</h1>
+    <div class="h-label">Registered in Mauritius · Reg. No. 679 · Founded 2021</div>
+    <h1>The institutional infrastructure<br><em>African capital</em><br>has been missing.</h1>
     <p class="h-sub">The Philanthropic Foundation is the governance and programme platform that connects development finance institutions, institutional investors, policymakers, and private capital across Africa — through regulated structures, curated relationships, and on-the-ground programmes.</p>
     <div class="h-actions">
       <a href="#programmes" class="btn-primary">Our Programmes</a>
-      <a href="#what" class="btn-secondary">How We Work →</a>
+      <a href="#mission" class="btn-secondary">Our Mission →</a>
     </div>
   </div>
   <div class="hero-stats">
-    <div class="hstat">
-      <div class="hstat-val">2</div>
-      <div class="hstat-lbl">Active Programmes</div>
-    </div>
-    <div class="hstat">
-      <div class="hstat-val">USD 150<sup>M</sup></div>
-      <div class="hstat-lbl">Climate Fund Target</div>
-    </div>
-    <div class="hstat">
-      <div class="hstat-val">1,100<sup>+</sup></div>
-      <div class="hstat-lbl">Circuit Delegates / Year</div>
-    </div>
-    <div class="hstat">
-      <div class="hstat-val">5<sup>+</sup></div>
-      <div class="hstat-lbl">African Markets</div>
-    </div>
+    <div class="hstat"><div class="hstat-val">2</div><div class="hstat-lbl">Active Programmes</div></div>
+    <div class="hstat"><div class="hstat-val">USD 150<sup>M</sup></div><div class="hstat-lbl">Climate Fund Target</div></div>
+    <div class="hstat"><div class="hstat-val">1,100<sup>+</sup></div><div class="hstat-lbl">Circuit Delegates / Year</div></div>
+    <div class="hstat"><div class="hstat-val">12<sup>+</sup></div><div class="hstat-lbl">Cities · Global Network</div></div>
   </div>
 </section>
 
 <!-- TICKER -->
-<div class="ticker">
-  <div class="ticker-track">
-    <span class="ticker-item">Mauritius Climate Transition Fund</span><span class="ticker-sep"> · </span>
-    <span class="ticker-item">The African Circuit</span><span class="ticker-sep"> · </span>
-    <span class="ticker-item">FSC-Regulated · Mauritius</span><span class="ticker-sep"> · </span>
-    <span class="ticker-item">DFI & LP Network</span><span class="ticker-sep"> · </span>
-    <span class="ticker-item">Blended Finance</span><span class="ticker-sep"> · </span>
-    <span class="ticker-item">Pan-African Financial Conferences</span><span class="ticker-sep"> · </span>
-    <span class="ticker-item">Diplomatic Mission Partners</span><span class="ticker-sep"> · </span>
-    <span class="ticker-item">IFC Performance Standards</span><span class="ticker-sep"> · </span>
-    <span class="ticker-item">EU Green Taxonomy Aligned</span><span class="ticker-sep"> · </span>
-    <span class="ticker-item">DTOS Administered</span><span class="ticker-sep"> · </span>
-    <span class="ticker-item">Mauritius Climate Transition Fund</span><span class="ticker-sep"> · </span>
-    <span class="ticker-item">The African Circuit</span><span class="ticker-sep"> · </span>
-    <span class="ticker-item">FSC-Regulated · Mauritius</span><span class="ticker-sep"> · </span>
-    <span class="ticker-item">DFI & LP Network</span><span class="ticker-sep"> · </span>
-    <span class="ticker-item">Blended Finance</span><span class="ticker-sep"> · </span>
-    <span class="ticker-item">Pan-African Financial Conferences</span><span class="ticker-sep"> · </span>
-    <span class="ticker-item">Diplomatic Mission Partners</span><span class="ticker-sep"> · </span>
-    <span class="ticker-item">IFC Performance Standards</span><span class="ticker-sep"> · </span>
-    <span class="ticker-item">EU Green Taxonomy Aligned</span><span class="ticker-sep"> · </span>
-    <span class="ticker-item">DTOS Administered</span><span class="ticker-sep"> · </span>
+<div class="ticker"><div class="ticker-track">
+  <span class="ticker-item">Mauritius Climate Transition Fund</span><span class="ticker-sep"> · </span>
+  <span class="ticker-item">The African Circuit</span><span class="ticker-sep"> · </span>
+  <span class="ticker-item">Reg. No. 679 · Mauritius</span><span class="ticker-sep"> · </span>
+  <span class="ticker-item">DFI & LP Network</span><span class="ticker-sep"> · </span>
+  <span class="ticker-item">Blended Finance</span><span class="ticker-sep"> · </span>
+  <span class="ticker-item">Pan-African Financial Conferences</span><span class="ticker-sep"> · </span>
+  <span class="ticker-item">Diplomatic Mission Partners</span><span class="ticker-sep"> · </span>
+  <span class="ticker-item">IFC Performance Standards</span><span class="ticker-sep"> · </span>
+  <span class="ticker-item">EU Green Taxonomy Aligned</span><span class="ticker-sep"> · </span>
+  <span class="ticker-item">Eversheds Sutherland · Legal</span><span class="ticker-sep"> · </span>
+  <span class="ticker-item">AfrAsia Bank · Banking</span><span class="ticker-sep"> · </span>
+  <span class="ticker-item">DTOS Ltd · Secretariat</span><span class="ticker-sep"> · </span>
+  <span class="ticker-item">Mauritius Climate Transition Fund</span><span class="ticker-sep"> · </span>
+  <span class="ticker-item">The African Circuit</span><span class="ticker-sep"> · </span>
+  <span class="ticker-item">Reg. No. 679 · Mauritius</span><span class="ticker-sep"> · </span>
+  <span class="ticker-item">DFI & LP Network</span><span class="ticker-sep"> · </span>
+  <span class="ticker-item">Blended Finance</span><span class="ticker-sep"> · </span>
+  <span class="ticker-item">Pan-African Financial Conferences</span><span class="ticker-sep"> · </span>
+  <span class="ticker-item">Diplomatic Mission Partners</span><span class="ticker-sep"> · </span>
+  <span class="ticker-item">IFC Performance Standards</span><span class="ticker-sep"> · </span>
+  <span class="ticker-item">EU Green Taxonomy Aligned</span><span class="ticker-sep"> · </span>
+  <span class="ticker-item">Eversheds Sutherland · Legal</span><span class="ticker-sep"> · </span>
+  <span class="ticker-item">AfrAsia Bank · Banking</span><span class="ticker-sep"> · </span>
+  <span class="ticker-item">DTOS Ltd · Secretariat</span><span class="ticker-sep"> · </span>
+</div></div>
+
+<!-- MISSION -->
+<section id="mission">
+  <div class="wrap">
+    <div class="s-eyebrow gold rv">Our Mission</div>
+    <h2 class="inv rv d1">To build the infrastructure<br>that makes <em>African capital</em><br>move with certainty.</h2>
+    <div class="mission-cols" style="margin-top:52px;">
+      <div class="rv d2">
+        <p class="mission-lead">Africa does not have a capital problem. It has an infrastructure problem — the institutional frameworks, governance structures, and trusted relationships that allow global capital to reach African opportunities with the confidence that serious investors require.</p>
+        <p class="mission-lead">The Philanthropic Foundation exists to be that infrastructure — permanently. Not as a fund manager, not as a consultancy, not as a development agency. As a regulated, independent institution that connects capital to opportunity through governed structures and relationships built over years.</p>
+      </div>
+      <div class="rv d3">
+        <div class="mp"><div class="mp-bar"></div><div><div class="mp-label">Capital Mobilisation</div><div class="mp-title">Direct more global capital into Africa at scale</div><div class="mp-text">Institutional, private, and concessional capital — into African infrastructure, climate, and growth opportunities with the governance frameworks that serious investors require.</div></div></div>
+        <div class="mp"><div class="mp-bar"></div><div><div class="mp-label">Institutional Infrastructure</div><div class="mp-title">Build permanent frameworks that outlast any cycle</div><div class="mp-text">Regulated vehicles, governance structures, and convening platforms that compound in value over years — not assembled for a single transaction or fundraise.</div></div></div>
+        <div class="mp"><div class="mp-bar"></div><div><div class="mp-label">Long-Term Relationships</div><div class="mp-title">Cultivate the relationships that move money</div><div class="mp-text">DFI, diplomatic, and investor relationships built through years of presence across three continents — AFSIC, SuperReturn, family office forums, embassy engagements.</div></div></div>
+      </div>
+    </div>
   </div>
-</div>
+</section>
 
 <!-- WHAT WE DO -->
-<section id="what">
+<section id="what" style="background:var(--white);">
   <div class="wrap">
     <div class="s-eyebrow rv">What We Do</div>
     <h2 class="rv d1">A platform that makes it easier<br>for capital to <em>reach Africa</em></h2>
-
-    <div class="what-intro" style="margin-top:48px;">
-      <div class="what-intro-left rv d2">
+    <div class="what-grid">
+      <div class="rv d2">
         <p>Most capital that could reach Africa doesn't — not because the opportunities aren't there, but because the <strong>institutional infrastructure is missing</strong>. The governance frameworks, the trusted relationships with regulators and DFIs, the convening platforms where the right people actually meet.</p>
-        <p>The Philanthropic Foundation was built to fill that gap. We are a <strong>Mauritius-registered, FSC-supervised institution</strong> that operates two programmes — a regulated climate investment fund and Africa's only pan-continental financial conference circuit — both designed to move capital more efficiently across the continent.</p>
-        <p>We are not a bank, a consultancy, or a development agency. We are a <strong>governance and programme platform</strong> with real institutional relationships — DFIs, embassies, sovereign wealth contacts, and fund managers — built over years, not assembled for a pitch deck.</p>
+        <p>The Philanthropic Foundation was built to be exactly that infrastructure. A <strong>Mauritius-registered institution</strong> operating two programmes — a regulated climate investment fund and Africa's only pan-continental financial conference circuit — both designed to move capital more efficiently and more confidently across the continent. With real institutional relationships built over years, not assembled for a pitch deck.</p>
       </div>
-      <div class="what-intro-right rv d3">
+      <div class="rv d3">
         <div class="network-label">Our Institutional Network</div>
-        <div class="network-items">
-          <div class="net-item">
-            <div class="net-dot"></div>
-            <div>
-              <div class="net-text">Development Finance Institutions</div>
-              <div class="net-sub">Leading DFIs and their LP networks across the continent</div>
-            </div>
-          </div>
-          <div class="net-item">
-            <div class="net-dot"></div>
-            <div>
-              <div class="net-text">Diplomatic Missions & Embassies</div>
-              <div class="net-sub">Ministerial & regulatory access across Africa</div>
-            </div>
-          </div>
-          <div class="net-item">
-            <div class="net-dot"></div>
-            <div>
-              <div class="net-text">Institutional Investors & Fund Managers</div>
-              <div class="net-sub">Pension funds, sovereign wealth, private equity & credit</div>
-            </div>
-          </div>
-          <div class="net-item">
-            <div class="net-dot"></div>
-            <div>
-              <div class="net-text">UHNWI & Family Offices</div>
-              <div class="net-sub">$30M+ investable assets · Africa-focused principals</div>
-            </div>
-          </div>
-          <div class="net-item">
-            <div class="net-dot"></div>
-            <div>
-              <div class="net-text">Regulated Service Providers</div>
-              <div class="net-sub">Fund administration, custody, audit & legal advisory</div>
-            </div>
-          </div>
-        </div>
+        <div class="net-item"><div class="net-dot"></div><div><div class="net-text">Development Finance Institutions</div><div class="net-sub">DFI co-investors, LP networks & concessional capital facilities</div></div></div>
+        <div class="net-item"><div class="net-dot"></div><div><div class="net-text">Private Capital & Co-Investment</div><div class="net-sub">Private equity, credit funds & infrastructure co-investment platforms</div></div></div>
+        <div class="net-item"><div class="net-dot"></div><div><div class="net-text">Funds of Funds & Foundations</div><div class="net-sub">Endowments, philanthropic foundations & multi-manager allocators</div></div></div>
+        <div class="net-item"><div class="net-dot"></div><div><div class="net-text">Institutional Investors & Fund Managers</div><div class="net-sub">Pension funds, sovereign wealth, asset managers & wealth platforms</div></div></div>
+        <div class="net-item"><div class="net-dot"></div><div><div class="net-text">UHNWI & Family Offices</div><div class="net-sub">Africa-focused principals · $30M+ investable assets</div></div></div>
+        <div class="net-item"><div class="net-dot"></div><div><div class="net-text">Diplomatic Missions & Embassies</div><div class="net-sub">Ministerial & regulatory access across Africa, Europe & Asia</div></div></div>
       </div>
     </div>
-
-    <!-- How it works -->
-    <div style="margin-top:64px;">
+    <div style="margin-top:72px;">
       <div class="s-eyebrow rv" style="margin-bottom:28px;">How It Works</div>
       <div class="how-grid rv d1">
         <div class="how-card">
           <div class="how-num">01 — Governance</div>
-          <svg class="how-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="8" y="20" width="32" height="22" rx="1" stroke="#0A7070" stroke-width="1.5"/>
-            <path d="M4 22L24 6L44 22" stroke="#0A7070" stroke-width="1.5" stroke-linecap="round"/>
-            <rect x="19" y="30" width="10" height="12" rx="1" stroke="#C09A3C" stroke-width="1.5"/>
-            <path d="M16 20V18C16 14.686 19.134 12 23 12H25C28.866 12 32 14.686 32 18V20" stroke="#0A7070" stroke-width="1.2" stroke-dasharray="2 2"/>
-          </svg>
+          <svg class="how-icon" viewBox="0 0 48 48" fill="none"><rect x="8" y="20" width="32" height="22" rx="1" stroke="#0A7070" stroke-width="1.5"/><path d="M4 22L24 6L44 22" stroke="#0A7070" stroke-width="1.5" stroke-linecap="round"/><rect x="19" y="30" width="10" height="12" rx="1" stroke="#C09A3C" stroke-width="1.5"/></svg>
           <div class="how-title">The Foundation holds the institutional layer</div>
-          <div class="how-text">Registered in Mauritius and supervised by the FSC, the Foundation provides the governance architecture — legal structure, DFI relationships, regulatory standing — that its programmes operate within.</div>
+          <div class="how-text">Registered in Mauritius (Reg. No. 679) under the Foundations Act 2012, the Foundation provides the governance architecture — legal structure, DFI relationships, regulatory standing — that its programmes operate within.</div>
         </div>
         <div class="how-card">
           <div class="how-num">02 — Deployment</div>
-          <svg class="how-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="24" cy="24" r="16" stroke="#0A7070" stroke-width="1.5"/>
-            <path d="M24 8C24 8 30 14 30 24C30 34 24 40 24 40" stroke="#C09A3C" stroke-width="1.2"/>
-            <path d="M24 8C24 8 18 14 18 24C18 34 24 40 24 40" stroke="#C09A3C" stroke-width="1.2"/>
-            <path d="M8 24H40" stroke="#0A7070" stroke-width="1.2"/>
-            <path d="M10 17H38M10 31H38" stroke="#0A7070" stroke-width="1" stroke-dasharray="2 2"/>
-          </svg>
+          <svg class="how-icon" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="16" stroke="#0A7070" stroke-width="1.5"/><path d="M24 8C24 8 30 14 30 24C30 34 24 40 24 40" stroke="#C09A3C" stroke-width="1.2"/><path d="M24 8C24 8 18 14 18 24C18 34 24 40 24 40" stroke="#C09A3C" stroke-width="1.2"/><path d="M8 24H40" stroke="#0A7070" stroke-width="1.2"/></svg>
           <div class="how-title">Programmes deploy into specific opportunities</div>
           <div class="how-text">Each programme has a focused mandate: the MCTF deploys blended finance into African climate infrastructure. The African Circuit convenes the investors, policymakers, and capital allocators who make deals happen.</div>
         </div>
         <div class="how-card">
           <div class="how-num">03 — Compounding</div>
-          <svg class="how-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M8 36L18 24L26 30L36 16" stroke="#0A7070" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M36 16H42V22" stroke="#C09A3C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            <circle cx="18" cy="24" r="2.5" fill="#0A7070"/>
-            <circle cx="26" cy="30" r="2.5" fill="#0A7070"/>
-            <circle cx="36" cy="16" r="2.5" fill="#C09A3C"/>
-            <path d="M8 42H40" stroke="#0A7070" stroke-width="1" opacity="0.3"/>
-          </svg>
+          <svg class="how-icon" viewBox="0 0 48 48" fill="none"><path d="M8 36L18 24L26 30L36 16" stroke="#0A7070" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M36 16H42V22" stroke="#C09A3C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="18" cy="24" r="2.5" fill="#0A7070"/><circle cx="26" cy="30" r="2.5" fill="#0A7070"/><circle cx="36" cy="16" r="2.5" fill="#C09A3C"/></svg>
           <div class="how-title">Capital flows more efficiently as a result</div>
           <div class="how-text">By combining a regulated investment vehicle with a continent-wide convening platform, the Foundation creates compounding value — the relationships built at the Circuit feed the Fund's pipeline, and vice versa.</div>
         </div>
@@ -543,82 +535,48 @@ footer{background:var(--ink2);padding:56px 0;border-top:1px solid rgba(255,255,2
   <div class="wrap">
     <div class="s-eyebrow rv">Our Programmes</div>
     <h2 class="rv d1">Two programmes.<br><em>One platform.</em></h2>
-    <p class="s-lead rv d2">Each programme is independent in focus, but powered by the same institutional foundation — the same network, the same governance standards, the same Mauritius base.</p>
-
-    <div class="prog-grid">
-      <!-- MCTF -->
-      <div class="prog-card rv d2">
+    <p class="s-lead rv d2">Each programme is independent in focus but powered by the same institutional foundation — the same network, the same governance standards, the same Mauritius base.</p>
+    <div class="prog-grid rv d2">
+      <div class="prog-card">
         <div class="prog-top">
           <div class="prog-stripe gold"></div>
-          <div class="prog-tag gold">Blended Finance · FSC-Regulated CIS · Est. 2021</div>
+          <div class="prog-tag gold">Blended Finance · Est. 2021</div>
           <div class="prog-title">Mauritius Climate Transition Fund</div>
-          <div class="prog-desc">A closed-end, FSC-regulated collective investment scheme that deploys blended finance into climate infrastructure across Africa and the Indian Ocean. The Fund stacks DFI concessional debt beneath institutional equity to create bankable project structures that European pension funds and asset managers can access — without compromising on governance standards. Targeted at renewable energy, water, coastal resilience, and low-carbon logistics.</div>
+          <div class="prog-desc">A closed-end collective investment scheme that deploys blended finance into climate infrastructure across Africa and the Indian Ocean. The Fund stacks DFI concessional debt beneath institutional equity to create bankable project structures that European pension funds and asset managers can access — without compromising on governance standards. Targeted at renewable energy, water, coastal resilience, and low-carbon logistics.</div>
         </div>
         <div class="prog-bottom">
           <div class="prog-stats">
-            <div>
-              <div class="pstat-val">$150M</div>
-              <div class="pstat-lbl">Target Fund Size</div>
-            </div>
-            <div>
-              <div class="pstat-val">8–12</div>
-              <div class="pstat-lbl">Target Investments</div>
-            </div>
-            <div>
-              <div class="pstat-val">10 yr</div>
-              <div class="pstat-lbl">Fund Term</div>
-            </div>
+            <div><div class="pstat-val">$150M</div><div class="pstat-lbl">Target Size</div></div>
+            <div><div class="pstat-val">10yr</div><div class="pstat-lbl">Fund Term</div></div>
+            <div><div class="pstat-val">8–12</div><div class="pstat-lbl">Investments</div></div>
           </div>
           <div class="prog-providers">
-            <span class="prog-provider">FSC-Regulated CIS</span>
-            <span class="prog-provider">Blended Finance</span>
-            <span class="prog-provider">IFC Performance Standards</span>
+            <span class="prog-provider">IFC Standards</span>
             <span class="prog-provider">EU Green Taxonomy</span>
-            <span class="prog-provider">OECD Blended Finance</span>
+            <span class="prog-provider">DFI Co-Investment</span>
           </div>
-          <a href="https://mauritiusclimatetransitionfund.com" target="_blank" class="prog-link gold">
-            Visit Fund Website ↗
-          </a>
+          <div class="uc-badge"><div class="uc-dot"></div><div class="uc-text">Website Under Construction</div></div>
         </div>
       </div>
-
-      <!-- African Circuit -->
-      <div class="prog-card rv d3">
+      <div class="prog-card">
         <div class="prog-top">
           <div class="prog-stripe"></div>
           <div class="prog-tag">Financial Conferences · Pan-African · 2026–2028</div>
           <div class="prog-title">The African Circuit</div>
-          <div class="prog-desc">The only pan-African financial conference circuit originating from Africa itself. Five invitation-only events per year across Mauritius, Nairobi, Cape Town, Casablanca, and online — bringing together fund managers, DFI limited partners, government ministers, UHNWI principals, and institutional investors in the same room. Built on the Foundation's DFI and diplomatic networks, not cold outreach.</div>
+          <div class="prog-desc">Invitation-only. Five cities. One season. The African Circuit is the only pan-African financial conference circuit originating from Africa itself — bringing together fund managers, DFI limited partners, government ministers, UHNWI principals, and institutional investors across Mauritius, Nairobi, Cape Town, Casablanca, and online. Access is by introduction or application only, built on the Foundation's DFI and diplomatic networks developed across three continents over four years.</div>
         </div>
         <div class="prog-bottom">
           <div class="prog-stats">
-            <div>
-              <div class="pstat-val">1,100+</div>
-              <div class="pstat-lbl">Annual Delegates</div>
-            </div>
-            <div>
-              <div class="pstat-val">5</div>
-              <div class="pstat-lbl">Cities Per Year</div>
-            </div>
-            <div>
-              <div class="pstat-val">$2T+</div>
-              <div class="pstat-lbl">AUM in the Room</div>
-            </div>
+            <div><div class="pstat-val">1,100<sup style="font-size:14px;color:var(--teal);">+</sup></div><div class="pstat-lbl">Annual Delegates</div></div>
+            <div><div class="pstat-val">5</div><div class="pstat-lbl">Cities</div></div>
+            <div><div class="pstat-val">$2T<sup style="font-size:14px;color:var(--teal);">+</sup></div><div class="pstat-lbl">AUM in Room</div></div>
           </div>
           <div class="prog-providers">
             <span class="prog-provider">Invitation Only</span>
-            <span class="prog-provider">Sep – Apr Season</span>
-            <span class="prog-provider">DFI LPs Attend</span>
+            <span class="prog-provider">Sep – Apr</span>
             <span class="prog-provider">Ministerial Speakers</span>
           </div>
-          <div style="display:flex;gap:20px;align-items:center;flex-wrap:wrap;">
-            <a href="mailto:admin@philanthropicfoundation.net?subject=African Circuit Sponsorship Enquiry" class="prog-link">
-              Sponsorship Enquiry ↗
-            </a>
-            <a href="mailto:admin@philanthropicfoundation.net?subject=African Circuit Delegate Access" style="font-size:11px;font-weight:400;letter-spacing:.08em;text-transform:uppercase;color:var(--grey);text-decoration:none;border-bottom:1px solid var(--line);padding-bottom:2px;">
-              Request Delegate Access
-            </a>
-          </div>
+          <a href="mailto:admin@philanthropicfoundation.net?subject=African Circuit Enquiry" class="prog-link">Enquire About Access →</a>
         </div>
       </div>
     </div>
@@ -628,219 +586,239 @@ footer{background:var(--ink2);padding:56px 0;border-top:1px solid rgba(255,255,2
 <!-- WHO WE WORK WITH -->
 <section id="network">
   <div class="wrap">
-    <div class="s-eyebrow gold rv">Who We Work With</div>
-    <h2 class="inv rv d1">The Foundation works with institutions<br>that are <em>serious about Africa</em></h2>
-    <p class="s-lead inv rv d2">Our programmes are designed for a specific audience — institutions that understand emerging markets, value governance, and are ready to deploy or engage at scale.</p>
-    <div class="network-grid rv d2">
+    <div class="s-eyebrow gold rv">Our Network</div>
+    <h2 class="inv rv d1">The relationships<br>that <em>move capital.</em></h2>
+    <p class="s-lead inv rv d2">Three years of deliberate relationship-building across three continents — AFSIC, SuperReturn, wealth management conferences, family office forums, LP-only private events, and embassy engagements — before a single programme launched.</p>
+    <div class="nc-grid rv d2">
       <div class="nc">
-        <svg class="nc-icon" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="2" y="8" width="10" height="14" rx="1" stroke="#0D9090" stroke-width="1.3"/>
-          <rect x="9" y="4" width="10" height="18" rx="1" stroke="#0D9090" stroke-width="1.3"/>
-          <rect x="16" y="10" width="10" height="12" rx="1" stroke="#C09A3C" stroke-width="1.3"/>
-          <path d="M2 22H26" stroke="#0D9090" stroke-width="1" opacity="0.4"/>
-        </svg>
+        <svg class="nc-icon" viewBox="0 0 28 28" fill="none"><rect x="2" y="8" width="10" height="14" rx="1" stroke="#0D9090" stroke-width="1.3"/><rect x="9" y="4" width="10" height="18" rx="1" stroke="#0D9090" stroke-width="1.3"/><rect x="16" y="10" width="10" height="12" rx="1" stroke="#C09A3C" stroke-width="1.3"/><path d="M2 22H26" stroke="#0D9090" stroke-width="1" opacity="0.4"/></svg>
         <div class="nc-title">Development Finance Institutions</div>
-        <div class="nc-text">DFIs are co-investors in the MCTF and delegates at The African Circuit. Our founding relationships give us direct access to their LP networks and co-financing facilities.</div>
+        <div class="nc-text">DFIs are co-investors in the MCTF and delegates at The African Circuit. Direct access to their LP networks, co-financing facilities, and concessional capital — relationships built in the field, not through introductions.</div>
       </div>
       <div class="nc">
-        <svg class="nc-icon" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M14 3L25 9V19L14 25L3 19V9L14 3Z" stroke="#0D9090" stroke-width="1.3"/>
-          <circle cx="14" cy="14" r="4" stroke="#C09A3C" stroke-width="1.3"/>
-          <path d="M14 3V7M14 21V25M3 9L6.5 11M21.5 17L25 19M3 19L6.5 17M21.5 11L25 9" stroke="#0D9090" stroke-width="1" opacity="0.5"/>
-        </svg>
+        <svg class="nc-icon" viewBox="0 0 28 28" fill="none"><path d="M14 3L25 9V19L14 25L3 19V9L14 3Z" stroke="#0D9090" stroke-width="1.3"/><circle cx="14" cy="14" r="4" stroke="#C09A3C" stroke-width="1.3"/><path d="M14 3V7M14 21V25M3 9L6.5 11M21.5 17L25 19M3 19L6.5 17M21.5 11L25 9" stroke="#0D9090" stroke-width="1" opacity="0.5"/></svg>
         <div class="nc-title">Institutional Investors</div>
-        <div class="nc-text">Pension funds, sovereign wealth funds, and ESG-mandated asset managers looking for governed, bankable exposure to African infrastructure and capital markets.</div>
+        <div class="nc-text">Pension funds, sovereign wealth funds, and ESG-mandated asset managers seeking governed, bankable exposure to African infrastructure and capital markets — with frameworks to satisfy their investment committees.</div>
       </div>
       <div class="nc">
-        <svg class="nc-icon" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M4 22V12L14 4L24 12V22H4Z" stroke="#0D9090" stroke-width="1.3"/>
-          <rect x="10" y="14" width="8" height="8" rx="0.5" stroke="#C09A3C" stroke-width="1.3"/>
-          <path d="M1 12L14 2L27 12" stroke="#0D9090" stroke-width="1" opacity="0.4"/>
-        </svg>
+        <svg class="nc-icon" viewBox="0 0 28 28" fill="none"><circle cx="8" cy="8" r="4" stroke="#0D9090" stroke-width="1.3"/><circle cx="20" cy="8" r="4" stroke="#C09A3C" stroke-width="1.3"/><circle cx="14" cy="20" r="4" stroke="#0D9090" stroke-width="1.3"/><path d="M12 8H8M20 8H16M11 17L8 11M17 17L20 11" stroke="#0D9090" stroke-width="1" opacity="0.4" stroke-linecap="round"/></svg>
+        <div class="nc-title">Private Capital & Co-Investment</div>
+        <div class="nc-text">Private equity managers, credit funds, and infrastructure platforms looking for co-investment opportunities and deal flow in African markets. The Foundation provides the institutional access layer that makes first transactions possible.</div>
+      </div>
+      <div class="nc">
+        <svg class="nc-icon" viewBox="0 0 28 28" fill="none"><rect x="3" y="6" width="8" height="8" rx="1" stroke="#0D9090" stroke-width="1.3"/><rect x="17" y="6" width="8" height="8" rx="1" stroke="#C09A3C" stroke-width="1.3"/><rect x="10" y="17" width="8" height="8" rx="1" stroke="#0D9090" stroke-width="1.3"/><path d="M11 10H17M14 14V17" stroke="#0D9090" stroke-width="1" opacity="0.5" stroke-linecap="round"/></svg>
+        <div class="nc-title">Funds of Funds & Foundations</div>
+        <div class="nc-text">Fund of funds managers, endowments, and philanthropic foundations seeking diversified exposure to African managers. The Foundation bridges the information and governance gap that typically prevents first allocations.</div>
+      </div>
+      <div class="nc">
+        <svg class="nc-icon" viewBox="0 0 28 28" fill="none"><path d="M4 22V12L14 4L24 12V22H4Z" stroke="#0D9090" stroke-width="1.3"/><rect x="10" y="14" width="8" height="8" rx="0.5" stroke="#C09A3C" stroke-width="1.3"/><path d="M1 12L14 2L27 12" stroke="#0D9090" stroke-width="1" opacity="0.4"/></svg>
         <div class="nc-title">Governments & Regulators</div>
-        <div class="nc-text">Ministers, central bank officials, and regulators participate at Circuit events and support the MCTF's project pipeline through policy dialogue and concessions.</div>
+        <div class="nc-text">Ministers, central bank officials, and regulators participate at Circuit events and support the MCTF's project pipeline through policy dialogue and concessions. Diplomatic mission partnerships span three continents.</div>
       </div>
       <div class="nc">
-        <svg class="nc-icon" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="10" cy="9" r="4" stroke="#0D9090" stroke-width="1.3"/>
-          <circle cx="20" cy="9" r="4" stroke="#C09A3C" stroke-width="1.3"/>
-          <path d="M2 24C2 20.134 5.134 17 9 17H11C12.2 17 13.3 17.3 14.2 17.9" stroke="#0D9090" stroke-width="1.3" stroke-linecap="round"/>
-          <path d="M14 24C14 20.134 17.134 17 21 17H23C26.866 17 30 20.134 30 24" stroke="#C09A3C" stroke-width="1.3" stroke-linecap="round"/>
-        </svg>
+        <svg class="nc-icon" viewBox="0 0 28 28" fill="none"><circle cx="10" cy="9" r="4" stroke="#0D9090" stroke-width="1.3"/><circle cx="20" cy="9" r="4" stroke="#C09A3C" stroke-width="1.3"/><path d="M2 24C2 20.134 5.134 17 9 17H11C12.2 17 13.3 17.3 14.2 17.9" stroke="#0D9090" stroke-width="1.3" stroke-linecap="round"/><path d="M14 24C14 20.134 17.134 17 21 17H23C26.866 17 30 20.134 30 24" stroke="#C09A3C" stroke-width="1.3" stroke-linecap="round"/></svg>
         <div class="nc-title">Sponsors & Strategic Partners</div>
-        <div class="nc-text">Financial services firms, law firms, banks, and corporates who want sustained visibility across Africa's most relevant institutional audiences — not one-off conferences.</div>
+        <div class="nc-text">Financial services firms, law firms, banks, and corporates seeking sustained visibility across Africa's most relevant institutional audiences — across five cities, one season, and a network built over years.</div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- FOUNDER QUOTE -->
-<section id="founder" style="background:var(--ink);padding:80px 0;">
+<section id="founder">
   <div class="wrap">
-    <div style="max-width:860px;margin:0 auto;text-align:center;" class="rv">
-      <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:4px;color:var(--gold);text-transform:uppercase;margin-bottom:36px;display:flex;align-items:center;justify-content:center;gap:20px;">
-        <span style="display:block;width:40px;height:1px;background:rgba(192,154,60,.35);"></span>
-        Chief Executive Officer
-        <span style="display:block;width:40px;height:1px;background:rgba(192,154,60,.35);"></span>
+    <div class="founder-inner rv">
+      <div class="founder-rule">
+        <span></span>
+        <div class="founder-role">Chief Executive Officer</div>
+        <span></span>
       </div>
-      <blockquote style="font-family:'EB Garamond',serif;font-size:clamp(22px,3vw,34px);font-weight:400;color:#fff;line-height:1.55;font-style:italic;letter-spacing:-.01em;margin-bottom:40px;">
-        "Africa does not lack capital opportunities — it lacks the institutional infrastructure that allows global capital to reach them with confidence. The Philanthropic Foundation was built to be exactly that infrastructure: governed, regulated, and rooted in the relationships that actually move money across the continent."
-      </blockquote>
-      <div style="display:flex;flex-direction:column;align-items:center;gap:6px;">
-        <div style="width:40px;height:1px;background:rgba(192,154,60,.25);margin-bottom:12px;"></div>
-        <div style="font-family:'EB Garamond',serif;font-size:18px;font-weight:500;color:#fff;letter-spacing:.03em;">Shidan Ragavoodoo</div>
-        <div style="font-family:'DM Mono',monospace;font-size:8.5px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;margin-top:2px;">Chief Executive Officer</div>
-        <div style="font-family:'Manrope',sans-serif;font-size:12px;font-weight:300;color:rgba(255,255,255,.35);margin-top:6px;letter-spacing:.04em;">LLM International Affairs &nbsp;·&nbsp; PhD Candidate &nbsp;·&nbsp; MBPsS</div>
-      </div>
+      <blockquote>&ldquo;Africa does not lack capital opportunities — it lacks the institutional infrastructure that allows global capital to reach them with confidence. The Philanthropic Foundation was built to be exactly that infrastructure: governed, regulated, and rooted in the relationships that actually move money across the continent.&rdquo;</blockquote>
+      <div style="width:40px;height:1px;background:rgba(192,154,60,.25);margin:0 auto 16px;"></div>
+      <div class="founder-name">Shidan Ragavoodoo</div>
+      <div class="founder-title">Chief Executive Officer</div>
+      <div class="founder-creds">LLM International Affairs &nbsp;·&nbsp; PhD Candidate &nbsp;·&nbsp; MBPsS</div>
     </div>
   </div>
 </section>
 
-<!-- PARTNER LOGOS -->
-<section id="partners" style="background:var(--cream2);padding:60px 0;">
+<!-- JOURNEY / TIMELINE -->
+<section id="journey">
   <div class="wrap">
-    <div class="rv" style="text-align:center;margin-bottom:40px;">
-      <div style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:3px;color:#8A9BA8;text-transform:uppercase;">Our Partners & Service Providers</div>
-    </div>
-    <div class="partner-strip rv d1">
-      <!-- Placeholder logo slots — replace src with actual partner logos -->
-      <div class="partner-slot">
-        <div class="partner-placeholder">
-          <div class="partner-ph-inner">Your Logo</div>
+    <div class="s-eyebrow gold rv">Our Journey</div>
+    <h2 class="inv rv d1">Built deliberately.<br><em>Moving with purpose.</em></h2>
+    <div class="tl-track rv d2">
+      <div class="tl-item">
+        <div class="tl-year">2021</div>
+        <div class="tl-dot"></div>
+        <div>
+          <div class="tl-title">Foundation Established</div>
+          <div class="tl-text">The Philanthropic Foundation registered in Mauritius (Reg. No. 679) under the Foundations Act 2012. Secretariat appointed — Capital Horizon. Governance framework and charter finalised.</div>
         </div>
       </div>
-      <div class="partner-slot">
-        <div class="partner-placeholder">
-          <div class="partner-ph-inner">Your Logo</div>
+      <div class="tl-item">
+        <div class="tl-year">2022 — 2023</div>
+        <div class="tl-dot"></div>
+        <div>
+          <div class="tl-title">International Network Built Across Four Continents</div>
+          <div class="tl-text">Three years of deliberate, on-the-ground relationship-building before a single programme launched publicly. The Foundation did not broadcast — it convened, attended, and engaged at the right tables across four continents.</div>
+          <div class="tl-text" style="margin-top:14px;">
+            <span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:8px;">Africa — 9 Markets</span>
+            Mauritius · Kenya (Nairobi) · South Africa (Cape Town, Johannesburg) · Ghana (Accra) · Ethiopia (Addis Ababa) · Rwanda (Kigali) · Senegal (Dakar) · Nigeria (Lagos, Abuja) · Egypt (Cairo) · Namibia (Windhoek) · Morocco (Casablanca)
+          </div>
+          <div class="tl-text" style="margin-top:12px;">
+            <span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;color:rgba(255,255,255,.3);text-transform:uppercase;display:block;margin-bottom:8px;">Europe · Middle East · Asia · Americas</span>
+            London · Paris · Geneva · Stockholm · Dubai · Singapore · Mumbai · New York
+          </div>
+          <div class="tl-text" style="margin-top:12px;">
+            <span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;color:rgba(255,255,255,.3);text-transform:uppercase;display:block;margin-bottom:8px;">Conferences & Forums</span>
+            AFSIC · SuperReturn · Wealth management conferences · Family office forums · LP-only private events · Embassy engagements · Diplomatic mission receptions
+          </div>
+          <div class="tl-text" style="margin-top:12px;">
+            <span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;color:rgba(255,255,255,.3);text-transform:uppercase;display:block;margin-bottom:8px;">Counterparties Engaged</span>
+            Development finance institutions · Co-investment platforms · Private capital allocators · Funds of funds · Endowments · Philanthropic foundations · Family offices · Sovereign wealth offices · Diplomatic missions · Regulators & ministries
+          </div>
         </div>
       </div>
-      <div class="partner-slot">
-        <div class="partner-placeholder">
-          <div class="partner-ph-inner">Your Logo</div>
+      <div class="tl-item">
+        <div class="tl-year">2024</div>
+        <div class="tl-dot"></div>
+        <div>
+          <div class="tl-title">Programmes Architected</div>
+          <div class="tl-text">The African Circuit model developed — five-city, invitation-only format confirmed. MCTF blended finance mandate structured in consultation with DFI partners. Target fund size set at USD 150M.</div>
         </div>
       </div>
-      <div class="partner-slot">
-        <div class="partner-placeholder">
-          <div class="partner-ph-inner">Your Logo</div>
+      <div class="tl-item">
+        <div class="tl-year">2025</div>
+        <div class="tl-dot"></div>
+        <div>
+          <div class="tl-title">Secretariat Transition to DTOS Ltd</div>
+          <div class="tl-text">Foundation secretariat transitioned to <a href="https://www.dtos-mu.com" target="_blank" rel="noopener" style="color:var(--gold);text-decoration:none;font-weight:500;">DTOS Ltd</a> — 10th Floor, Standard Chartered Tower, 19 Cybercity, Ebene. DTOS brings institutional-grade fund administration and regulatory expertise aligned with the Foundation's next phase.</div>
         </div>
       </div>
-      <div class="partner-slot">
-        <div class="partner-placeholder">
-          <div class="partner-ph-inner">Your Logo</div>
+      <div class="tl-item tl-active">
+        <div class="tl-year">2025 — 2026</div>
+        <div class="tl-dot"></div>
+        <div>
+          <div class="tl-title">Launch Year</div>
+          <div class="tl-text">The African Circuit Season One underway. MCTF submitted for FSC review — on track for authorisation. First institutional investor and sponsor relationships formalised across five African markets.</div>
         </div>
       </div>
-      <div class="partner-slot">
-        <div class="partner-placeholder">
-          <div class="partner-ph-inner">Your Logo</div>
+      <div class="tl-item tl-future">
+        <div class="tl-year">2027 →</div>
+        <div class="tl-dot"></div>
+        <div>
+          <div class="tl-title">Scale & Deepen</div>
+          <div class="tl-text">MCTF first close targeted post-authorisation. African Circuit Season Two. Expansion of co-investment relationships and institutional LP network across Europe and the Gulf.</div>
         </div>
       </div>
-    </div>
-    <div class="rv d2" style="text-align:center;margin-top:32px;">
-      <p style="font-size:12px;font-weight:300;color:#8A9BA8;font-family:'DM Mono',monospace;letter-spacing:1.5px;text-transform:uppercase;">Partner logos displayed with permission</p>
     </div>
   </div>
 </section>
 
 <!-- GOVERNANCE -->
-<section id="governance">
+<section id="governance" style="background:var(--white);">
   <div class="wrap">
-    <div class="s-eyebrow rv">Governance & Structure</div>
-    <h2 class="rv d1">Built on a regulated,<br><em>transparent</em> foundation</h2>
-    <p class="s-lead rv d2">Institutional counterparties need to know who they are dealing with. Here is our structure, plainly stated.</p>
+    <div class="s-eyebrow rv">Governance</div>
+    <h2 class="rv d1">Structured to the standard<br><em>institutions require.</em></h2>
     <div class="gov-layout">
-      <div class="gov-table rv d2">
-        <div class="gov-row">
-          <div class="gov-key">Legal Form</div>
-          <div class="gov-val">Foundation — legal person under the <strong>Foundations Act 2012</strong></div>
-        </div>
-        <div class="gov-row">
-          <div class="gov-key">Jurisdiction</div>
-          <div class="gov-val">Republic of Mauritius · Exclusive governing law & courts</div>
-        </div>
-        <div class="gov-row">
-          <div class="gov-key">Regulator</div>
-          <div class="gov-val"><strong>Financial Services Commission</strong> · Registrar of Companies · MRA</div>
-        </div>
-        <div class="gov-row">
-          <div class="gov-key">Secretary</div>
-          <div class="gov-val"><strong>DTOS Ltd</strong> · 10th Floor, Standard Chartered Tower, 19 Cybercity, Ebene 72201, Republic of Mauritius</div>
-        </div>
-        <div class="gov-row">
-          <div class="gov-key">Duration</div>
-          <div class="gov-val">Unlimited — established in perpetuity</div>
-        </div>
-        <div class="gov-row">
-          <div class="gov-key">Accounting</div>
-          <div class="gov-val">Year ended 30 June · Annual Financial Statements prepared</div>
-        </div>
-        <div class="gov-row">
-          <div class="gov-key">Council</div>
-          <div class="gov-val">Governing body · at least one member ordinarily resident in Mauritius</div>
-        </div>
-        <div class="gov-row">
-          <div class="gov-key">Confidentiality</div>
-          <div class="gov-val">Foundation information is treated as confidential per Charter. Full documentation available under NDA on request.</div>
-        </div>
+      <div class="rv d1">
+        <div class="gov-row"><div class="gov-key">Legal Form</div><div class="gov-val">Foundation — legal person under the <strong>Foundations Act 2012</strong></div></div>
+        <div class="gov-row"><div class="gov-key">Registration</div><div class="gov-val">Reg. No. 679 · Republic of Mauritius</div></div>
+        <div class="gov-row"><div class="gov-key">Jurisdiction</div><div class="gov-val">Republic of Mauritius · Exclusive governing law & courts</div></div>
+        <div class="gov-row"><div class="gov-key">Regulator</div><div class="gov-val">Registrar of Companies · Mauritius · MRA</div></div>
+        <div class="gov-row"><div class="gov-key">Legal Counsel</div><div class="gov-val"><a href="https://www.eversheds-sutherland.com" target="_blank" rel="noopener">Eversheds Sutherland</a> · Global law firm · Africa practice</div></div>
+        <div class="gov-row"><div class="gov-key">Principal Banker</div><div class="gov-val"><a href="https://www.afrasiabank.com" target="_blank" rel="noopener">AfrAsia Bank</a> · Mauritius · Institutional & private banking</div></div>
+        <div class="gov-row"><div class="gov-key">Secretary</div><div class="gov-val"><a href="https://www.dtos-mu.com" target="_blank" rel="noopener">DTOS Ltd</a> · Regulated fund administrator · 10th Floor, Standard Chartered Tower, 19 Cybercity, Ebene 72201, Republic of Mauritius</div></div>
+        <div class="gov-row"><div class="gov-key">Duration</div><div class="gov-val">Unlimited — established in perpetuity</div></div>
+        <div class="gov-row"><div class="gov-key">Accounting</div><div class="gov-val">Year ended 30 June · Annual financial statements prepared and independently reviewed · Available to qualified counterparties on request</div></div>
+        <div class="gov-row"><div class="gov-key">Council</div><div class="gov-val">Governing body · at least one member ordinarily resident in Mauritius</div></div>
+        <div class="gov-row"><div class="gov-key">Confidentiality</div><div class="gov-val">Foundation information treated as confidential per Charter · Full documentation available under NDA on request</div></div>
       </div>
-      <div class="gov-right rv d3">
+      <div class="gov-right rv d2">
         <div class="gov-highlight">
-          <div class="gov-hl-label">Why Mauritius</div>
-          <div class="gov-hl-text">Mauritius administers $800B+ in AUM, hosts 26,000+ registered global business companies, and maintains double taxation treaties covering every major African investment market. It is where African capital is structured.</div>
-          <div class="gov-hl-attr">2026 host of the U.S.–Africa Business Summit</div>
+          <div class="gov-hl-label">Foundation Charter</div>
+          <div class="gov-hl-text">&ldquo;The Foundation's charter requires that information be treated as confidential. We share what is necessary, to the right parties, at the right stage.&rdquo;</div>
         </div>
         <div class="gov-badge">
-          <div style="width:32px;height:32px;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;">
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="2" y="2" width="12" height="14" rx="1" stroke="#0A7070" stroke-width="1.2"/><path d="M5 6H11M5 9H11M5 12H8" stroke="#0A7070" stroke-width="1" stroke-linecap="round"/></svg>
-          </div>
-          <div>
-            <div class="gov-badge-title">Documentation Available on Request</div>
-            <div class="gov-badge-text">Institutional counterparties may request the Foundation's charter, programme documentation, and fund legal pack under a standard NDA. Contact us directly to begin the process.</div>
-          </div>
+          <div class="gov-badge-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="2" y="2" width="12" height="14" rx="1" stroke="#0A7070" stroke-width="1.2"/><path d="M5 6H11M5 9H11M5 12H8" stroke="#0A7070" stroke-width="1" stroke-linecap="round"/></svg></div>
+          <div><div class="gov-badge-title">Documentation on Request</div><div class="gov-badge-text">Submit enquiry → NDA issued within 48 hours → Full documentation pack released. Charter, programme documentation, and fund legal pack available to qualified institutional counterparties.</div></div>
         </div>
         <div class="gov-badge">
-          <div style="width:32px;height:32px;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;">
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="3" y="7" width="10" height="8" rx="1" stroke="#0A7070" stroke-width="1.2"/><path d="M5 7V5C5 3.343 6.343 2 8 2C9.657 2 11 3.343 11 5V7" stroke="#0A7070" stroke-width="1.2" stroke-linecap="round"/><circle cx="8" cy="11" r="1" fill="#C09A3C"/></svg>
-          </div>
-          <div>
-            <div class="gov-badge-title">Confidentiality by Design</div>
-            <div class="gov-badge-text">The Foundation's charter requires that all information be treated as confidential. We share what is necessary, to the right parties, at the right stage.</div>
-          </div>
+          <div class="gov-badge-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="3" y="7" width="10" height="8" rx="1" stroke="#0A7070" stroke-width="1.2"/><path d="M5 7V5C5 3.343 6.343 2 8 2C9.657 2 11 3.343 11 5V7" stroke="#0A7070" stroke-width="1.2" stroke-linecap="round"/><circle cx="8" cy="11" r="1" fill="#C09A3C"/></svg></div>
+          <div><div class="gov-badge-title">Confidentiality by Design</div><div class="gov-badge-text">The Foundation's charter requires that all information be treated as confidential. We share what is necessary, to the right parties, at the right stage.</div></div>
+        </div>
+        <div class="gov-badge">
+          <div class="gov-badge-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 2L10 6H14L11 9L12 13L8 11L4 13L5 9L2 6H6L8 2Z" stroke="#0A7070" stroke-width="1.2" stroke-linejoin="round"/></svg></div>
+          <div><div class="gov-badge-title">Institutional-Grade Service Partners</div><div class="gov-badge-text">Legal counsel by <a href="https://www.eversheds-sutherland.com" target="_blank" rel="noopener">Eversheds Sutherland</a> — top-20 global law firm with dedicated Africa practice. Banking with <a href="https://www.afrasiabank.com" target="_blank" rel="noopener">AfrAsia Bank</a> — the institution of choice for private and institutional capital in the Indian Ocean.</div></div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- CONTACT -->
-<section id="contact">
+<!-- OPERATING STANDARDS -->
+<section id="standards">
   <div class="wrap">
-    <div class="contact-layout">
-      <div>
-        <div class="s-eyebrow rv">Contact</div>
-        <h2 class="rv d1">Start a<br><em>conversation</em></h2>
-        <p class="rv d2">Whether you are exploring the MCTF as an investor, considering sponsorship of The African Circuit, or want to understand how the Foundation could support your Africa strategy — reach out directly.</p>
-        <div class="cinfo rv d3">
-          <div class="cinfo-row">
-            <div class="cinfo-dot"></div>
-            <div>
-              <div class="cinfo-label">Email</div>
-              <div class="cinfo-val"><a href="mailto:admin@philanthropicfoundation.net">admin@philanthropicfoundation.net</a></div>
-            </div>
-          </div>
-          <div class="cinfo-row">
-            <div class="cinfo-dot"></div>
-            <div>
-              <div class="cinfo-label">Registered Office</div>
-              <div class="cinfo-val">DTOS Ltd · 10th Floor, Standard Chartered Tower, 19 Cybercity, Ebene 72201, Republic of Mauritius</div>
-            </div>
-          </div>
-          <div class="cinfo-row">
-            <div class="cinfo-dot"></div>
-            <div>
-              <div class="cinfo-label">Response Time</div>
-              <div class="cinfo-val">We respond to all serious enquiries within 48 hours</div>
-            </div>
-          </div>
+    <div class="s-eyebrow rv">Operating Standards</div>
+    <h2 class="rv d1">Held to the standards<br><em>institutions require.</em></h2>
+    <p class="s-lead rv d2">The Foundation operates voluntarily to a set of frameworks that go beyond what Mauritius law requires. These are not compliance exercises — they are the operating standards we believe any serious institutional platform should meet.</p>
+    <div class="std-grid rv d2">
+      <div class="std-card"><div class="std-label">People & Ethics</div><div class="std-title">Modern Slavery & Human Trafficking</div><div class="std-text">Zero-tolerance policy on modern slavery and human trafficking in any form. Consistent with the UK Modern Slavery Act 2015 in spirit and practice across all operations and relationships.</div></div>
+      <div class="std-card"><div class="std-label">Financial Integrity</div><div class="std-title">AML / KYC & Anti-Bribery</div><div class="std-text">Robust anti-money laundering and know-your-customer procedures applied across all counterparty relationships. Full alignment with the UK Bribery Act 2010 and FATF recommendations through Mauritius.</div></div>
+      <div class="std-card"><div class="std-label">Data & Privacy</div><div class="std-title">Data Protection & Privacy</div><div class="std-text">Personal and institutional data handled in accordance with GDPR principles and the Mauritius Data Protection Act 2017. All counterparty information treated with strict confidentiality per charter.</div></div>
+      <div class="std-card"><div class="std-label">Investment Standards</div><div class="std-title">IFC Performance Standards</div><div class="std-text">The MCTF's investment framework is structured in alignment with IFC Performance Standards on Environmental and Social Sustainability — the benchmark applied by leading DFIs and institutional LPs globally.</div></div>
+      <div class="std-card"><div class="std-label">Climate & Sustainability</div><div class="std-title">EU Green Taxonomy & OECD Blended Finance</div><div class="std-text">Climate investment activities aligned with the EU Green Taxonomy classification system and OECD Blended Finance Principles — ensuring investments meet the governance standards required by European institutional investors.</div></div>
+      <div class="std-card"><div class="std-label">Accountability</div><div class="std-title">Grievance & Whistleblowing</div><div class="std-text">A formal grievance and whistleblowing mechanism is maintained for all counterparties, delegates, and partners. Concerns may be raised confidentially and reviewed independently of programme operations.</div></div>
+    </div>
+    <div class="rv d3" style="margin-top:32px;padding:28px 32px;background:var(--ink);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px;">
+      <div style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;color:rgba(255,255,255,.35);text-transform:uppercase;">Full policy documentation available on request under NDA</div>
+      <a href="#contact" style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;color:var(--gold);text-transform:uppercase;text-decoration:none;border-bottom:1px solid rgba(192,154,60,.3);padding-bottom:2px;">Request Documentation →</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- SDG ALIGNMENT -->
+<section id="sdg" style="background:var(--ink);padding:80px 0;">
+  <div class="wrap">
+    <div class="s-eyebrow gold rv">Global Frameworks</div>
+    <h2 class="inv rv d1">Aligned to the standards<br>that <em>development capital</em> requires.</h2>
+    <p class="s-lead inv rv d2">The Foundation's programmes are structured in alignment with the United Nations Sustainable Development Goals and leading international development finance frameworks — ensuring our work meets the screening and reporting requirements of institutional DFI and ESG-mandated investors.</p>
+    <div class="sdg-grid rv d2">
+      <div class="sdg-card"><div class="sdg-num" style="background:#E5243B;">8</div><div class="sdg-title">Decent Work &amp; Economic Growth</div><div class="sdg-text">The African Circuit and MCTF pipeline directly support African job creation, enterprise development, and inclusive economic growth across nine African markets.</div></div>
+      <div class="sdg-card"><div class="sdg-num" style="background:#FD6925;">9</div><div class="sdg-title">Industry, Innovation &amp; Infrastructure</div><div class="sdg-text">The MCTF deploys into climate infrastructure — renewable energy, water, low-carbon logistics — financing the resilient infrastructure Africa's growth requires.</div></div>
+      <div class="sdg-card"><div class="sdg-num" style="background:#3F7E44;">13</div><div class="sdg-title">Climate Action</div><div class="sdg-text">The MCTF is a dedicated climate investment vehicle. All investments are screened for climate alignment and structured in accordance with the EU Green Taxonomy and OECD Blended Finance Principles.</div></div>
+      <div class="sdg-card"><div class="sdg-num" style="background:#19486A;">17</div><div class="sdg-title">Partnerships for the Goals</div><div class="sdg-text">The Foundation's blended finance model — stacking DFI concessional capital beneath institutional equity — operationalises the partnership model the SDGs were designed around.</div></div>
+    </div>
+    <div class="rv d3" style="margin-top:28px;padding:24px 32px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);display:flex;align-items:center;flex-wrap:wrap;gap:16px;">
+      <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;color:rgba(255,255,255,.3);text-transform:uppercase;margin-right:8px;">Also aligned with</div>
+      <span class="fw-tag">IFC Performance Standards</span>
+      <span class="fw-tag">EU Green Taxonomy</span>
+      <span class="fw-tag">OECD Blended Finance Principles</span>
+      <span class="fw-tag">Paris Agreement</span>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" style="background:var(--cream);">
+  <div class="wrap">
+    <div class="s-eyebrow rv">Contact</div>
+    <h2 class="rv d1">Begin the<br><em>conversation.</em></h2>
+    <div class="contact-layout" style="margin-top:52px;">
+      <div class="rv d1">
+        <p style="font-size:15px;font-weight:300;color:#5a6e7a;line-height:1.85;margin-bottom:20px;">The Foundation accepts a limited number of institutional introductions each quarter. If you are a DFI, institutional investor, family office, or government counterpart — we invite you to begin the conversation.</p>
+        <div style="display:inline-flex;align-items:center;gap:10px;padding:12px 18px;background:var(--ink);margin-bottom:32px;">
+          <div style="width:7px;height:7px;border-radius:50%;background:var(--gold);flex-shrink:0;"></div>
+          <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;color:rgba(255,255,255,.5);text-transform:uppercase;">Accepting introductions · Q2 2026</div>
+        </div>
+        <div class="cinfo">
+          <div class="cinfo-row"><div class="cinfo-dot"></div><div><div class="cinfo-label">Email</div><div class="cinfo-val"><a href="mailto:admin@philanthropicfoundation.net">admin@philanthropicfoundation.net</a></div></div></div>
+          <div class="cinfo-row"><div class="cinfo-dot"></div><div><div class="cinfo-label">Registered Office</div><div class="cinfo-val">DTOS Ltd · 10th Floor, Standard Chartered Tower<br>19 Cybercity, Ebene 72201, Republic of Mauritius</div></div></div>
+          <div class="cinfo-row"><div class="cinfo-dot"></div><div><div class="cinfo-label">Registration</div><div class="cinfo-val">The Philanthropic Foundation · Reg. No. 679<br>Foundations Act 2012 · Mauritius</div></div></div>
+          <div class="cinfo-row"><div class="cinfo-dot"></div><div><div class="cinfo-label">Confidentiality</div><div class="cinfo-val">All enquiries treated as confidential · NDA issued within 48 hours on request</div></div></div>
+          <div class="cinfo-row"><div class="cinfo-dot"></div><div><div class="cinfo-label">Response Time</div><div class="cinfo-val">We respond to all enquiries within 48 hours</div></div></div>
         </div>
       </div>
       <div class="rv d2">
@@ -851,10 +829,9 @@ footer{background:var(--ink2);padding:56px 0;border-top:1px solid rgba(255,255,2
             <div class="fg"><label>Last Name</label><input type="text" placeholder="Smith"></div>
           </div>
           <div class="fg"><label>Organisation</label><input type="text" placeholder="Institution or firm name"></div>
-          <div class="fg"><label>Email</label><input type="email" placeholder="jane@institution.com"></div>
-          <div class="fg">
-            <label>I am interested in</label>
-            <select>
+          <div class="fg"><label>Email</label><input type="email" placeholder="jane@institution.com" id="formEmail"></div>
+          <div class="fg"><label>I am interested in</label>
+            <select id="formInterest">
               <option>MCTF — Investor Enquiry</option>
               <option>MCTF — Fund Documentation Request</option>
               <option>The African Circuit — Sponsorship</option>
@@ -863,8 +840,8 @@ footer{background:var(--ink2);padding:56px 0;border-top:1px solid rgba(255,255,2
               <option>General Enquiry</option>
             </select>
           </div>
-          <div class="fg"><label>Message</label><textarea placeholder="Tell us about your interest…"></textarea></div>
-          <button class="form-btn" onclick="alert('Thank you — we will be in touch within 48 hours.'); return false;">Submit Enquiry</button>
+          <div class="fg"><label>Message</label><textarea id="formMsg" placeholder="Tell us about your interest…"></textarea></div>
+          <button class="form-btn" onclick="submitForm()">Submit Enquiry</button>
         </div>
       </div>
     </div>
@@ -879,11 +856,16 @@ footer{background:var(--ink2);padding:56px 0;border-top:1px solid rgba(255,255,2
         <img src="data:image/png;base64,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" alt="logo">
         <span class="foot-logo-text">The <span>Philanthropic</span> Foundation</span>
       </div>
-      <div class="foot-copy">© 2026 · Mauritius · All rights reserved</div>
+      <div class="foot-copy">
+        © 2026 · The Philanthropic Foundation · Reg. No. 679 · Mauritius · All rights reserved<br>
+        <span style="font-size:8px;letter-spacing:1px;opacity:.6;">Governance & programme platform for African capital · Secretariat: DTOS Ltd, Ebene</span>
+      </div>
       <div class="foot-links">
-        <a href="#what">What We Do</a>
+        <a href="#mission">Mission</a>
         <a href="#programmes">Programmes</a>
+        <a href="#network">Network</a>
         <a href="#governance">Governance</a>
+        <a href="#standards">Standards</a>
         <a href="#contact">Contact</a>
       </div>
     </div>
@@ -891,33 +873,49 @@ footer{background:var(--ink2);padding:56px 0;border-top:1px solid rgba(255,255,2
 </footer>
 
 <script>
-// Cursor — hide on touch devices
-const dot = document.getElementById('dot');
+// ── CURSOR ──
+const ring = document.getElementById('cursor-ring');
+const dot  = document.getElementById('cursor-dot');
+let mouseX = 0, mouseY = 0, ringX = 0, ringY = 0;
+
 if(window.matchMedia('(hover:hover)').matches){
   document.addEventListener('mousemove', e => {
-    dot.style.left = e.clientX - 3 + 'px';
-    dot.style.top = e.clientY - 3 + 'px';
+    mouseX = e.clientX; mouseY = e.clientY;
+    dot.style.left  = mouseX + 'px';
+    dot.style.top   = mouseY + 'px';
+    ring.style.opacity = '1';
   });
+
+  function animateRing(){
+    ringX += (mouseX - ringX) * 0.12;
+    ringY += (mouseY - ringY) * 0.12;
+    ring.style.left = ringX + 'px';
+    ring.style.top  = ringY + 'px';
+    requestAnimationFrame(animateRing);
+  }
+  animateRing();
+
   document.querySelectorAll('a,button,input,select,textarea').forEach(el => {
-    el.addEventListener('mouseenter', () => dot.classList.add('x'));
-    el.addEventListener('mouseleave', () => dot.classList.remove('x'));
+    el.addEventListener('mouseenter', () => { ring.classList.add('hover'); dot.classList.add('hover'); });
+    el.addEventListener('mouseleave', () => { ring.classList.remove('hover'); dot.classList.remove('hover'); });
   });
+
+  document.addEventListener('mouseleave', () => { ring.style.opacity = '0'; });
 } else {
+  ring.style.display = 'none';
   dot.style.display = 'none';
+  document.body.style.cursor = 'auto';
 }
 
-// Nav scroll
+// ── NAV SCROLL ──
 const nav = document.getElementById('nav');
-window.addEventListener('scroll', () => {
-  nav.classList.toggle('scrolled', window.scrollY > 60);
-});
+window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 60); });
 
-// Hamburger menu
+// ── MOBILE MENU ──
 function toggleMob(){
   const mob = document.getElementById('mobileMenu');
   const ham = document.getElementById('hamburger');
-  mob.classList.toggle('open');
-  ham.classList.toggle('open');
+  mob.classList.toggle('open'); ham.classList.toggle('open');
   document.body.style.overflow = mob.classList.contains('open') ? 'hidden' : '';
 }
 function closeMob(){
@@ -926,11 +924,129 @@ function closeMob(){
   document.body.style.overflow = '';
 }
 
-// Scroll reveal
+// ── SCROLL REVEAL ──
 const obs = new IntersectionObserver(entries => {
   entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); obs.unobserve(e.target); } });
 }, {threshold: 0.1});
 document.querySelectorAll('.rv').forEach(el => obs.observe(el));
+
+// ── LANGUAGE TOGGLE ──
+const translations = {
+  en: {
+    'hero-h1': 'The institutional infrastructure<br><em>African capital</em><br>has been missing.',
+    'hero-sub': 'The Philanthropic Foundation is the governance and programme platform that connects development finance institutions, institutional investors, policymakers, and private capital across Africa — through regulated structures, curated relationships, and on-the-ground programmes.',
+    'hero-btn1': 'Our Programmes',
+    'hero-btn2': 'Our Mission →',
+    'mission-eyebrow': 'Our Mission',
+    'mission-h2': 'To build the infrastructure<br>that makes <em>African capital</em><br>move with certainty.',
+    'mission-p1': 'Africa does not have a capital problem. It has an infrastructure problem — the institutional frameworks, governance structures, and trusted relationships that allow global capital to reach African opportunities with the confidence that serious investors require.',
+    'mission-p2': 'The Philanthropic Foundation exists to be that infrastructure — permanently. Not as a fund manager, not as a consultancy, not as a development agency. As a regulated, independent institution that connects capital to opportunity through governed structures and relationships built over years.',
+    'what-eyebrow': 'What We Do',
+    'what-h2': 'A platform that makes it easier<br>for capital to <em>reach Africa</em>',
+    'prog-eyebrow': 'Our Programmes',
+    'prog-h2': 'Two programmes.<br><em>One platform.</em>',
+    'network-eyebrow': 'Our Network',
+    'network-h2': 'The relationships<br>that <em>move capital.</em>',
+    'journey-eyebrow': 'Our Journey',
+    'journey-h2': 'Built deliberately.<br><em>Moving with purpose.</em>',
+    'gov-eyebrow': 'Governance',
+    'gov-h2': 'Structured to the standard<br><em>institutions require.</em>',
+    'std-eyebrow': 'Operating Standards',
+    'std-h2': 'Held to the standards<br><em>institutions require.</em>',
+    'sdg-eyebrow': 'Global Frameworks',
+    'sdg-h2': 'Aligned to the standards<br>that <em>development capital</em> requires.',
+    'contact-eyebrow': 'Contact',
+    'contact-h2': 'Begin the<br><em>conversation.</em>',
+    'nav-btn': 'Get in Touch',
+    'lang-btn': 'FR',
+    'lang': 'en'
+  },
+  fr: {
+    'hero-h1': "L'infrastructure institutionnelle<br>dont le <em>capital africain</em><br>a toujours eu besoin.",
+    'hero-sub': "La Philanthropic Foundation est la plateforme de gouvernance et de programmes qui connecte les institutions de financement du développement, les investisseurs institutionnels, les décideurs politiques et le capital privé en Afrique — à travers des structures réglementées, des relations sélectionnées et des programmes sur le terrain.",
+    'hero-btn1': 'Nos Programmes',
+    'hero-btn2': 'Notre Mission →',
+    'mission-eyebrow': 'Notre Mission',
+    'mission-h2': "Construire l'infrastructure<br>qui permet au <em>capital africain</em><br>de circuler avec certitude.",
+    'mission-p1': "L'Afrique n'a pas un problème de capital. Elle a un problème d'infrastructure — les cadres institutionnels, les structures de gouvernance et les relations de confiance qui permettent au capital mondial d'atteindre les opportunités africaines avec la confiance qu'exigent les investisseurs sérieux.",
+    'mission-p2': "La Philanthropic Foundation existe pour être exactement cette infrastructure — de manière permanente. Pas comme gestionnaire de fonds, ni comme cabinet de conseil, ni comme agence de développement. Comme une institution réglementée et indépendante qui connecte le capital aux opportunités à travers des structures régies et des relations construites sur des années.",
+    'what-eyebrow': 'Ce Que Nous Faisons',
+    'what-h2': "Une plateforme qui facilite<br>l'accès du capital à <em>l'Afrique</em>",
+    'prog-eyebrow': 'Nos Programmes',
+    'prog-h2': 'Deux programmes.<br><em>Une plateforme.</em>',
+    'network-eyebrow': 'Notre Réseau',
+    'network-h2': 'Les relations<br>qui <em>mobilisent le capital.</em>',
+    'journey-eyebrow': 'Notre Parcours',
+    'journey-h2': 'Construit délibérément.<br><em>Avancer avec détermination.</em>',
+    'gov-eyebrow': 'Gouvernance',
+    'gov-h2': "Structuré selon les standards<br>qu'<em>exigent les institutions.</em>",
+    'std-eyebrow': 'Standards Opérationnels',
+    'std-h2': "Respectant les standards<br>qu'<em>exigent les institutions.</em>",
+    'sdg-eyebrow': 'Cadres Internationaux',
+    'sdg-h2': "Aligné sur les standards<br>que requiert le <em>capital de développement.</em>",
+    'contact-eyebrow': 'Contact',
+    'contact-h2': 'Commencer<br><em>la conversation.</em>',
+    'nav-btn': 'Nous Contacter',
+    'lang-btn': 'EN',
+    'lang': 'fr'
+  }
+};
+
+let currentLang = 'en';
+const langMap = {
+  'hero-h1':       () => document.querySelector('h1'),
+  'hero-sub':      () => document.querySelector('.h-sub'),
+  'hero-btn1':     () => document.querySelector('.btn-primary'),
+  'hero-btn2':     () => document.querySelector('.btn-secondary'),
+  'mission-eyebrow': () => document.querySelector('#mission .s-eyebrow'),
+  'mission-h2':    () => document.querySelector('#mission h2'),
+  'mission-p1':    () => document.querySelectorAll('#mission .mission-lead')[0],
+  'mission-p2':    () => document.querySelectorAll('#mission .mission-lead')[1],
+  'what-eyebrow':  () => document.querySelector('#what .s-eyebrow'),
+  'what-h2':       () => document.querySelector('#what h2'),
+  'prog-eyebrow':  () => document.querySelector('#programmes .s-eyebrow'),
+  'prog-h2':       () => document.querySelector('#programmes h2'),
+  'network-eyebrow': () => document.querySelector('#network .s-eyebrow'),
+  'network-h2':    () => document.querySelector('#network h2'),
+  'journey-eyebrow': () => document.querySelector('#journey .s-eyebrow'),
+  'journey-h2':    () => document.querySelector('#journey h2'),
+  'gov-eyebrow':   () => document.querySelector('#governance .s-eyebrow'),
+  'gov-h2':        () => document.querySelector('#governance h2'),
+  'std-eyebrow':   () => document.querySelector('#standards .s-eyebrow'),
+  'std-h2':        () => document.querySelector('#standards h2'),
+  'sdg-eyebrow':   () => document.querySelector('#sdg .s-eyebrow'),
+  'sdg-h2':        () => document.querySelector('#sdg h2'),
+  'contact-eyebrow': () => document.querySelector('#contact .s-eyebrow'),
+  'contact-h2':    () => document.querySelector('#contact h2'),
+  'nav-btn':       () => document.querySelector('.nav-btn'),
+  'lang-btn':      () => document.getElementById('lang-toggle'),
+};
+
+function toggleLang() {
+  currentLang = currentLang === 'en' ? 'fr' : 'en';
+  const t = translations[currentLang];
+  document.documentElement.lang = currentLang;
+  Object.keys(langMap).forEach(key => {
+    const el = langMap[key]();
+    if (el && t[key] !== undefined) {
+      el.innerHTML = t[key];
+    }
+  });
+  // Update mob-cta
+  const mobCta = document.querySelector('.mob-cta');
+  if (mobCta) mobCta.textContent = currentLang === 'fr' ? 'Nous Contacter' : 'Get in Touch';
+}
+function submitForm(){
+  const fields = document.querySelectorAll('#contact input, #contact select, #contact textarea');
+  const first  = fields[0].value, last = fields[1].value;
+  const org    = fields[2].value;
+  const email  = document.getElementById('formEmail').value;
+  const interest = document.getElementById('formInterest').value;
+  const msg    = document.getElementById('formMsg').value;
+  if(!first || !email){ alert('Please fill in at least your name and email address.'); return; }
+  const body = 'Name: '+first+' '+last+'%0D%0AOrganisation: '+org+'%0D%0AEmail: '+email+'%0D%0AEnquiry Type: '+interest+'%0D%0A%0D%0A'+encodeURIComponent(msg);
+  window.location.href = 'mailto:admin@philanthropicfoundation.net?subject=Enquiry — '+encodeURIComponent(interest)+'&body='+body;
+}
 </script>
 </body>
 </html>
