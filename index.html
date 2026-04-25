@@ -103,7 +103,7 @@ nav.scrolled{padding:15px 72px;background:rgba(8,19,28,.97);backdrop-filter:blur
 .nav-links a:hover{color:#fff;}
 .nav-btn{background:transparent;border:1px solid rgba(192,154,60,.5);color:var(--gold);padding:9px 22px;font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;transition:all .2s;white-space:nowrap;}
 .nav-btn:hover{background:var(--gold);color:var(--ink);}
-.hamburger{display:none;flex-direction:column;gap:5px;cursor:none;padding:4px;background:none;border:none;}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:none;border:none;}
 .hamburger span{display:block;width:22px;height:1.5px;background:rgba(255,255,255,.6);transition:all .3s;}
 .hamburger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg);}
 .hamburger.open span:nth-child(2){opacity:0;}
@@ -304,7 +304,7 @@ blockquote{font-family:'EB Garamond',serif;font-size:clamp(20px,3vw,30px);font-w
 .fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--teal);}
 .fg textarea{resize:vertical;min-height:100px;}
 .fg-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
-.form-btn{background:var(--ink);color:#fff;border:none;padding:16px;font-family:'Manrope',sans-serif;font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;cursor:none;transition:background .2s;width:100%;margin-top:4px;}
+.form-btn{background:var(--ink);color:#fff;border:none;padding:16px;font-family:'Manrope',sans-serif;font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;transition:background .2s;width:100%;margin-top:4px;}
 .form-btn:hover{background:var(--teal);}
 
 /* ── FOOTER ── */
@@ -319,19 +319,285 @@ footer{background:var(--ink2);padding:52px 0;border-top:1px solid rgba(255,255,2
 .foot-links a{font-size:11px;font-weight:300;letter-spacing:.06em;color:rgba(255,255,255,.35);text-decoration:none;text-transform:uppercase;transition:color .2s;}
 .foot-links a:hover{color:rgba(255,255,255,.8);}
 
-/* ── ANIMATIONS ── */
+/* ── SKIP LINK (accessibility) ── */
+.skip-link{position:absolute;top:-999px;left:16px;z-index:9999;background:var(--gold);color:var(--ink);padding:10px 18px;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border-radius:0;}
+.skip-link:focus{top:16px;}
+
+/* ── FOCUS STYLES (keyboard navigation) ── */
+*:focus-visible{outline:2px solid var(--gold);outline-offset:3px;}
+a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offset:3px;}
+
+/* ── SCROLL MARGIN (so fixed nav doesn't cover headings) ── */
+#mission,#what,#programmes,#network,#founder,#journey,#governance,#standards,#sdg,#contact{scroll-margin-top:72px;}
+
+/* ── HERO sub opacity bump (was .42 — too dim) ── */
+.h-sub{color:rgba(255,255,255,.62);}
+
+/* ── H-LABEL legibility ── */
+.h-label{font-size:10px;color:rgba(192,154,60,.85);}
+
+/* ── HERO STATS: label opacity boost ── */
+.hstat-lbl{color:rgba(255,255,255,.45);font-size:9px;}
+
+/* ── MISSION pillar text: opacity boost (was .40 — WCAG fail) ── */
+.mp-text{color:rgba(255,255,255,.58);}
+
+/* ── SECTION LEAD max-width for readable line length ── */
+.s-lead{max-width:640px;font-size:17px;line-height:1.8;}
+
+/* ── MISSION LEAD line-length cap ── */
+.mission-lead{max-width:540px;}
+
+/* ── WHAT-LEFT paragraph max-width ── */
+.what-left p{max-width:540px;font-size:15px;}
+
+/* ── NAV links min touch target ── */
+.nav-links a{padding:8px 4px;}
+
+/* ── HAMBURGER min touch target ── */
+.hamburger{min-width:44px;min-height:44px;justify-content:center;align-items:center;}
+
+/* ── MOBILE MENU links spacing ── */
+.mobile-menu a{padding:10px 0;}
+
+/* ── NETWORK section text: opacity boost (was .50 — borderline) ── */
+.nc-text{color:rgba(255,255,255,.65);}
+
+/* ── TIMELINE text opacity boost ── */
+.tl-text{color:rgba(255,255,255,.6);}
+
+/* ── FOUNDER CREDS opacity boost ── */
+.founder-creds{color:rgba(255,255,255,.45);}
+
+/* ── SDG text opacity boost (was .45) ── */
+.sdg-text{color:rgba(255,255,255,.62);}
+
+/* ── FOOTER copy contrast boost ── */
+.foot-copy{color:rgba(255,255,255,.4);}
+.foot-links a{color:rgba(255,255,255,.5);}
+.foot-links a:hover{color:#fff;}
+
+/* ── FORM inputs: visible border by default (not transparent) ── */
+.fg input,.fg select,.fg textarea{border-color:rgba(8,19,28,.12);font-size:15px;}
+.fg input::placeholder,.fg textarea::placeholder{color:#a0b0bc;}
+
+/* ── FORM BUTTON min height ── */
+.form-btn{min-height:52px;font-size:13px;}
+
+/* ── CONTACT info val line-height ── */
+.cinfo-val{line-height:1.7;font-size:14px;}
+
+/* ── PROG CARD description legibility ── */
+.prog-desc{font-size:14px;line-height:1.9;color:#4e6270;}
+
+/* ── GOV KEY contrast boost ── */
+.gov-key{color:#6a7f8e;font-size:10px;}
+
+/* ── GOV VAL line-height ── */
+.gov-val{font-size:14px;line-height:1.75;}
+
+/* ── STD TEXT contrast ── */
+.std-text{color:#4e6270;}
+
+/* ── HOW-TEXT legibility ── */
+.how-text{color:#4e6270;}
+
+/* ── NET SUB contrast ── */
+.net-sub{color:#4e6270;font-size:13px;}
+
+/* ── PROG PROVIDERS legibility ── */
+.prog-provider{color:#4e6270;font-size:10px;}
+.pstat-lbl{color:#4e6270;}
+
+/* ── PROGRESS: active CTA underline feedback ── */
+.prog-link:hover,.prog-link:focus-visible{text-decoration:underline;text-underline-offset:3px;gap:14px;}
+
+/* ── SECTION PROGRESS NAV (right-side dots) ── */
+#prog-nav{
+  position:fixed;right:28px;top:50%;transform:translateY(-50%);
+  z-index:490;display:flex;flex-direction:column;gap:14px;
+  opacity:0;transition:opacity .4s;
+}
+#prog-nav.visible{opacity:1;}
+.pn-dot{
+  width:6px;height:6px;border-radius:50%;
+  background:rgba(255,255,255,.2);
+  border:1px solid rgba(255,255,255,.25);
+  cursor:pointer;transition:all .3s;display:block;
+  position:relative;
+}
+.pn-dot:hover,.pn-dot.active{
+  background:var(--gold);border-color:var(--gold);
+  transform:scale(1.4);
+}
+.pn-dot .pn-label{
+  position:absolute;right:18px;top:50%;transform:translateY(-50%);
+  font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;
+  color:rgba(255,255,255,.7);text-transform:uppercase;
+  white-space:nowrap;opacity:0;pointer-events:none;
+  transition:opacity .2s;
+  background:rgba(8,19,28,.75);padding:4px 10px;
+  backdrop-filter:blur(8px);
+}
+.pn-dot:hover .pn-label{opacity:1;}
+
+/* ── BACK TO TOP ── */
+#back-top{
+  position:fixed;bottom:36px;right:28px;z-index:490;
+  width:42px;height:42px;border-radius:50%;
+  background:var(--ink2);border:1px solid rgba(192,154,60,.3);
+  display:flex;align-items:center;justify-content:center;
+  opacity:0;pointer-events:none;cursor:pointer;
+  transition:opacity .3s,background .2s,border-color .2s;
+}
+#back-top.visible{opacity:1;pointer-events:all;}
+#back-top:hover{background:var(--gold);border-color:var(--gold);}
+#back-top svg{display:block;}
+
+/* ── SCROLL PROGRESS BAR ── */
+#scroll-bar{
+  position:fixed;top:0;left:0;height:2px;
+  background:var(--gold);z-index:600;
+  width:0%;transition:width .1s linear;
+  transform-origin:left;
+}
+
+/* ── HERO CTA: stronger primary ── */
+.btn-primary{
+  padding:15px 40px;font-size:11px;font-weight:700;
+  letter-spacing:.14em;
+  box-shadow:0 0 0 0 rgba(192,154,60,.4);
+  transition:background .2s,box-shadow .2s,transform .15s;
+}
+.btn-primary:hover{
+  background:var(--gold2);
+  box-shadow:0 8px 32px rgba(192,154,60,.25);
+  transform:translateY(-1px);
+}
+.btn-secondary{
+  color:rgba(255,255,255,.65);
+  border-bottom-color:rgba(255,255,255,.3);
+}
+.btn-secondary:hover{color:#fff;border-bottom-color:var(--gold);}
+
+/* ── FORM: inline validation ── */
+.fg input.error,.fg select.error,.fg textarea.error{
+  border-color:#c0392b !important;
+  background:rgba(192,57,43,.04);
+}
+.fg-error{
+  font-family:'DM Mono',monospace;font-size:10px;letter-spacing:1.5px;
+  color:#c0392b;margin-top:5px;display:none;
+}
+.fg input.error ~ .fg-error,
+.fg select.error ~ .fg-error,
+.fg textarea.error ~ .fg-error{display:block;}
+.fg input.valid,.fg select.valid,.fg textarea.valid{
+  border-color:rgba(10,112,112,.45) !important;
+}
+.form-btn{transition:background .2s,transform .15s,opacity .2s;}
+.form-btn:hover{transform:translateY(-1px);}
+.form-btn:active{transform:translateY(0);}
+.form-btn:disabled{opacity:.55;cursor:not-allowed;transform:none;}
+
+/* ── NC CARD: subtle lift on hover ── */
+.nc{transition:background .3s,transform .25s;}
+.nc:hover{background:rgba(10,112,112,.12);transform:translateY(-2px);}
+
+/* ── SDG CARD: gold accent on hover ── */
+.sdg-card{transition:background .3s,border-color .3s;}
+.sdg-card:hover{background:rgba(255,255,255,.07);border-color:rgba(192,154,60,.25);}
+
+/* ── GOV VAL link underline on hover ── */
+.gov-val a:hover{text-decoration:underline;text-underline-offset:2px;}
+
+/* ── PROG CARD: stronger lift ── */
+.prog-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 32px 80px rgba(8,19,28,.12);
+}
+
+/* ── TICKER: slightly higher contrast text ── */
+.ticker-item{color:rgba(8,19,28,.75);}
+
+/* ── RESPONSIVE: hide progress nav on mobile ── */
+@media(max-width:900px){
+  #prog-nav{display:none;}
+  #back-top{right:20px;bottom:24px;width:38px;height:38px;}
+  #scroll-bar{display:block;}
+}
 @keyframes rise{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
 @keyframes mesh{from{opacity:.7}to{opacity:1}}
 @keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes mapPulse{0%,100%{opacity:.6;r:4}50%{opacity:1;r:6}}
+@keyframes mapGlow{0%,100%{opacity:.3}50%{opacity:.7}}
+@keyframes mapDraw{from{stroke-dashoffset:1200}to{stroke-dashoffset:0}}
+
+/* ── AFRICA MAP HERO ── */
+#hero-map{
+  position:absolute;right:-60px;top:0;bottom:0;
+  width:58%;z-index:1;pointer-events:none;
+  display:flex;align-items:center;
+}
+#hero-map svg{width:100%;height:100%;overflow:visible;}
+.map-country{
+  fill:rgba(10,112,112,.18);
+  stroke:rgba(10,112,112,.35);
+  stroke-width:.6;
+  transition:fill .4s;
+}
+.map-country.highlight{
+  fill:rgba(192,154,60,.12);
+  stroke:rgba(192,154,60,.45);
+}
+.map-country.active{
+  fill:rgba(10,112,112,.32);
+  stroke:rgba(13,144,144,.7);
+  stroke-width:.8;
+}
+.map-dot{
+  fill:var(--gold);
+  animation:mapPulse 3s ease-in-out infinite;
+}
+.map-dot-ring{
+  fill:none;
+  stroke:var(--gold);
+  stroke-width:.8;
+  opacity:.4;
+  animation:mapGlow 3s ease-in-out infinite;
+}
+.map-arc{
+  fill:none;
+  stroke:rgba(192,154,60,.25);
+  stroke-width:.6;
+  stroke-dasharray:4 4;
+}
+.map-vignette{
+  position:absolute;inset:0;
+  background:linear-gradient(90deg,var(--ink) 0%,var(--ink) 8%,transparent 35%,transparent 70%,var(--ink) 100%),
+             linear-gradient(180deg,var(--ink) 0%,transparent 15%,transparent 85%,var(--ink) 100%);
+  pointer-events:none;
+}
+
+/* ── TICKER: pause on hover for readability ── */
+.ticker-track{animation:ticker 40s linear infinite;}
+.ticker:hover .ticker-track{animation-play-state:paused;}
 
 /* ── RESPONSIVE ── */
 @media(max-width:900px){
+  body{cursor:auto;}
+  button,a,input,select,textarea,.hamburger,.form-btn,.nav-btn,#lang-toggle{cursor:auto;}
   nav{padding:20px 32px;}nav.scrolled{padding:14px 32px;}
+  #lang-toggle{margin-left:4px;padding:6px 10px;}
+  #hero-map{width:70%;right:-40px;}
+  .hero-content{position:relative;z-index:2;}
   .nav-links{display:none;}.nav-btn{display:none;}.hamburger{display:flex;}
   .wrap{padding:0 32px;}section{padding:72px 0;}
+  #mission,#what,#programmes,#network,#founder,#journey,#governance,#standards,#sdg,#contact{scroll-margin-top:60px;}
   .hero-content{padding:100px 32px 48px 32px;}
   .hero-vline{display:none;}
   .hero-stats{padding:24px 32px;gap:28px;flex-wrap:wrap;}
+  .hstat{min-width:120px;}
   .mission-cols{grid-template-columns:1fr;gap:40px;}
   .what-grid{grid-template-columns:1fr;gap:40px;}
   .how-grid{grid-template-columns:1fr;gap:2px;}
@@ -345,14 +611,22 @@ footer{background:var(--ink2);padding:52px 0;border-top:1px solid rgba(255,255,2
   .contact-layout{grid-template-columns:1fr;gap:48px;}
   .foot-inner{flex-direction:column;align-items:center;text-align:center;}
   .foot-links{justify-content:center;}
+  .s-lead{font-size:16px;}
+  .mission-lead{max-width:100%;}
+  .what-left p{max-width:100%;}
 }
 @media(max-width:600px){
+  body{cursor:auto;}
+  button,a,input,select,textarea,.form-btn,.nav-btn,#lang-toggle{cursor:auto;}
   nav{padding:16px 20px;}nav.scrolled{padding:12px 20px;}
   .logo-sub{display:none;}.logo-rule{display:none;}
   .wrap{padding:0 20px;}section{padding:56px 0;}
+  #mission,#what,#programmes,#network,#founder,#journey,#governance,#standards,#sdg,#contact{scroll-margin-top:56px;}
   .hero-content{padding:90px 20px 40px 20px;}
+  #hero-map{width:100%;right:0;opacity:.3;}
   h1{font-size:clamp(30px,8vw,44px);line-height:1.12;}
-  .h-sub{font-size:13px;}.h-actions{flex-direction:column;align-items:flex-start;gap:14px;}
+  .h-sub{font-size:14px;line-height:1.8;}
+  .h-actions{flex-direction:column;align-items:flex-start;gap:14px;}
   .btn-primary{width:100%;text-align:center;padding:14px 24px;}
   .hero-stats{padding:20px;gap:20px;}.hstat-val{font-size:24px;}
   .ticker-item{padding:0 28px;font-size:8px;}
@@ -362,15 +636,48 @@ footer{background:var(--ink2);padding:52px 0;border-top:1px solid rgba(255,255,2
   .tl-item{padding-left:28px;padding-bottom:40px;}
   .tl-year{position:relative;left:auto;width:auto;text-align:left;margin-bottom:8px;display:block;}
   .tl-dot{position:absolute;left:0;margin-top:0;}
-  .gov-row{grid-template-columns:1fr;gap:4px;}.gov-key{font-size:8px;}
+  .gov-row{grid-template-columns:1fr;gap:4px;}.gov-key{font-size:9px;}
   .std-grid{grid-template-columns:1fr;}
   .sdg-grid{grid-template-columns:1fr 1fr;}
   .contact-form{padding:28px 20px;}.fg-row{grid-template-columns:1fr;}
-  .foot-copy{font-size:7px;letter-spacing:1px;}
+  .foot-copy{font-size:8px;letter-spacing:1px;}
+  .how-card{padding:32px 24px;}
+  .nc-text{font-size:14px;}
+  .s-lead{font-size:15px;}
+  blockquote{font-size:clamp(18px,4.5vw,24px);}
+  .std-grid{gap:2px;}
+  .gov-layout{gap:32px;}
+  .contact-layout{gap:36px;}
+  #lang-toggle{font-size:8px;padding:6px 10px;letter-spacing:1.5px;}
 }
 </style>
 </head>
 <body>
+<a href="#mission" class="skip-link">Skip to content</a>
+
+<!-- SCROLL PROGRESS BAR -->
+<div id="scroll-bar" aria-hidden="true"></div>
+
+<!-- SECTION PROGRESS NAV -->
+<div id="prog-nav" role="navigation" aria-label="Section navigation">
+  <a class="pn-dot" href="#hero"       aria-label="Top"><span class="pn-label">Top</span></a>
+  <a class="pn-dot" href="#mission"    aria-label="Mission"><span class="pn-label">Mission</span></a>
+  <a class="pn-dot" href="#what"       aria-label="What We Do"><span class="pn-label">What We Do</span></a>
+  <a class="pn-dot" href="#programmes" aria-label="Programmes"><span class="pn-label">Programmes</span></a>
+  <a class="pn-dot" href="#network"    aria-label="Network"><span class="pn-label">Network</span></a>
+  <a class="pn-dot" href="#journey"    aria-label="Journey"><span class="pn-label">Journey</span></a>
+  <a class="pn-dot" href="#governance" aria-label="Governance"><span class="pn-label">Governance</span></a>
+  <a class="pn-dot" href="#standards"  aria-label="Standards"><span class="pn-label">Standards</span></a>
+  <a class="pn-dot" href="#sdg"        aria-label="SDGs"><span class="pn-label">SDGs</span></a>
+  <a class="pn-dot" href="#contact"    aria-label="Contact"><span class="pn-label">Contact</span></a>
+</div>
+
+<!-- BACK TO TOP -->
+<button id="back-top" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+  <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+    <path d="M7 11V3M3 7l4-4 4 4" stroke="rgba(255,255,255,.8)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+</button>
 
 <!-- CURSOR -->
 <div id="cursor-ring"></div>
@@ -391,7 +698,7 @@ footer{background:var(--ink2);padding:52px 0;border-top:1px solid rgba(255,255,2
 </div>
 
 <!-- NAV -->
-<nav id="nav">
+<nav id="nav" role="navigation" aria-label="Main navigation">
   <a href="#" class="logo">
     <img src="data:image/png;base64,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" alt="The Philanthropic Foundation">
     <span class="logo-rule"></span>
@@ -409,8 +716,8 @@ footer{background:var(--ink2);padding:52px 0;border-top:1px solid rgba(255,255,2
     <li><a href="#sdg">SDGs</a></li>
   </ul>
   <a href="#contact" class="nav-btn">Get in Touch</a>
-  <button id="lang-toggle" onclick="toggleLang()" style="background:none;border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.5);padding:7px 14px;font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;cursor:none;transition:all .2s;margin-left:8px;" onmouseenter="this.style.borderColor='rgba(192,154,60,.5)';this.style.color='var(--gold)'" onmouseleave="this.style.borderColor='rgba(255,255,255,.2)';this.style.color='rgba(255,255,255,.5)'">FR</button>
-  <button class="hamburger" id="hamburger" onclick="toggleMob()" aria-label="Menu">
+  <button id="lang-toggle" onclick="toggleLang()" aria-label="Switch to French" style="background:none;border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.5);padding:7px 14px;font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;cursor:pointer;transition:all .2s;margin-left:8px;" onmouseenter="this.style.borderColor='rgba(192,154,60,.5)';this.style.color='var(--gold)'" onmouseleave="this.style.borderColor='rgba(255,255,255,.2)';this.style.color='rgba(255,255,255,.5)'">FR</button>
+  <button class="hamburger" id="hamburger" onclick="toggleMob()" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobileMenu">
     <span></span><span></span><span></span>
   </button>
 </nav>
@@ -420,6 +727,121 @@ footer{background:var(--ink2);padding:52px 0;border-top:1px solid rgba(255,255,2
   <div class="hero-mesh"></div>
   <div class="hero-grid"></div>
   <div class="hero-vline"></div>
+
+  <!-- AFRICA MAP -->
+  <div id="hero-map" aria-hidden="true">
+    <div class="map-vignette"></div>
+    <svg viewBox="120 60 380 520" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <defs>
+        <radialGradient id="glowGrad" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#0A7070" stop-opacity=".4"/>
+          <stop offset="100%" stop-color="#0A7070" stop-opacity="0"/>
+        </radialGradient>
+        <filter id="blur2"><feGaussianBlur stdDeviation="2"/></filter>
+      </defs>
+
+      <!-- Continental glow -->
+      <ellipse cx="290" cy="330" rx="130" ry="180" fill="url(#glowGrad)" filter="url(#blur2)" opacity=".5"/>
+
+      <!-- Morocco -->
+      <path class="map-country highlight" d="M195,85 L235,82 L245,95 L238,118 L220,125 L205,120 L195,105 Z"/>
+      <!-- Algeria -->
+      <path class="map-country" d="M235,82 L295,80 L305,95 L298,128 L270,135 L245,130 L238,118 L245,95 Z"/>
+      <!-- Tunisia -->
+      <path class="map-country" d="M295,80 L318,78 L322,95 L308,108 L298,105 L305,95 Z"/>
+      <!-- Libya -->
+      <path class="map-country" d="M318,78 L368,76 L375,100 L370,135 L340,138 L322,130 L322,95 Z"/>
+      <!-- Egypt -->
+      <path class="map-country highlight" d="M368,76 L412,74 L418,100 L415,135 L380,138 L375,100 Z"/>
+      <!-- Mauritania -->
+      <path class="map-country" d="M165,125 L205,120 L220,125 L218,160 L200,175 L170,178 L155,160 L160,140 Z"/>
+      <!-- Mali -->
+      <path class="map-country" d="M220,125 L270,135 L268,168 L258,185 L235,192 L218,185 L218,160 Z"/>
+      <!-- Niger -->
+      <path class="map-country" d="M270,135 L320,130 L335,145 L330,175 L308,185 L285,188 L268,175 L268,168 Z"/>
+      <!-- Chad -->
+      <path class="map-country" d="M320,130 L370,135 L375,165 L368,195 L345,205 L325,200 L315,185 L330,175 Z"/>
+      <!-- Sudan -->
+      <path class="map-country" d="M370,135 L415,135 L420,160 L415,200 L395,215 L375,218 L360,205 L368,195 L375,165 Z"/>
+      <!-- Senegal/Gambia/Guinea -->
+      <path class="map-country highlight" d="M155,175 L195,178 L200,195 L192,215 L172,220 L155,210 L150,195 Z"/>
+      <!-- Guinea-Bissau/Guinea/Sierra Leone -->
+      <path class="map-country" d="M195,178 L218,185 L222,205 L215,225 L200,232 L192,225 L192,215 Z"/>
+      <!-- Burkina Faso -->
+      <path class="map-country" d="M218,185 L258,185 L262,200 L252,215 L232,218 L218,210 L218,200 Z"/>
+      <!-- Ghana/Togo/Benin/Cote d'Ivoire -->
+      <path class="map-country active" d="M222,205 L262,200 L268,218 L260,238 L242,248 L222,245 L212,232 L215,218 Z"/>
+      <!-- Nigeria -->
+      <path class="map-country active" d="M262,200 L315,198 L322,218 L318,245 L295,260 L268,258 L255,245 L260,238 L268,218 Z"/>
+      <!-- Cameroon/CAR -->
+      <path class="map-country" d="M315,198 L368,195 L372,220 L365,248 L340,255 L318,252 L318,245 L322,218 Z"/>
+      <!-- Ethiopia -->
+      <path class="map-country highlight" d="M375,218 L418,215 L428,240 L420,268 L395,275 L372,268 L368,248 L372,220 Z"/>
+      <!-- Somalia -->
+      <path class="map-country" d="M418,215 L445,220 L448,255 L430,285 L418,278 L420,268 L428,240 Z"/>
+      <!-- Kenya -->
+      <path class="map-country active" d="M395,275 L428,272 L430,300 L415,318 L392,322 L378,308 L378,290 Z"/>
+      <!-- DRC -->
+      <path class="map-country active" d="M318,252 L368,248 L378,272 L375,308 L348,322 L318,318 L298,305 L295,278 L305,262 Z"/>
+      <!-- Tanzania -->
+      <path class="map-country highlight" d="M378,308 L415,318 L418,345 L408,368 L382,372 L360,362 L355,338 L362,322 Z"/>
+      <!-- Angola -->
+      <path class="map-country" d="M295,305 L348,322 L352,355 L345,382 L315,388 L290,382 L282,358 L285,332 Z"/>
+      <!-- Zambia/Zimbabwe -->
+      <path class="map-country" d="M348,358 L395,355 L400,382 L390,405 L365,410 L342,405 L338,382 L348,368 Z"/>
+      <!-- Mozambique -->
+      <path class="map-country" d="M390,368 L418,360 L422,392 L415,420 L395,428 L378,415 L372,392 L382,375 Z"/>
+      <!-- Namibia/Botswana -->
+      <path class="map-country" d="M290,382 L345,382 L348,415 L340,440 L312,448 L288,440 L280,415 Z"/>
+      <!-- Zimbabwe/S.Africa north -->
+      <path class="map-country" d="M342,405 L395,405 L398,432 L385,450 L358,455 L335,448 L332,425 Z"/>
+      <!-- South Africa -->
+      <path class="map-country highlight" d="M285,445 L358,455 L365,480 L350,502 L322,510 L295,502 L278,480 L280,460 Z"/>
+      <!-- Madagascar -->
+      <path class="map-country" d="M432,348 L448,342 L455,368 L450,398 L438,408 L428,398 L425,368 Z"/>
+
+      <!-- City dots — key African financial hubs -->
+      <!-- Mauritius -->
+      <circle class="map-dot-ring" cx="458" cy="418" r="10" style="animation-delay:.2s"/>
+      <circle class="map-dot" cx="458" cy="418" r="4.5" style="animation-delay:.2s"/>
+      <text x="440" y="412" font-family="'DM Mono',monospace" font-size="7" fill="rgba(192,154,60,.85)" letter-spacing="1" text-anchor="end">MAURITIUS</text>
+
+      <!-- Nairobi -->
+      <circle class="map-dot-ring" cx="408" cy="300" r="8" style="animation-delay:.5s"/>
+      <circle class="map-dot" cx="408" cy="300" r="3.5" style="animation-delay:.5s;fill:rgba(192,154,60,.75)"/>
+      <text x="418" y="298" font-family="'DM Mono',monospace" font-size="6.5" fill="rgba(255,255,255,.45)" letter-spacing="1">NAIROBI</text>
+
+      <!-- Cape Town -->
+      <circle class="map-dot-ring" cx="310" cy="500" r="8" style="animation-delay:.8s"/>
+      <circle class="map-dot" cx="310" cy="500" r="3.5" style="animation-delay:.8s;fill:rgba(192,154,60,.75)"/>
+      <text x="322" y="498" font-family="'DM Mono',monospace" font-size="6.5" fill="rgba(255,255,255,.45)" letter-spacing="1">CAPE TOWN</text>
+
+      <!-- Casablanca -->
+      <circle class="map-dot-ring" cx="205" cy="95" r="8" style="animation-delay:1.1s"/>
+      <circle class="map-dot" cx="205" cy="95" r="3.5" style="animation-delay:1.1s;fill:rgba(192,154,60,.75)"/>
+      <text x="216" y="93" font-family="'DM Mono',monospace" font-size="6.5" fill="rgba(255,255,255,.45)" letter-spacing="1">CASABLANCA</text>
+
+      <!-- Lagos -->
+      <circle class="map-dot-ring" cx="268" cy="235" r="8" style="animation-delay:1.4s"/>
+      <circle class="map-dot" cx="268" cy="235" r="3.5" style="animation-delay:1.4s;fill:rgba(192,154,60,.75)"/>
+      <text x="258" y="229" font-family="'DM Mono',monospace" font-size="6.5" fill="rgba(255,255,255,.45)" letter-spacing="1" text-anchor="end">LAGOS</text>
+
+      <!-- Cairo -->
+      <circle class="map-dot-ring" cx="392" cy="102" r="8" style="animation-delay:1.7s"/>
+      <circle class="map-dot" cx="392" cy="102" r="3.5" style="animation-delay:1.7s;fill:rgba(192,154,60,.75)"/>
+      <text x="402" y="100" font-family="'DM Mono',monospace" font-size="6.5" fill="rgba(255,255,255,.45)" letter-spacing="1">CAIRO</text>
+
+      <!-- Connection arcs between Circuit cities and Mauritius -->
+      <path class="map-arc" d="M408,300 Q445,340 458,418"/>
+      <path class="map-arc" d="M310,500 Q390,490 458,418"/>
+      <path class="map-arc" d="M205,95  Q320,80 392,102"/>
+      <path class="map-arc" d="M268,235 Q360,220 408,300"/>
+
+      <!-- Reg number watermark -->
+      <text x="290" y="570" font-family="'DM Mono',monospace" font-size="7" fill="rgba(255,255,255,.08)" letter-spacing="3" text-anchor="middle">REG. NO. 679 · MAURITIUS</text>
+    </svg>
+  </div>
+
   <div class="hero-content">
     <div class="h-label">Registered in Mauritius · Reg. No. 679 · Founded 2021</div>
     <h1>The institutional infrastructure<br><em>African capital</em><br>has been missing.</h1>
@@ -505,7 +927,7 @@ footer{background:var(--ink2);padding:52px 0;border-top:1px solid rgba(255,255,2
       </div>
     </div>
     <div style="margin-top:72px;">
-      <div class="s-eyebrow rv" style="margin-bottom:28px;">How It Works</div>
+      <div class="s-eyebrow rv" id="how-eyebrow" style="margin-bottom:28px;">How It Works</div>
       <div class="how-grid rv d1">
         <div class="how-card">
           <div class="how-num">01 — Governance</div>
@@ -825,11 +1247,11 @@ footer{background:var(--ink2);padding:52px 0;border-top:1px solid rgba(255,255,2
         <div class="contact-form">
           <div class="form-hed">Send an Enquiry</div>
           <div class="fg-row">
-            <div class="fg"><label>First Name</label><input type="text" placeholder="Jane"></div>
+            <div class="fg"><label>First Name</label><input type="text" placeholder="Jane"><span class="fg-error">Required</span></div>
             <div class="fg"><label>Last Name</label><input type="text" placeholder="Smith"></div>
           </div>
-          <div class="fg"><label>Organisation</label><input type="text" placeholder="Institution or firm name"></div>
-          <div class="fg"><label>Email</label><input type="email" placeholder="jane@institution.com" id="formEmail"></div>
+          <div class="fg"><label>Organisation</label><input type="text" placeholder="Institution or firm name"><span class="fg-error">Required</span></div>
+          <div class="fg"><label>Email</label><input type="email" placeholder="jane@institution.com" id="formEmail"><span class="fg-error">Please enter a valid email</span></div>
           <div class="fg"><label>I am interested in</label>
             <select id="formInterest">
               <option>MCTF — Investor Enquiry</option>
@@ -840,7 +1262,7 @@ footer{background:var(--ink2);padding:52px 0;border-top:1px solid rgba(255,255,2
               <option>General Enquiry</option>
             </select>
           </div>
-          <div class="fg"><label>Message</label><textarea id="formMsg" placeholder="Tell us about your interest…"></textarea></div>
+          <div class="fg"><label>Message</label><textarea id="formMsg" placeholder="Tell us about your interest…"></textarea><span class="fg-error">Please add a message</span></div>
           <button class="form-btn" onclick="submitForm()">Submit Enquiry</button>
         </div>
       </div>
@@ -916,11 +1338,15 @@ function toggleMob(){
   const mob = document.getElementById('mobileMenu');
   const ham = document.getElementById('hamburger');
   mob.classList.toggle('open'); ham.classList.toggle('open');
-  document.body.style.overflow = mob.classList.contains('open') ? 'hidden' : '';
+  const isOpen = mob.classList.contains('open');
+  ham.setAttribute('aria-expanded', isOpen);
+  document.body.style.overflow = isOpen ? 'hidden' : '';
 }
 function closeMob(){
   document.getElementById('mobileMenu').classList.remove('open');
-  document.getElementById('hamburger').classList.remove('open');
+  const ham = document.getElementById('hamburger');
+  ham.classList.remove('open');
+  ham.setAttribute('aria-expanded','false');
   document.body.style.overflow = '';
 }
 
@@ -937,26 +1363,166 @@ const translations = {
     'hero-sub': 'The Philanthropic Foundation is the governance and programme platform that connects development finance institutions, institutional investors, policymakers, and private capital across Africa — through regulated structures, curated relationships, and on-the-ground programmes.',
     'hero-btn1': 'Our Programmes',
     'hero-btn2': 'Our Mission →',
+    'hero-stat1-lbl': 'Active Programmes',
+    'hero-stat2-lbl': 'Climate Fund Target',
+    'hero-stat3-lbl': 'Circuit Delegates / Year',
+    'hero-stat4-lbl': 'Cities · Global Network',
     'mission-eyebrow': 'Our Mission',
     'mission-h2': 'To build the infrastructure<br>that makes <em>African capital</em><br>move with certainty.',
     'mission-p1': 'Africa does not have a capital problem. It has an infrastructure problem — the institutional frameworks, governance structures, and trusted relationships that allow global capital to reach African opportunities with the confidence that serious investors require.',
     'mission-p2': 'The Philanthropic Foundation exists to be that infrastructure — permanently. Not as a fund manager, not as a consultancy, not as a development agency. As a regulated, independent institution that connects capital to opportunity through governed structures and relationships built over years.',
+    'mp1-label': 'Capital Mobilisation',
+    'mp1-title': 'Direct more global capital into Africa at scale',
+    'mp1-text': 'Institutional, private, and concessional capital — into African infrastructure, climate, and growth opportunities with the governance frameworks that serious investors require.',
+    'mp2-label': 'Institutional Infrastructure',
+    'mp2-title': 'Build permanent frameworks that outlast any cycle',
+    'mp2-text': 'Regulated vehicles, governance structures, and convening platforms that compound in value over years — not assembled for a single transaction or fundraise.',
+    'mp3-label': 'Long-Term Relationships',
+    'mp3-title': 'Cultivate the relationships that move money',
+    'mp3-text': 'DFI, diplomatic, and investor relationships built through years of presence across three continents — AFSIC, SuperReturn, family office forums, embassy engagements.',
     'what-eyebrow': 'What We Do',
     'what-h2': 'A platform that makes it easier<br>for capital to <em>reach Africa</em>',
+    'what-p1': "Most capital that could reach Africa doesn't — not because the opportunities aren't there, but because the <strong>institutional infrastructure is missing</strong>. The governance frameworks, the trusted relationships with regulators and DFIs, the convening platforms where the right people actually meet.",
+    'what-p2': "The Philanthropic Foundation was built to be exactly that infrastructure. A <strong>Mauritius-registered institution</strong> operating two programmes — a regulated climate investment fund and Africa's only pan-continental financial conference circuit — both designed to move capital more efficiently and more confidently across the continent. With real institutional relationships built over years, not assembled for a pitch deck.",
+    'what-net-label': 'Our Institutional Network',
+    'net1-text': 'Development Finance Institutions',
+    'net1-sub': 'DFI co-investors, LP networks & concessional capital facilities',
+    'net2-text': 'Private Capital & Co-Investment',
+    'net2-sub': 'Private equity, credit funds & infrastructure co-investment platforms',
+    'net3-text': 'Funds of Funds & Foundations',
+    'net3-sub': 'Endowments, philanthropic foundations & multi-manager allocators',
+    'net4-text': 'Institutional Investors & Fund Managers',
+    'net4-sub': 'Pension funds, sovereign wealth, asset managers & wealth platforms',
+    'net5-text': 'UHNWI & Family Offices',
+    'net5-sub': 'Africa-focused principals · $30M+ investable assets',
+    'net6-text': 'Diplomatic Missions & Embassies',
+    'net6-sub': 'Ministerial & regulatory access across Africa, Europe & Asia',
+    'how-eyebrow': 'How It Works',
+    'how1-num': '01 — Governance',
+    'how1-title': 'The Foundation holds the institutional layer',
+    'how1-text': 'Registered in Mauritius (Reg. No. 679) under the Foundations Act 2012, the Foundation provides the governance architecture — legal structure, DFI relationships, regulatory standing — that its programmes operate within.',
+    'how2-num': '02 — Deployment',
+    'how2-title': 'Programmes deploy into specific opportunities',
+    'how2-text': 'Each programme has a focused mandate: the MCTF deploys blended finance into African climate infrastructure. The African Circuit convenes the investors, policymakers, and capital allocators who make deals happen.',
+    'how3-num': '03 — Compounding',
+    'how3-title': 'Capital flows more efficiently as a result',
+    'how3-text': 'By combining a regulated investment vehicle with a continent-wide convening platform, the Foundation creates compounding value — the relationships built at the Circuit feed the Fund\'s pipeline, and vice versa.',
     'prog-eyebrow': 'Our Programmes',
     'prog-h2': 'Two programmes.<br><em>One platform.</em>',
+    'prog-lead': 'Each programme is independent in focus but powered by the same institutional foundation — the same network, the same governance standards, the same Mauritius base.',
+    'mctf-tag': 'Blended Finance · Est. 2021',
+    'mctf-title': 'Mauritius Climate Transition Fund',
+    'mctf-desc': 'A closed-end collective investment scheme that deploys blended finance into climate infrastructure across Africa and the Indian Ocean. The Fund stacks DFI concessional debt beneath institutional equity to create bankable project structures that European pension funds and asset managers can access — without compromising on governance standards. Targeted at renewable energy, water, coastal resilience, and low-carbon logistics.',
+    'mctf-stat1-lbl': 'Target Size',
+    'mctf-stat2-lbl': 'Fund Term',
+    'mctf-stat3-lbl': 'Investments',
+    'uc-text': 'Website Under Construction',
+    'ac-tag': 'Financial Conferences · Pan-African · 2026–2028',
+    'ac-title': 'The African Circuit',
+    'ac-desc': "Invitation-only. Five cities. One season. The African Circuit is the only pan-African financial conference circuit originating from Africa itself — bringing together fund managers, DFI limited partners, government ministers, UHNWI principals, and institutional investors across Mauritius, Nairobi, Cape Town, Casablanca, and online. Access is by introduction or application only, built on the Foundation's DFI and diplomatic networks developed across three continents over four years.",
+    'ac-stat1-lbl': 'Annual Delegates',
+    'ac-stat2-lbl': 'Cities',
+    'ac-stat3-lbl': 'AUM in Room',
+    'ac-link': 'Enquire About Access →',
     'network-eyebrow': 'Our Network',
     'network-h2': 'The relationships<br>that <em>move capital.</em>',
+    'network-lead': 'Three years of deliberate relationship-building across three continents — AFSIC, SuperReturn, wealth management conferences, family office forums, LP-only private events, and embassy engagements — before a single programme launched.',
+    'nc1-title': 'Development Finance Institutions',
+    'nc1-text': "DFIs are co-investors in the MCTF and delegates at The African Circuit. Direct access to their LP networks, co-financing facilities, and concessional capital — relationships built in the field, not through introductions.",
+    'nc2-title': 'Institutional Investors',
+    'nc2-text': 'Pension funds, sovereign wealth funds, and ESG-mandated asset managers seeking governed, bankable exposure to African infrastructure and capital markets — with frameworks to satisfy their investment committees.',
+    'nc3-title': 'Private Capital & Co-Investment',
+    'nc3-text': "Private equity managers, credit funds, and infrastructure platforms looking for co-investment opportunities and deal flow in African markets. The Foundation provides the institutional access layer that makes first transactions possible.",
+    'nc4-title': 'Funds of Funds & Foundations',
+    'nc4-text': "Fund of funds managers, endowments, and philanthropic foundations seeking diversified exposure to African managers. The Foundation bridges the information and governance gap that typically prevents first allocations.",
+    'nc5-title': 'Governments & Regulators',
+    'nc5-text': "Ministers, central bank officials, and regulators participate at Circuit events and support the MCTF's project pipeline through policy dialogue and concessions. Diplomatic mission partnerships span three continents.",
+    'nc6-title': 'Sponsors & Strategic Partners',
+    'nc6-text': "Financial services firms, law firms, banks, and corporates seeking sustained visibility across Africa's most relevant institutional audiences — across five cities, one season, and a network built over years.",
+    'founder-role': 'Chief Executive Officer',
+    'founder-quote': '&ldquo;Africa does not lack capital opportunities — it lacks the institutional infrastructure that allows global capital to reach them with confidence. The Philanthropic Foundation was built to be exactly that infrastructure: governed, regulated, and rooted in the relationships that actually move money across the continent.&rdquo;',
+    'founder-title': 'Chief Executive Officer',
     'journey-eyebrow': 'Our Journey',
     'journey-h2': 'Built deliberately.<br><em>Moving with purpose.</em>',
+    'tl1-title': 'Foundation Established',
+    'tl1-text': 'The Philanthropic Foundation registered in Mauritius (Reg. No. 679) under the Foundations Act 2012. Secretariat appointed — Capital Horizon. Governance framework and charter finalised.',
+    'tl2-title': 'International Network Built Across Four Continents',
+    'tl2-text': 'Three years of deliberate, on-the-ground relationship-building before a single programme launched publicly. The Foundation did not broadcast — it convened, attended, and engaged at the right tables across four continents.',
+    'tl3-title': 'Programmes Architected',
+    'tl3-text': 'The African Circuit model developed — five-city, invitation-only format confirmed. MCTF blended finance mandate structured in consultation with DFI partners. Target fund size set at USD 150M.',
+    'tl4-title': 'Secretariat Transition to DTOS Ltd',
+    'tl4-text': 'Foundation secretariat transitioned to <a href="https://www.dtos-mu.com" target="_blank" rel="noopener" style="color:var(--gold);text-decoration:none;font-weight:500;">DTOS Ltd</a> — 10th Floor, Standard Chartered Tower, 19 Cybercity, Ebene. DTOS brings institutional-grade fund administration and regulatory expertise aligned with the Foundation\'s next phase.',
+    'tl5-title': 'Launch Year',
+    'tl5-text': "The African Circuit Season One underway. MCTF submitted for FSC review — on track for authorisation. First institutional investor and sponsor relationships formalised across five African markets.",
+    'tl6-title': 'Scale & Deepen',
+    'tl6-text': 'MCTF first close targeted post-authorisation. African Circuit Season Two. Expansion of co-investment relationships and institutional LP network across Europe and the Gulf.',
     'gov-eyebrow': 'Governance',
     'gov-h2': 'Structured to the standard<br><em>institutions require.</em>',
+    'gov-hl-label': 'Foundation Charter',
+    'gov-hl-text': '&ldquo;The Foundation\'s charter requires that information be treated as confidential. We share what is necessary, to the right parties, at the right stage.&rdquo;',
+    'gov-badge1-title': 'Documentation on Request',
+    'gov-badge1-text': 'Submit enquiry → NDA issued within 48 hours → Full documentation pack released. Charter, programme documentation, and fund legal pack available to qualified institutional counterparties.',
+    'gov-badge2-title': 'Confidentiality by Design',
+    'gov-badge2-text': "The Foundation's charter requires that all information be treated as confidential. We share what is necessary, to the right parties, at the right stage.",
+    'gov-badge3-title': 'Institutional-Grade Service Partners',
+    'gov-badge3-text': 'Legal counsel by <a href="https://www.eversheds-sutherland.com" target="_blank" rel="noopener">Eversheds Sutherland</a> — top-20 global law firm with dedicated Africa practice. Banking with <a href="https://www.afrasiabank.com" target="_blank" rel="noopener">AfrAsia Bank</a> — the institution of choice for private and institutional capital in the Indian Ocean.',
     'std-eyebrow': 'Operating Standards',
     'std-h2': 'Held to the standards<br><em>institutions require.</em>',
+    'std-lead': "The Foundation operates voluntarily to a set of frameworks that go beyond what Mauritius law requires. These are not compliance exercises — they are the operating standards we believe any serious institutional platform should meet.",
+    'std1-label': 'People & Ethics',
+    'std1-title': 'Modern Slavery & Human Trafficking',
+    'std1-text': 'Zero-tolerance policy on modern slavery and human trafficking in any form. Consistent with the UK Modern Slavery Act 2015 in spirit and practice across all operations and relationships.',
+    'std2-label': 'Financial Integrity',
+    'std2-title': 'AML / KYC & Anti-Bribery',
+    'std2-text': 'Robust anti-money laundering and know-your-customer procedures applied across all counterparty relationships. Full alignment with the UK Bribery Act 2010 and FATF recommendations through Mauritius.',
+    'std3-label': 'Data & Privacy',
+    'std3-title': 'Data Protection & Privacy',
+    'std3-text': 'Personal and institutional data handled in accordance with GDPR principles and the Mauritius Data Protection Act 2017. All counterparty information treated with strict confidentiality per charter.',
+    'std4-label': 'Investment Standards',
+    'std4-title': 'IFC Performance Standards',
+    'std4-text': "The MCTF's investment framework is structured in alignment with IFC Performance Standards on Environmental and Social Sustainability — the benchmark applied by leading DFIs and institutional LPs globally.",
+    'std5-label': 'Climate & Sustainability',
+    'std5-title': 'EU Green Taxonomy & OECD Blended Finance',
+    'std5-text': "Climate investment activities aligned with the EU Green Taxonomy classification system and OECD Blended Finance Principles — ensuring investments meet the governance standards required by European institutional investors.",
+    'std6-label': 'Accountability',
+    'std6-title': 'Grievance & Whistleblowing',
+    'std6-text': 'A formal grievance and whistleblowing mechanism is maintained for all counterparties, delegates, and partners. Concerns may be raised confidentially and reviewed independently of programme operations.',
+    'std-doc-text': 'Full policy documentation available on request under NDA',
+    'std-doc-link': 'Request Documentation →',
     'sdg-eyebrow': 'Global Frameworks',
     'sdg-h2': 'Aligned to the standards<br>that <em>development capital</em> requires.',
+    'sdg-lead': "The Foundation's programmes are structured in alignment with the United Nations Sustainable Development Goals and leading international development finance frameworks — ensuring our work meets the screening and reporting requirements of institutional DFI and ESG-mandated investors.",
+    'sdg1-title': 'Decent Work & Economic Growth',
+    'sdg1-text': "The African Circuit and MCTF pipeline directly support African job creation, enterprise development, and inclusive economic growth across nine African markets.",
+    'sdg2-title': 'Industry, Innovation & Infrastructure',
+    'sdg2-text': "The MCTF deploys into climate infrastructure — renewable energy, water, low-carbon logistics — financing the resilient infrastructure Africa's growth requires.",
+    'sdg3-title': 'Climate Action',
+    'sdg3-text': 'The MCTF is a dedicated climate investment vehicle. All investments are screened for climate alignment and structured in accordance with the EU Green Taxonomy and OECD Blended Finance Principles.',
+    'sdg4-title': 'Partnerships for the Goals',
+    'sdg4-text': "The Foundation's blended finance model — stacking DFI concessional capital beneath institutional equity — operationalises the partnership model the SDGs were designed around.",
+    'sdg-also': 'Also aligned with',
     'contact-eyebrow': 'Contact',
     'contact-h2': 'Begin the<br><em>conversation.</em>',
+    'contact-intro': 'The Foundation accepts a limited number of institutional introductions each quarter. If you are a DFI, institutional investor, family office, or government counterpart — we invite you to begin the conversation.',
+    'contact-accepting': 'Accepting introductions · Q2 2026',
+    'contact-email-lbl': 'Email',
+    'contact-office-lbl': 'Registered Office',
+    'contact-reg-lbl': 'Registration',
+    'contact-conf-lbl': 'Confidentiality',
+    'contact-conf-val': 'All enquiries treated as confidential · NDA issued within 48 hours on request',
+    'contact-resp-lbl': 'Response Time',
+    'contact-resp-val': 'We respond to all enquiries within 48 hours',
+    'form-hed': 'Send an Enquiry',
+    'form-fname': 'First Name',
+    'form-lname': 'Last Name',
+    'form-org': 'Organisation',
+    'form-email': 'Email',
+    'form-interest': 'I am interested in',
+    'form-msg': 'Message',
+    'form-btn': 'Submit Enquiry',
+    'form-err-req': 'Required',
+    'form-err-email': 'Please enter a valid email',
+    'form-err-msg': 'Please add a message',
     'nav-btn': 'Get in Touch',
     'lang-btn': 'FR',
     'lang': 'en'
@@ -966,26 +1532,166 @@ const translations = {
     'hero-sub': "La Philanthropic Foundation est la plateforme de gouvernance et de programmes qui connecte les institutions de financement du développement, les investisseurs institutionnels, les décideurs politiques et le capital privé en Afrique — à travers des structures réglementées, des relations sélectionnées et des programmes sur le terrain.",
     'hero-btn1': 'Nos Programmes',
     'hero-btn2': 'Notre Mission →',
+    'hero-stat1-lbl': 'Programmes Actifs',
+    'hero-stat2-lbl': 'Objectif du Fonds Climatique',
+    'hero-stat3-lbl': 'Délégués du Circuit / An',
+    'hero-stat4-lbl': 'Villes · Réseau Mondial',
     'mission-eyebrow': 'Notre Mission',
     'mission-h2': "Construire l'infrastructure<br>qui permet au <em>capital africain</em><br>de circuler avec certitude.",
     'mission-p1': "L'Afrique n'a pas un problème de capital. Elle a un problème d'infrastructure — les cadres institutionnels, les structures de gouvernance et les relations de confiance qui permettent au capital mondial d'atteindre les opportunités africaines avec la confiance qu'exigent les investisseurs sérieux.",
     'mission-p2': "La Philanthropic Foundation existe pour être exactement cette infrastructure — de manière permanente. Pas comme gestionnaire de fonds, ni comme cabinet de conseil, ni comme agence de développement. Comme une institution réglementée et indépendante qui connecte le capital aux opportunités à travers des structures régies et des relations construites sur des années.",
+    'mp1-label': 'Mobilisation du Capital',
+    'mp1-title': "Diriger davantage de capital mondial vers l'Afrique à grande échelle",
+    'mp1-text': "Capital institutionnel, privé et concessionnel — vers l'infrastructure africaine, le climat et les opportunités de croissance avec les cadres de gouvernance qu'exigent les investisseurs sérieux.",
+    'mp2-label': 'Infrastructure Institutionnelle',
+    'mp2-title': 'Construire des cadres permanents qui résistent à tout cycle',
+    'mp2-text': "Véhicules réglementés, structures de gouvernance et plateformes de réunion qui créent de la valeur composée sur des années — pas assemblés pour une seule transaction ou levée de fonds.",
+    'mp3-label': 'Relations à Long Terme',
+    'mp3-title': 'Cultiver les relations qui font circuler les capitaux',
+    'mp3-text': "Relations avec les IFD, diplomatiques et les investisseurs construites au fil d'années de présence sur trois continents — AFSIC, SuperReturn, forums family office, engagements auprès des ambassades.",
     'what-eyebrow': 'Ce Que Nous Faisons',
     'what-h2': "Une plateforme qui facilite<br>l'accès du capital à <em>l'Afrique</em>",
+    'what-p1': "La majorité du capital susceptible d'atteindre l'Afrique n'y parvient pas — non pas faute d'opportunités, mais parce que <strong>l'infrastructure institutionnelle est absente</strong>. Les cadres de gouvernance, les relations de confiance avec les régulateurs et les IFD, les plateformes de réunion où les bonnes personnes se rencontrent vraiment.",
+    'what-p2': "La Philanthropic Foundation a été conçue pour être exactement cette infrastructure. Une <strong>institution enregistrée à Maurice</strong> gérant deux programmes — un fonds d'investissement climatique réglementé et le seul circuit de conférences financières panafricain — tous deux destinés à faire circuler les capitaux plus efficacement et avec plus de confiance à travers le continent. Avec de véritables relations institutionnelles construites sur des années, pas assemblées pour un pitch deck.",
+    'what-net-label': 'Notre Réseau Institutionnel',
+    'net1-text': 'Institutions de Financement du Développement',
+    'net1-sub': 'Co-investisseurs IFD, réseaux LP & facilités de capital concessionnel',
+    'net2-text': 'Capital Privé & Co-investissement',
+    'net2-sub': 'Capital-investissement, fonds de crédit & plateformes de co-investissement en infrastructure',
+    'net3-text': 'Fonds de Fonds & Fondations',
+    'net3-sub': 'Dotations, fondations philanthropiques & allocateurs multi-gérants',
+    'net4-text': 'Investisseurs Institutionnels & Gestionnaires de Fonds',
+    'net4-sub': 'Fonds de pension, fonds souverains, gestionnaires d\'actifs & plateformes de patrimoine',
+    'net5-text': 'UHNWI & Family Offices',
+    'net5-sub': 'Principaux axés sur l\'Afrique · Actifs investissables 30M$+',
+    'net6-text': 'Missions Diplomatiques & Ambassades',
+    'net6-sub': 'Accès ministériel & réglementaire en Afrique, Europe & Asie',
+    'how-eyebrow': 'Comment Ça Fonctionne',
+    'how1-num': '01 — Gouvernance',
+    'how1-title': 'La Fondation détient la couche institutionnelle',
+    'how1-text': "Enregistrée à Maurice (Rég. N° 679) sous la Loi sur les Fondations de 2012, la Fondation fournit l'architecture de gouvernance — structure juridique, relations IFD, statut réglementaire — dans laquelle opèrent ses programmes.",
+    'how2-num': '02 — Déploiement',
+    'how2-title': 'Les programmes se déploient sur des opportunités spécifiques',
+    'how2-text': "Chaque programme a un mandat ciblé : le MCTF déploie des financements mixtes dans l'infrastructure climatique africaine. The African Circuit réunit les investisseurs, décideurs politiques et allocateurs de capital qui concrétisent les transactions.",
+    'how3-num': '03 — Capitalisation',
+    'how3-title': 'Les capitaux circulent ainsi plus efficacement',
+    'how3-text': "En combinant un véhicule d'investissement réglementé avec une plateforme de réunion à l'échelle continentale, la Fondation crée une valeur composée — les relations établies au Circuit alimentent le pipeline du Fonds, et vice versa.",
     'prog-eyebrow': 'Nos Programmes',
     'prog-h2': 'Deux programmes.<br><em>Une plateforme.</em>',
+    'prog-lead': "Chaque programme est indépendant dans son orientation, mais alimenté par la même fondation institutionnelle — le même réseau, les mêmes standards de gouvernance, la même base mauricienne.",
+    'mctf-tag': 'Finance Mixte · Créé en 2021',
+    'mctf-title': 'Mauritius Climate Transition Fund',
+    'mctf-desc': "Un régime d'investissement collectif fermé qui déploie des financements mixtes dans l'infrastructure climatique en Afrique et dans l'océan Indien. Le Fonds empile la dette concessionnelle des IFD sous les fonds propres institutionnels pour créer des structures de projet bancables accessibles aux fonds de pension européens et aux gestionnaires d'actifs — sans compromettre les standards de gouvernance. Ciblé sur les énergies renouvelables, l'eau, la résilience côtière et la logistique bas carbone.",
+    'mctf-stat1-lbl': 'Taille Cible',
+    'mctf-stat2-lbl': 'Durée du Fonds',
+    'mctf-stat3-lbl': 'Investissements',
+    'uc-text': 'Site Web en Construction',
+    'ac-tag': 'Conférences Financières · Panafricain · 2026–2028',
+    'ac-title': 'The African Circuit',
+    'ac-desc': "Sur invitation uniquement. Cinq villes. Une saison. The African Circuit est le seul circuit de conférences financières panafricain originaire d'Afrique même — réunissant des gestionnaires de fonds, des commanditaires d'IFD, des ministres gouvernementaux, des principaux UHNWI et des investisseurs institutionnels à Maurice, Nairobi, Le Cap, Casablanca et en ligne. L'accès se fait uniquement par introduction ou candidature, basé sur les réseaux IFD et diplomatiques de la Fondation développés sur trois continents en quatre ans.",
+    'ac-stat1-lbl': 'Délégués Annuels',
+    'ac-stat2-lbl': 'Villes',
+    'ac-stat3-lbl': 'AUM en Salle',
+    'ac-link': 'Demander un Accès →',
     'network-eyebrow': 'Notre Réseau',
     'network-h2': 'Les relations<br>qui <em>mobilisent le capital.</em>',
+    'network-lead': "Trois ans de construction délibérée de relations sur trois continents — AFSIC, SuperReturn, conférences de gestion de patrimoine, forums family office, événements privés LP uniquement, et engagements auprès des ambassades — avant le lancement d'un seul programme.",
+    'nc1-title': 'Institutions de Financement du Développement',
+    'nc1-text': "Les IFD sont co-investisseurs dans le MCTF et délégués à The African Circuit. Accès direct à leurs réseaux LP, facilités de cofinancement et capital concessionnel — des relations construites sur le terrain, pas par des introductions.",
+    'nc2-title': 'Investisseurs Institutionnels',
+    'nc2-text': "Fonds de pension, fonds souverains et gestionnaires d'actifs à mandat ESG cherchant une exposition gouvernée et bancable à l'infrastructure africaine et aux marchés de capitaux — avec des cadres pour satisfaire leurs comités d'investissement.",
+    'nc3-title': 'Capital Privé & Co-investissement',
+    'nc3-text': "Gestionnaires de capital-investissement, fonds de crédit et plateformes d'infrastructure à la recherche d'opportunités de co-investissement et de flux de transactions sur les marchés africains. La Fondation fournit la couche d'accès institutionnel qui rend les premières transactions possibles.",
+    'nc4-title': 'Fonds de Fonds & Fondations',
+    'nc4-text': "Gestionnaires de fonds de fonds, dotations et fondations philanthropiques cherchant une exposition diversifiée aux gestionnaires africains. La Fondation comble le fossé informationnel et de gouvernance qui empêche généralement les premières allocations.",
+    'nc5-title': 'Gouvernements & Régulateurs',
+    'nc5-text': "Les ministres, hauts responsables des banques centrales et régulateurs participent aux événements du Circuit et soutiennent le pipeline de projets du MCTF à travers le dialogue politique et les concessions. Les partenariats avec les missions diplomatiques couvrent trois continents.",
+    'nc6-title': 'Sponsors & Partenaires Stratégiques',
+    'nc6-text': "Sociétés de services financiers, cabinets d'avocats, banques et entreprises cherchant une visibilité soutenue auprès des audiences institutionnelles les plus pertinentes d'Afrique — dans cinq villes, une saison, et un réseau construit sur des années.",
+    'founder-role': 'Directeur Général',
+    'founder-quote': '&ldquo;L\'Afrique ne manque pas d\'opportunités de capital — elle manque de l\'infrastructure institutionnelle qui permet au capital mondial de les atteindre avec confiance. La Philanthropic Foundation a été construite pour être exactement cette infrastructure : gouvernée, réglementée et ancrée dans les relations qui font vraiment circuler l\'argent à travers le continent.&rdquo;',
+    'founder-title': 'Directeur Général',
     'journey-eyebrow': 'Notre Parcours',
     'journey-h2': 'Construit délibérément.<br><em>Avancer avec détermination.</em>',
+    'tl1-title': 'Fondation Créée',
+    'tl1-text': "La Philanthropic Foundation enregistrée à Maurice (Rég. N° 679) sous la Loi sur les Fondations de 2012. Secrétariat nommé — Capital Horizon. Cadre de gouvernance et charte finalisés.",
+    'tl2-title': 'Réseau International Construit sur Quatre Continents',
+    'tl2-text': "Trois ans de construction délibérée et sur le terrain de relations avant le lancement public d'un seul programme. La Fondation n'a pas diffusé — elle a convoqué, participé et engagé aux bonnes tables sur quatre continents.",
+    'tl3-title': 'Programmes Conçus',
+    'tl3-text': "Le modèle du African Circuit développé — format cinq villes, sur invitation uniquement confirmé. Mandat de financement mixte du MCTF structuré en consultation avec les partenaires IFD. Taille cible du fonds fixée à 150M USD.",
+    'tl4-title': 'Transition du Secrétariat vers DTOS Ltd',
+    'tl4-text': 'Secrétariat de la Fondation transféré à <a href="https://www.dtos-mu.com" target="_blank" rel="noopener" style="color:var(--gold);text-decoration:none;font-weight:500;">DTOS Ltd</a> — 10ème étage, Standard Chartered Tower, 19 Cybercity, Ebène. DTOS apporte une administration de fonds de qualité institutionnelle et une expertise réglementaire alignée sur la prochaine phase de la Fondation.',
+    'tl5-title': 'Année de Lancement',
+    'tl5-text': "La Saison Un du African Circuit en cours. MCTF soumis à l'examen de la FSC — en bonne voie pour l'autorisation. Premières relations avec des investisseurs institutionnels et des sponsors formalisées sur cinq marchés africains.",
+    'tl6-title': 'Développer & Approfondir',
+    'tl6-text': "Premier closing du MCTF ciblé après autorisation. Saison Deux du African Circuit. Expansion des relations de co-investissement et du réseau LP institutionnel en Europe et dans le Golfe.",
     'gov-eyebrow': 'Gouvernance',
     'gov-h2': "Structuré selon les standards<br>qu'<em>exigent les institutions.</em>",
+    'gov-hl-label': 'Charte de la Fondation',
+    'gov-hl-text': "&ldquo;La charte de la Fondation exige que les informations soient traitées comme confidentielles. Nous partageons ce qui est nécessaire, aux bonnes parties, au bon moment.&rdquo;",
+    'gov-badge1-title': 'Documentation sur Demande',
+    'gov-badge1-text': "Soumettre une demande → NDA émis sous 48 heures → Pack de documentation complet remis. Charte, documentation des programmes et pack juridique du fonds disponibles pour les contreparties institutionnelles qualifiées.",
+    'gov-badge2-title': 'Confidentialité par Conception',
+    'gov-badge2-text': "La charte de la Fondation exige que toutes les informations soient traitées comme confidentielles. Nous partageons ce qui est nécessaire, aux bonnes parties, au bon moment.",
+    'gov-badge3-title': 'Partenaires de Services de Qualité Institutionnelle',
+    'gov-badge3-text': 'Conseil juridique par <a href="https://www.eversheds-sutherland.com" target="_blank" rel="noopener">Eversheds Sutherland</a> — cabinet d\'avocats mondial top 20 avec une pratique dédiée à l\'Afrique. Banque avec <a href="https://www.afrasiabank.com" target="_blank" rel="noopener">AfrAsia Bank</a> — l\'institution de référence pour le capital privé et institutionnel dans l\'océan Indien.',
     'std-eyebrow': 'Standards Opérationnels',
     'std-h2': "Respectant les standards<br>qu'<em>exigent les institutions.</em>",
+    'std-lead': "La Fondation opère volontairement selon un ensemble de cadres qui vont au-delà de ce qu'exige la loi mauricienne. Ce ne sont pas des exercices de conformité — ce sont les standards opérationnels que nous croyons que toute plateforme institutionnelle sérieuse devrait respecter.",
+    'std1-label': 'Personnes & Éthique',
+    'std1-title': 'Esclavage Moderne & Traite des Êtres Humains',
+    'std1-text': "Politique de tolérance zéro envers l'esclavage moderne et la traite des êtres humains sous toute forme. Conforme à l'esprit et à la pratique de la UK Modern Slavery Act 2015 dans toutes les opérations et relations.",
+    'std2-label': 'Intégrité Financière',
+    'std2-title': 'LBC/FT & Anti-corruption',
+    'std2-text': "Procédures robustes de lutte contre le blanchiment d'argent et de connaissance du client appliquées à toutes les relations avec les contreparties. Plein alignement avec le UK Bribery Act 2010 et les recommandations du GAFI via Maurice.",
+    'std3-label': 'Données & Confidentialité',
+    'std3-title': 'Protection des Données & Confidentialité',
+    'std3-text': "Les données personnelles et institutionnelles sont traitées conformément aux principes du RGPD et à la Loi sur la Protection des Données de Maurice de 2017. Toutes les informations des contreparties traitées avec une stricte confidentialité selon la charte.",
+    'std4-label': "Standards d'Investissement",
+    'std4-title': 'Standards de Performance de la SFI',
+    'std4-text': "Le cadre d'investissement du MCTF est structuré en alignement avec les Standards de Performance de la SFI sur la durabilité environnementale et sociale — le référentiel appliqué par les principales IFD et LP institutionnels à l'échelle mondiale.",
+    'std5-label': 'Climat & Durabilité',
+    'std5-title': 'Taxonomie Verte UE & Finance Mixte OCDE',
+    'std5-text': "Activités d'investissement climatique alignées sur le système de classification de la Taxonomie Verte de l'UE et les Principes de Finance Mixte de l'OCDE — garantissant que les investissements respectent les standards de gouvernance requis par les investisseurs institutionnels européens.",
+    'std6-label': 'Responsabilité',
+    'std6-title': 'Griefs & Dénonciation',
+    'std6-text': "Un mécanisme formel de griefs et de dénonciation est maintenu pour toutes les contreparties, délégués et partenaires. Les préoccupations peuvent être soulevées de manière confidentielle et examinées indépendamment des opérations des programmes.",
+    'std-doc-text': 'Documentation complète des politiques disponible sur demande sous NDA',
+    'std-doc-link': 'Demander la Documentation →',
     'sdg-eyebrow': 'Cadres Internationaux',
     'sdg-h2': "Aligné sur les standards<br>que requiert le <em>capital de développement.</em>",
+    'sdg-lead': "Les programmes de la Fondation sont structurés en alignement avec les Objectifs de Développement Durable des Nations Unies et les principaux cadres internationaux de financement du développement — garantissant que notre travail répond aux exigences de sélection et de reporting des investisseurs IFD institutionnels et à mandat ESG.",
+    'sdg1-title': 'Travail Décent & Croissance Économique',
+    'sdg1-text': "Le African Circuit et le pipeline MCTF soutiennent directement la création d'emplois africains, le développement des entreprises et la croissance économique inclusive sur neuf marchés africains.",
+    'sdg2-title': 'Industrie, Innovation & Infrastructure',
+    'sdg2-text': "Le MCTF se déploie dans l'infrastructure climatique — énergies renouvelables, eau, logistique bas carbone — finançant l'infrastructure résiliente que requiert la croissance de l'Afrique.",
+    'sdg3-title': 'Action pour le Climat',
+    'sdg3-text': "Le MCTF est un véhicule d'investissement climatique dédié. Tous les investissements sont contrôlés pour l'alignement climatique et structurés conformément à la Taxonomie Verte de l'UE et aux Principes de Finance Mixte de l'OCDE.",
+    'sdg4-title': 'Partenariats pour les Objectifs',
+    'sdg4-text': "Le modèle de financement mixte de la Fondation — empilant le capital concessionnel des IFD sous les fonds propres institutionnels — opérationnalise le modèle de partenariat autour duquel les ODD ont été conçus.",
+    'sdg-also': 'Également aligné avec',
     'contact-eyebrow': 'Contact',
     'contact-h2': 'Commencer<br><em>la conversation.</em>',
+    'contact-intro': "La Fondation accepte un nombre limité d'introductions institutionnelles chaque trimestre. Si vous êtes une IFD, un investisseur institutionnel, un family office ou une contrepartie gouvernementale — nous vous invitons à entamer la conversation.",
+    'contact-accepting': 'Acceptant des introductions · T2 2026',
+    'contact-email-lbl': 'Email',
+    'contact-office-lbl': 'Siège Social',
+    'contact-reg-lbl': 'Enregistrement',
+    'contact-conf-lbl': 'Confidentialité',
+    'contact-conf-val': 'Toutes les demandes traitées comme confidentielles · NDA émis sous 48 heures sur demande',
+    'contact-resp-lbl': 'Délai de Réponse',
+    'contact-resp-val': 'Nous répondons à toutes les demandes dans les 48 heures',
+    'form-hed': 'Envoyer une Demande',
+    'form-fname': 'Prénom',
+    'form-lname': 'Nom de Famille',
+    'form-org': 'Organisation',
+    'form-email': 'Email',
+    'form-interest': "Je suis intéressé par",
+    'form-msg': 'Message',
+    'form-btn': 'Soumettre la Demande',
+    'form-err-req': 'Champ obligatoire',
+    'form-err-email': 'Veuillez saisir un email valide',
+    'form-err-msg': 'Veuillez ajouter un message',
     'nav-btn': 'Nous Contacter',
     'lang-btn': 'EN',
     'lang': 'fr'
@@ -993,34 +1699,180 @@ const translations = {
 };
 
 let currentLang = 'en';
+
+// Helper to get all elements matching a selector into an array
+function $$(sel, ctx) { return Array.from((ctx||document).querySelectorAll(sel)); }
+
 const langMap = {
   'hero-h1':       () => document.querySelector('h1'),
   'hero-sub':      () => document.querySelector('.h-sub'),
   'hero-btn1':     () => document.querySelector('.btn-primary'),
   'hero-btn2':     () => document.querySelector('.btn-secondary'),
+  'hero-stat1-lbl': () => document.querySelectorAll('.hstat-lbl')[0],
+  'hero-stat2-lbl': () => document.querySelectorAll('.hstat-lbl')[1],
+  'hero-stat3-lbl': () => document.querySelectorAll('.hstat-lbl')[2],
+  'hero-stat4-lbl': () => document.querySelectorAll('.hstat-lbl')[3],
   'mission-eyebrow': () => document.querySelector('#mission .s-eyebrow'),
   'mission-h2':    () => document.querySelector('#mission h2'),
   'mission-p1':    () => document.querySelectorAll('#mission .mission-lead')[0],
   'mission-p2':    () => document.querySelectorAll('#mission .mission-lead')[1],
+  'mp1-label':     () => document.querySelectorAll('#mission .mp-label')[0],
+  'mp1-title':     () => document.querySelectorAll('#mission .mp-title')[0],
+  'mp1-text':      () => document.querySelectorAll('#mission .mp-text')[0],
+  'mp2-label':     () => document.querySelectorAll('#mission .mp-label')[1],
+  'mp2-title':     () => document.querySelectorAll('#mission .mp-title')[1],
+  'mp2-text':      () => document.querySelectorAll('#mission .mp-text')[1],
+  'mp3-label':     () => document.querySelectorAll('#mission .mp-label')[2],
+  'mp3-title':     () => document.querySelectorAll('#mission .mp-title')[2],
+  'mp3-text':      () => document.querySelectorAll('#mission .mp-text')[2],
   'what-eyebrow':  () => document.querySelector('#what .s-eyebrow'),
   'what-h2':       () => document.querySelector('#what h2'),
+  'what-p1':       () => document.querySelectorAll('#what .what-left p')[0],
+  'what-p2':       () => document.querySelectorAll('#what .what-left p')[1],
+  'what-net-label':() => document.querySelector('#what .network-label'),
+  'net1-text':     () => document.querySelectorAll('#what .net-text')[0],
+  'net1-sub':      () => document.querySelectorAll('#what .net-sub')[0],
+  'net2-text':     () => document.querySelectorAll('#what .net-text')[1],
+  'net2-sub':      () => document.querySelectorAll('#what .net-sub')[1],
+  'net3-text':     () => document.querySelectorAll('#what .net-text')[2],
+  'net3-sub':      () => document.querySelectorAll('#what .net-sub')[2],
+  'net4-text':     () => document.querySelectorAll('#what .net-text')[3],
+  'net4-sub':      () => document.querySelectorAll('#what .net-sub')[3],
+  'net5-text':     () => document.querySelectorAll('#what .net-text')[4],
+  'net5-sub':      () => document.querySelectorAll('#what .net-sub')[4],
+  'net6-text':     () => document.querySelectorAll('#what .net-text')[5],
+  'net6-sub':      () => document.querySelectorAll('#what .net-sub')[5],
+  'how-eyebrow':   () => document.getElementById('how-eyebrow'),
+  'how1-num':      () => document.querySelectorAll('.how-num')[0],
+  'how1-title':    () => document.querySelectorAll('.how-title')[0],
+  'how1-text':     () => document.querySelectorAll('.how-text')[0],
+  'how2-num':      () => document.querySelectorAll('.how-num')[1],
+  'how2-title':    () => document.querySelectorAll('.how-title')[1],
+  'how2-text':     () => document.querySelectorAll('.how-text')[1],
+  'how3-num':      () => document.querySelectorAll('.how-num')[2],
+  'how3-title':    () => document.querySelectorAll('.how-title')[2],
+  'how3-text':     () => document.querySelectorAll('.how-text')[2],
   'prog-eyebrow':  () => document.querySelector('#programmes .s-eyebrow'),
   'prog-h2':       () => document.querySelector('#programmes h2'),
+  'prog-lead':     () => document.querySelector('#programmes .s-lead'),
+  'mctf-tag':      () => document.querySelectorAll('.prog-tag')[0],
+  'mctf-title':    () => document.querySelectorAll('.prog-title')[0],
+  'mctf-desc':     () => document.querySelectorAll('.prog-desc')[0],
+  'mctf-stat1-lbl':() => document.querySelectorAll('#programmes .pstat-lbl')[0],
+  'mctf-stat2-lbl':() => document.querySelectorAll('#programmes .pstat-lbl')[1],
+  'mctf-stat3-lbl':() => document.querySelectorAll('#programmes .pstat-lbl')[2],
+  'uc-text':       () => document.querySelector('.uc-text'),
+  'ac-tag':        () => document.querySelectorAll('.prog-tag')[1],
+  'ac-title':      () => document.querySelectorAll('.prog-title')[1],
+  'ac-desc':       () => document.querySelectorAll('.prog-desc')[1],
+  'ac-stat1-lbl':  () => document.querySelectorAll('#programmes .pstat-lbl')[3],
+  'ac-stat2-lbl':  () => document.querySelectorAll('#programmes .pstat-lbl')[4],
+  'ac-stat3-lbl':  () => document.querySelectorAll('#programmes .pstat-lbl')[5],
+  'ac-link':       () => document.querySelector('.prog-link'),
   'network-eyebrow': () => document.querySelector('#network .s-eyebrow'),
   'network-h2':    () => document.querySelector('#network h2'),
+  'network-lead':  () => document.querySelector('#network .s-lead'),
+  'nc1-title':     () => document.querySelectorAll('.nc-title')[0],
+  'nc1-text':      () => document.querySelectorAll('.nc-text')[0],
+  'nc2-title':     () => document.querySelectorAll('.nc-title')[1],
+  'nc2-text':      () => document.querySelectorAll('.nc-text')[1],
+  'nc3-title':     () => document.querySelectorAll('.nc-title')[2],
+  'nc3-text':      () => document.querySelectorAll('.nc-text')[2],
+  'nc4-title':     () => document.querySelectorAll('.nc-title')[3],
+  'nc4-text':      () => document.querySelectorAll('.nc-text')[3],
+  'nc5-title':     () => document.querySelectorAll('.nc-title')[4],
+  'nc5-text':      () => document.querySelectorAll('.nc-text')[4],
+  'nc6-title':     () => document.querySelectorAll('.nc-title')[5],
+  'nc6-text':      () => document.querySelectorAll('.nc-text')[5],
+  'founder-role':  () => document.querySelector('#founder .founder-role'),
+  'founder-quote': () => document.querySelector('#founder blockquote'),
+  'founder-title': () => document.querySelector('#founder .founder-title'),
   'journey-eyebrow': () => document.querySelector('#journey .s-eyebrow'),
   'journey-h2':    () => document.querySelector('#journey h2'),
+  'tl1-title':     () => document.querySelectorAll('.tl-title')[0],
+  'tl1-text':      () => document.querySelectorAll('.tl-item')[0].querySelector('.tl-text'),
+  'tl2-title':     () => document.querySelectorAll('.tl-title')[1],
+  'tl2-text':      () => document.querySelectorAll('.tl-item')[1].querySelector('.tl-text'),
+  'tl3-title':     () => document.querySelectorAll('.tl-title')[2],
+  'tl3-text':      () => document.querySelectorAll('.tl-item')[2].querySelector('.tl-text'),
+  'tl4-title':     () => document.querySelectorAll('.tl-title')[3],
+  'tl4-text':      () => document.querySelectorAll('.tl-item')[3].querySelector('.tl-text'),
+  'tl5-title':     () => document.querySelectorAll('.tl-title')[4],
+  'tl5-text':      () => document.querySelectorAll('.tl-item')[4].querySelector('.tl-text'),
+  'tl6-title':     () => document.querySelectorAll('.tl-title')[5],
+  'tl6-text':      () => document.querySelectorAll('.tl-item')[5].querySelector('.tl-text'),
   'gov-eyebrow':   () => document.querySelector('#governance .s-eyebrow'),
   'gov-h2':        () => document.querySelector('#governance h2'),
+  'gov-hl-label':  () => document.querySelector('.gov-hl-label'),
+  'gov-hl-text':   () => document.querySelector('.gov-hl-text'),
+  'gov-badge1-title': () => document.querySelectorAll('.gov-badge-title')[0],
+  'gov-badge1-text':  () => document.querySelectorAll('.gov-badge-text')[0],
+  'gov-badge2-title': () => document.querySelectorAll('.gov-badge-title')[1],
+  'gov-badge2-text':  () => document.querySelectorAll('.gov-badge-text')[1],
+  'gov-badge3-title': () => document.querySelectorAll('.gov-badge-title')[2],
+  'gov-badge3-text':  () => document.querySelectorAll('.gov-badge-text')[2],
   'std-eyebrow':   () => document.querySelector('#standards .s-eyebrow'),
   'std-h2':        () => document.querySelector('#standards h2'),
+  'std-lead':      () => document.querySelector('#standards .s-lead'),
+  'std1-label':    () => document.querySelectorAll('.std-label')[0],
+  'std1-title':    () => document.querySelectorAll('.std-title')[0],
+  'std1-text':     () => document.querySelectorAll('.std-text')[0],
+  'std2-label':    () => document.querySelectorAll('.std-label')[1],
+  'std2-title':    () => document.querySelectorAll('.std-title')[1],
+  'std2-text':     () => document.querySelectorAll('.std-text')[1],
+  'std3-label':    () => document.querySelectorAll('.std-label')[2],
+  'std3-title':    () => document.querySelectorAll('.std-title')[2],
+  'std3-text':     () => document.querySelectorAll('.std-text')[2],
+  'std4-label':    () => document.querySelectorAll('.std-label')[3],
+  'std4-title':    () => document.querySelectorAll('.std-title')[3],
+  'std4-text':     () => document.querySelectorAll('.std-text')[3],
+  'std5-label':    () => document.querySelectorAll('.std-label')[4],
+  'std5-title':    () => document.querySelectorAll('.std-title')[4],
+  'std5-text':     () => document.querySelectorAll('.std-text')[4],
+  'std6-label':    () => document.querySelectorAll('.std-label')[5],
+  'std6-title':    () => document.querySelectorAll('.std-title')[5],
+  'std6-text':     () => document.querySelectorAll('.std-text')[5],
+  'std-doc-text':  () => document.querySelector('#standards [style*="DM Mono"]'),
+  'std-doc-link':  () => document.querySelector('#standards a[href="#contact"]'),
   'sdg-eyebrow':   () => document.querySelector('#sdg .s-eyebrow'),
   'sdg-h2':        () => document.querySelector('#sdg h2'),
+  'sdg-lead':      () => document.querySelector('#sdg .s-lead'),
+  'sdg1-title':    () => document.querySelectorAll('.sdg-title')[0],
+  'sdg1-text':     () => document.querySelectorAll('.sdg-text')[0],
+  'sdg2-title':    () => document.querySelectorAll('.sdg-title')[1],
+  'sdg2-text':     () => document.querySelectorAll('.sdg-text')[1],
+  'sdg3-title':    () => document.querySelectorAll('.sdg-title')[2],
+  'sdg3-text':     () => document.querySelectorAll('.sdg-text')[2],
+  'sdg4-title':    () => document.querySelectorAll('.sdg-title')[3],
+  'sdg4-text':     () => document.querySelectorAll('.sdg-text')[3],
+  'sdg-also':      () => document.querySelector('#sdg [style*="DM Mono"]'),
   'contact-eyebrow': () => document.querySelector('#contact .s-eyebrow'),
   'contact-h2':    () => document.querySelector('#contact h2'),
+  'contact-intro': () => document.querySelector('#contact p[style]'),
+  'contact-accepting': () => document.querySelector('#contact .cinfo').previousElementSibling?.querySelector('[style*="DM Mono"]') || document.querySelector('#contact [style*="letter-spacing:2px"]'),
+  'contact-email-lbl':  () => document.querySelectorAll('.cinfo-label')[0],
+  'contact-office-lbl': () => document.querySelectorAll('.cinfo-label')[1],
+  'contact-reg-lbl':    () => document.querySelectorAll('.cinfo-label')[2],
+  'contact-conf-lbl':   () => document.querySelectorAll('.cinfo-label')[3],
+  'contact-conf-val':   () => document.querySelectorAll('.cinfo-val')[3],
+  'contact-resp-lbl':   () => document.querySelectorAll('.cinfo-label')[4],
+  'contact-resp-val':   () => document.querySelectorAll('.cinfo-val')[4],
+  'form-hed':      () => document.querySelector('.form-hed'),
+  'form-btn':      () => document.querySelector('.form-btn'),
   'nav-btn':       () => document.querySelector('.nav-btn'),
   'lang-btn':      () => document.getElementById('lang-toggle'),
 };
+
+// Special multi-element handlers that need innerHTML with placeholders
+function applyFormLabels(t) {
+  const labels = document.querySelectorAll('.fg label');
+  const keys = ['form-fname','form-lname','form-org','form-email','form-interest','form-msg'];
+  labels.forEach((lbl, i) => { if (t[keys[i]]) lbl.textContent = t[keys[i]]; });
+  // Error messages
+  const errs = document.querySelectorAll('.fg-error');
+  const errKeys = ['form-err-req', null, 'form-err-req', 'form-err-email', null, 'form-err-msg'];
+  errs.forEach((e, i) => { if (errKeys[i] && t[errKeys[i]]) e.textContent = t[errKeys[i]]; });
+}
 
 function toggleLang() {
   currentLang = currentLang === 'en' ? 'fr' : 'en';
@@ -1032,21 +1884,116 @@ function toggleLang() {
       el.innerHTML = t[key];
     }
   });
+  applyFormLabels(t);
+  // Update lang toggle aria-label
+  const lt = document.getElementById('lang-toggle');
+  if (lt) lt.setAttribute('aria-label', currentLang === 'fr' ? 'Passer en anglais' : 'Switch to French');
   // Update mob-cta
   const mobCta = document.querySelector('.mob-cta');
   if (mobCta) mobCta.textContent = currentLang === 'fr' ? 'Nous Contacter' : 'Get in Touch';
 }
 function submitForm(){
-  const fields = document.querySelectorAll('#contact input, #contact select, #contact textarea');
-  const first  = fields[0].value, last = fields[1].value;
-  const org    = fields[2].value;
-  const email  = document.getElementById('formEmail').value;
-  const interest = document.getElementById('formInterest').value;
-  const msg    = document.getElementById('formMsg').value;
-  if(!first || !email){ alert('Please fill in at least your name and email address.'); return; }
-  const body = 'Name: '+first+' '+last+'%0D%0AOrganisation: '+org+'%0D%0AEmail: '+email+'%0D%0AEnquiry Type: '+interest+'%0D%0A%0D%0A'+encodeURIComponent(msg);
-  window.location.href = 'mailto:admin@philanthropicfoundation.net?subject=Enquiry — '+encodeURIComponent(interest)+'&body='+body;
+  const first  = document.querySelectorAll('#contact .fg input')[0];
+  const last   = document.querySelectorAll('#contact .fg input')[1];
+  const org    = document.querySelectorAll('#contact .fg input')[2];
+  const email  = document.getElementById('formEmail');
+  const interest = document.getElementById('formInterest');
+  const msg    = document.getElementById('formMsg');
+  let valid = true;
+
+  function validate(el, condition) {
+    el.classList.remove('error','valid');
+    if (!condition) { el.classList.add('error'); valid = false; }
+    else { el.classList.add('valid'); }
+  }
+
+  validate(first, first.value.trim().length > 0);
+  validate(email, /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim()));
+  validate(org,   org.value.trim().length > 0);
+  validate(msg,   msg.value.trim().length > 0);
+
+  if (!valid) {
+    const firstErr = document.querySelector('#contact .fg input.error, #contact .fg textarea.error');
+    if (firstErr) firstErr.focus();
+    return;
+  }
+
+  const btn = document.querySelector('.form-btn');
+  btn.disabled = true;
+  btn.textContent = currentLang === 'fr' ? 'Envoi…' : 'Sending…';
+
+  const body = 'Name: '+first.value+' '+last.value+'%0D%0AOrganisation: '+org.value+'%0D%0AEmail: '+email.value+'%0D%0AEnquiry Type: '+interest.value+'%0D%0A%0D%0A'+encodeURIComponent(msg.value);
+  window.location.href = 'mailto:admin@philanthropicfoundation.net?subject=Enquiry — '+encodeURIComponent(interest.value)+'&body='+body;
+
+  setTimeout(() => { btn.disabled = false; btn.textContent = currentLang === 'fr' ? 'Soumettre la Demande' : 'Submit Enquiry'; }, 2000);
 }
+
+// Clear error state on input
+document.querySelectorAll('#contact .fg input, #contact .fg textarea').forEach(el => {
+  el.addEventListener('input', () => { el.classList.remove('error'); if(el.value.trim()) el.classList.add('valid'); });
+});
+
+// ── SCROLL PROGRESS BAR ──
+const scrollBar = document.getElementById('scroll-bar');
+function updateScrollBar() {
+  const pct = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight) * 100;
+  scrollBar.style.width = Math.min(pct, 100) + '%';
+}
+
+// ── SECTION PROGRESS NAV ──
+const progNav  = document.getElementById('prog-nav');
+const backTop  = document.getElementById('back-top');
+const pnDots   = Array.from(document.querySelectorAll('.pn-dot'));
+const sections = ['hero','mission','what','programmes','network','journey','governance','standards','sdg','contact'];
+
+function updateProgNav() {
+  const scrollY = window.scrollY;
+  const total   = document.documentElement.scrollHeight - window.innerHeight;
+
+  // Show/hide nav after 15% scroll
+  if (scrollY > window.innerHeight * 0.15) {
+    progNav.classList.add('visible');
+  } else {
+    progNav.classList.remove('visible');
+  }
+
+  // Back to top after 30%
+  if (scrollY / total > 0.3) {
+    backTop.classList.add('visible');
+  } else {
+    backTop.classList.remove('visible');
+  }
+
+  // Active dot
+  let active = 0;
+  sections.forEach((id, i) => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    if (el.getBoundingClientRect().top <= window.innerHeight * 0.5) active = i;
+  });
+  pnDots.forEach((d, i) => d.classList.toggle('active', i === active));
+
+  // Dot colour adapts to section background
+  const activeSec = document.getElementById(sections[active]);
+  const isDark = activeSec && (
+    activeSec.style.background === 'var(--ink)' ||
+    getComputedStyle(activeSec).backgroundColor === 'rgb(8, 19, 28)' ||
+    activeSec.id === 'mission' || activeSec.id === 'network' ||
+    activeSec.id === 'journey' || activeSec.id === 'founder' ||
+    activeSec.id === 'sdg'
+  );
+  pnDots.forEach(d => {
+    d.style.background   = d.classList.contains('active') ? 'var(--gold)' : (isDark ? 'rgba(255,255,255,.25)' : 'rgba(8,19,28,.18)');
+    d.style.borderColor  = d.classList.contains('active') ? 'var(--gold)' : (isDark ? 'rgba(255,255,255,.3)'  : 'rgba(8,19,28,.22)');
+  });
+}
+
+window.addEventListener('scroll', () => {
+  updateScrollBar();
+  updateProgNav();
+}, { passive: true });
+
+updateProgNav();
 </script>
 </body>
 </html>
