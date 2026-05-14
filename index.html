@@ -151,10 +151,12 @@ h2.inv em{color:rgba(255,255,255,.5);}
 
 /* ── PROGRAMMES — KEY CHANGE: 3 columns ── */
 #programmes{background:var(--cream);}
-.prog-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:2px;margin-top:52px;}
-.prog-card{background:var(--white);overflow:hidden;transition:transform .3s,box-shadow .3s;display:flex;flex-direction:column;}
+.prog-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:2px;margin-top:52px;align-items:start;}
+/* Equalise card heights across the row — prog-bottom always at same vertical level */
+.prog-grid .prog-card{height:100%;}
+.prog-card{background:var(--white);overflow:hidden;transition:transform .3s,box-shadow .3s;display:grid;grid-template-rows:1fr auto;}
 .prog-card:hover{transform:translateY(-6px);box-shadow:0 32px 80px rgba(8,19,28,.12);}
-.prog-top{padding:44px 44px 32px;flex:1;}
+.prog-top{padding:44px 44px 32px;}
 .prog-stripe{height:3px;background:var(--teal);margin-bottom:28px;}
 .prog-stripe.gold{background:var(--gold);}
 .prog-tag{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2.5px;color:var(--teal);text-transform:uppercase;margin-bottom:14px;}
