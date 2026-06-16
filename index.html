@@ -564,145 +564,814 @@ footer{background:var(--ink2);padding:52px 0;border-top:1px solid rgba(255,255,2
   </div>
 </section>
 
-<!-- PROGRAMMES — FOUR CARDS -->
-<section id="programmes">
+<!-- ── PROGRAMMES — CINEMATIC SWITCHER ── -->
+<section id="programmes" style="background:var(--cream);padding:100px 0 0;">
   <div class="wrap">
     <div class="s-eyebrow rv">Our Programmes</div>
     <h2 class="rv d1">Four programmes.<br><em>One platform.</em></h2>
-    <p class="s-lead rv d2">Each programme is independent in focus but powered by the same institutional foundation — the same network, the same governance standards, the same Mauritius base. Together they form a closed loop: the Fund finances, the Circuit convenes, River Hub trains, and NatureShield measures the ESG performance that connects it all.</p>
-    <div class="prog-grid rv d2">
+    <p class="s-lead rv d2">Each programme is independent in focus but powered by the same institutional foundation — the same network, the same governance standards, the same Mauritius base.</p>
+  </div>
+
+  <!-- SWITCHER -->
+  <div class="ps-shell rv d3">
+
+    <!-- LEFT RAIL -->
+    <nav class="ps-rail" aria-label="Programme navigation">
+      <button class="ps-tab active" data-prog="tap" aria-selected="true">
+        <span class="ps-tab-num">01</span>
+        <span class="ps-tab-inner">
+          <span class="ps-tab-label">TAP Fund 1</span>
+          <span class="ps-tab-sub">Blended Finance · $150M</span>
+        </span>
+        <span class="ps-tab-arrow">→</span>
+      </button>
+      <button class="ps-tab" data-prog="circuit" aria-selected="false">
+        <span class="ps-tab-num">02</span>
+        <span class="ps-tab-inner">
+          <span class="ps-tab-label">The African Circuit</span>
+          <span class="ps-tab-sub">Conferences · 5 Cities</span>
+        </span>
+        <span class="ps-tab-arrow">→</span>
+      </button>
+      <button class="ps-tab" data-prog="river" aria-selected="false">
+        <span class="ps-tab-num">03</span>
+        <span class="ps-tab-inner">
+          <span class="ps-tab-label">River Hub</span>
+          <span class="ps-tab-sub">Capacity Building · TAF</span>
+        </span>
+        <span class="ps-tab-arrow">→</span>
+      </button>
+      <button class="ps-tab" data-prog="nature" aria-selected="false">
+        <span class="ps-tab-num">04</span>
+        <span class="ps-tab-inner">
+          <span class="ps-tab-label">NatureShield</span>
+          <span class="ps-tab-sub">ESG Bureau · ISSB</span>
+        </span>
+        <span class="ps-tab-arrow">→</span>
+      </button>
+      <!-- flywheel note -->
+      <div class="ps-flywheel">
+        <svg viewBox="0 0 80 80" width="80" height="80" aria-hidden="true">
+          <circle cx="40" cy="40" r="30" fill="none" stroke="rgba(192,154,60,.12)" stroke-width="1"/>
+          <circle cx="40" cy="40" r="30" fill="none" stroke="rgba(192,154,60,.35)" stroke-width="1"
+            stroke-dasharray="188" stroke-dashoffset="188"
+            class="ps-fly-ring" stroke-linecap="round"/>
+          <text x="40" y="36" text-anchor="middle" font-family="'DM Mono',monospace" font-size="7" fill="rgba(255,255,255,.3)" letter-spacing="1">ONE</text>
+          <text x="40" y="48" text-anchor="middle" font-family="'DM Mono',monospace" font-size="7" fill="rgba(255,255,255,.3)" letter-spacing="1">FLYWHEEL</text>
+        </svg>
+        <span>Four programmes.<br>One compounding loop.</span>
+      </div>
+    </nav>
+
+    <!-- PANELS -->
+    <div class="ps-stage" role="tabpanel">
 
       <!-- TAP FUND 1 -->
-      <div class="prog-card">
-        <div class="prog-top">
-          <div class="prog-stripe gold"></div>
-          <div class="prog-tag gold">Blended Finance Co-Investment · Est. 2021</div>
-          <div class="prog-title">Transition Africa Partners Fund 1</div>
-          <div class="prog-desc">A closed-end collective investment scheme that deploys blended finance into climate infrastructure across Africa and the Indian Ocean. The Fund stacks DFI concessional debt beneath institutional equity to create bankable project structures that European pension funds and asset managers can access — without compromising on governance standards. Targeted at renewable energy, water, coastal resilience, and low-carbon logistics.</div>
+      <div class="ps-panel active" id="panel-tap">
+        <div class="ps-bg ps-bg-tap" aria-hidden="true">
+          <div class="ps-bg-grid"></div>
+          <div class="ps-bg-glow ps-glow-gold"></div>
+          <svg class="ps-bg-svg" viewBox="-60 0 600 600" preserveAspectRatio="xMaxYMid meet" aria-hidden="true">
+            <!-- Capital stack waterfall bands -->
+            <!-- Concessional / DFI layer -->
+            <rect x="260" y="80" width="280" height="110" fill="rgba(192,154,60,.06)" stroke="rgba(192,154,60,.18)" stroke-width="1"/>
+            <text x="278" y="107" font-family="'DM Mono',monospace" font-size="8" fill="rgba(192,154,60,.45)" letter-spacing="2" text-transform="uppercase">CONCESSIONAL DEBT</text>
+            <text x="278" y="122" font-family="'DM Mono',monospace" font-size="7" fill="rgba(192,154,60,.25)" letter-spacing="1">DFI · AFD · IFC · BII</text>
+            <text x="278" y="138" font-family="'EB Garamond',serif" font-size="13" fill="rgba(192,154,60,.35)" letter-spacing="0">First-loss protection</text>
+            <line x1="260" y1="190" x2="540" y2="190" stroke="rgba(192,154,60,.08)" stroke-width="1"/>
+            <!-- Senior debt layer -->
+            <rect x="285" y="210" width="230" height="105" fill="rgba(10,112,112,.06)" stroke="rgba(10,112,112,.2)" stroke-width="1"/>
+            <text x="303" y="236" font-family="'DM Mono',monospace" font-size="8" fill="rgba(13,144,144,.5)" letter-spacing="2">SENIOR DEBT</text>
+            <text x="303" y="251" font-family="'DM Mono',monospace" font-size="7" fill="rgba(13,144,144,.25)" letter-spacing="1">Pension Funds · Insurers</text>
+            <text x="303" y="267" font-family="'EB Garamond',serif" font-size="13" fill="rgba(13,144,144,.3)">Risk-adjusted returns</text>
+            <line x1="285" y1="315" x2="515" y2="315" stroke="rgba(10,112,112,.08)" stroke-width="1"/>
+            <!-- Equity layer -->
+            <rect x="310" y="335" width="180" height="100" fill="rgba(255,255,255,.03)" stroke="rgba(255,255,255,.1)" stroke-width="1"/>
+            <text x="328" y="361" font-family="'DM Mono',monospace" font-size="8" fill="rgba(255,255,255,.3)" letter-spacing="2">EQUITY</text>
+            <text x="328" y="376" font-family="'DM Mono',monospace" font-size="7" fill="rgba(255,255,255,.15)" letter-spacing="1">Family Offices · DFIs</text>
+            <text x="328" y="392" font-family="'EB Garamond',serif" font-size="13" fill="rgba(255,255,255,.2)">Highest risk / return</text>
+            <!-- Project at bottom -->
+            <rect x="335" y="460" width="130" height="50" fill="rgba(192,154,60,.04)" stroke="rgba(192,154,60,.12)" stroke-width="1" stroke-dasharray="4 3"/>
+            <text x="400" y="481" font-family="'DM Mono',monospace" font-size="8" fill="rgba(192,154,60,.3)" letter-spacing="1" text-anchor="middle">AFRICAN</text>
+            <text x="400" y="496" font-family="'DM Mono',monospace" font-size="8" fill="rgba(192,154,60,.3)" letter-spacing="1" text-anchor="middle">INFRASTRUCTURE</text>
+            <!-- Flow arrows -->
+            <path d="M400,435 L400,460" stroke="rgba(192,154,60,.15)" stroke-width="1" marker-end="url(#arr)"/>
+            <path d="M400,315 L400,335" stroke="rgba(10,112,112,.12)" stroke-width="1"/>
+            <path d="M400,190 L400,210" stroke="rgba(192,154,60,.12)" stroke-width="1"/>
+            <!-- USD 150M label -->
+            <text x="555" y="130" font-family="'EB Garamond',serif" font-size="11" fill="rgba(192,154,60,.2)" text-anchor="middle" transform="rotate(-90,555,130)">USD 150M TARGET</text>
+            <line x1="548" y1="80" x2="548" y2="435" stroke="rgba(192,154,60,.08)" stroke-width="1"/>
+            <line x1="545" y1="80" x2="551" y2="80" stroke="rgba(192,154,60,.12)" stroke-width="1"/>
+            <line x1="545" y1="435" x2="551" y2="435" stroke="rgba(192,154,60,.12)" stroke-width="1"/>
+          </svg>
         </div>
-        <div class="prog-bottom">
-          <div class="prog-stats">
-            <div><div class="pstat-val">$150M</div><div class="pstat-lbl">Target Size</div></div>
-            <div><div class="pstat-val">10yr</div><div class="pstat-lbl">Fund Term</div></div>
-            <div><div class="pstat-val">8–12</div><div class="pstat-lbl">Investments</div></div>
-          </div>
-          <div class="prog-providers">
-            <span class="prog-provider">IFC Standards</span>
-            <span class="prog-provider">EU Green Taxonomy</span>
-            <span class="prog-provider">DFI Co-Investment</span>
-          </div>
-          <div style="display:flex;flex-direction:column;gap:10px;margin-top:4px;">
-            <a href="https://transitionpartners.africa/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:10px;padding:11px 18px;border:1px solid rgba(192,154,60,.35);color:var(--gold);text-decoration:none;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;transition:all .2s;" onmouseover="this.style.background='rgba(192,154,60,.07)'" onmouseout="this.style.background='transparent'">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 4 10 15 15 0 0 1-4 10 15 15 0 0 1-4-10 15 15 0 0 1 4-10z"/></svg>
-              Visit Fund Site →
-            </a>
-            <div style="display:inline-flex;align-items:center;gap:8px;padding:7px 12px;border:1px solid rgba(192,154,60,.12);background:var(--cream);">
-              <div style="width:6px;height:6px;border-radius:50%;background:var(--gold);flex-shrink:0;"></div>
-              <span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;color:#8A9BA8;text-transform:uppercase;">transitionpartners.africa</span>
+        <div class="ps-content">
+          <div class="ps-eyebrow"><span class="ps-dot ps-dot-gold"></span>Blended Finance Co-Investment · Est. 2021</div>
+          <h3 class="ps-title">Transition Africa<br>Partners Fund 1</h3>
+          <p class="ps-desc">A closed-end collective investment scheme that deploys blended finance into climate infrastructure across Africa and the Indian Ocean. The Fund stacks DFI concessional debt beneath institutional equity to create bankable project structures that European pension funds and asset managers can access — without compromising on governance standards.</p>
+          <div class="ps-stats">
+            <div class="ps-stat">
+              <div class="ps-stat-val" style="color:var(--gold);">$150M</div>
+              <div class="ps-stat-lbl">Target Size</div>
+            </div>
+            <div class="ps-stat-div"></div>
+            <div class="ps-stat">
+              <div class="ps-stat-val">10 yr</div>
+              <div class="ps-stat-lbl">Fund Term</div>
+            </div>
+            <div class="ps-stat-div"></div>
+            <div class="ps-stat">
+              <div class="ps-stat-val">8–12</div>
+              <div class="ps-stat-lbl">Investments</div>
             </div>
           </div>
+          <div class="ps-tags">
+            <span class="ps-tag">IFC Standards</span>
+            <span class="ps-tag">EU Green Taxonomy</span>
+            <span class="ps-tag">DFI Co-Investment</span>
+            <span class="ps-tag">Renewable Energy</span>
+            <span class="ps-tag">Water &amp; Coastal</span>
+          </div>
+          <div class="ps-actions">
+            <a href="https://transitionpartners.africa/" target="_blank" rel="noopener" class="ps-cta ps-cta-gold">
+              Visit Fund Site
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+            <a href="#contact" class="ps-cta-ghost">Investor Enquiry →</a>
+          </div>
         </div>
+        <div class="ps-panel-num" aria-hidden="true">01</div>
       </div>
 
-      <!-- THE AFRICAN CIRCUIT -->
-      <div class="prog-card">
-        <div class="prog-top">
-          <div class="prog-stripe"></div>
-          <div class="prog-tag">Financial Conferences · Pan-African · 2026–2028</div>
-          <div class="prog-title">The African Circuit</div>
-          <div class="prog-desc">Invitation-only. Five cities. One season. The African Circuit is the only pan-African financial conference circuit originating from Africa itself — bringing together fund managers, DFI limited partners, government ministers, UHNWI principals, and institutional investors across Mauritius, Nairobi, Cape Town, Casablanca, and online. Access is by introduction or application only, built on the Foundation's DFI and diplomatic networks developed across four continents over five years.</div>
+      <!-- AFRICAN CIRCUIT -->
+      <div class="ps-panel" id="panel-circuit">
+        <div class="ps-bg ps-bg-circuit" aria-hidden="true">
+          <div class="ps-bg-grid"></div>
+          <div class="ps-bg-glow ps-glow-teal"></div>
+          <svg class="ps-bg-svg" viewBox="-60 0 600 600" preserveAspectRatio="xMaxYMid meet" aria-hidden="true">
+            <!-- Simplified Africa coastline silhouette (path approximation) -->
+            <path d="M340,60 L390,58 L430,70 L460,90 L475,115 L480,145 L478,175
+                     L482,200 L488,225 L490,255 L488,285 L480,310 L468,335
+                     L452,358 L432,378 L410,395 L390,408 L372,418 L355,425
+                     L340,430 L325,432 L310,428 L295,418 L278,405 L262,388
+                     L248,368 L238,345 L232,320 L230,295 L232,270 L238,248
+                     L242,225 L240,200 L235,175 L228,150 L225,125 L230,100
+                     L242,80 L262,66 L300,60 Z"
+              fill="rgba(10,112,112,.06)" stroke="rgba(10,112,112,.2)" stroke-width="1"/>
+            <!-- Horn of Africa -->
+            <path d="M480,175 L500,168 L518,180 L510,200 L488,200 Z"
+              fill="rgba(10,112,112,.05)" stroke="rgba(10,112,112,.15)" stroke-width="1"/>
+            <!-- Circuit cities — approximate lat/long positions on this silhouette -->
+            <!-- Mauritius (east, off map — indicated by dashed line) -->
+            <circle cx="535" cy="355" r="5" fill="var(--gold)" opacity=".9"/>
+            <circle cx="535" cy="355" r="12" fill="none" stroke="rgba(192,154,60,.4)" stroke-width="1"/>
+            <text x="535" y="342" font-family="'DM Mono',monospace" font-size="7.5" fill="rgba(192,154,60,.75)" letter-spacing="1" text-anchor="middle">MAURITIUS</text>
+            <line x1="490" y1="355" x2="523" y2="355" stroke="rgba(192,154,60,.2)" stroke-width="1" stroke-dasharray="3 3"/>
+            <!-- Nairobi -->
+            <circle cx="462" cy="298" r="4" fill="rgba(13,144,144,.8)"/>
+            <circle cx="462" cy="298" r="10" fill="none" stroke="rgba(13,144,144,.3)" stroke-width="1"/>
+            <text x="475" y="296" font-family="'DM Mono',monospace" font-size="7" fill="rgba(255,255,255,.35)" letter-spacing="1">NAIROBI</text>
+            <!-- Lagos -->
+            <circle cx="283" cy="270" r="4" fill="rgba(13,144,144,.7)"/>
+            <circle cx="283" cy="270" r="10" fill="none" stroke="rgba(13,144,144,.25)" stroke-width="1"/>
+            <text x="252" y="268" font-family="'DM Mono',monospace" font-size="7" fill="rgba(255,255,255,.35)" letter-spacing="1" text-anchor="end">LAGOS</text>
+            <!-- Accra -->
+            <circle cx="265" cy="292" r="4" fill="rgba(13,144,144,.7)"/>
+            <circle cx="265" cy="292" r="10" fill="none" stroke="rgba(13,144,144,.2)" stroke-width="1"/>
+            <text x="234" y="305" font-family="'DM Mono',monospace" font-size="7" fill="rgba(255,255,255,.3)" letter-spacing="1" text-anchor="end">ACCRA</text>
+            <!-- Johannesburg -->
+            <circle cx="388" cy="400" r="4" fill="rgba(13,144,144,.7)"/>
+            <circle cx="388" cy="400" r="10" fill="none" stroke="rgba(13,144,144,.2)" stroke-width="1"/>
+            <text x="388" y="422" font-family="'DM Mono',monospace" font-size="7" fill="rgba(255,255,255,.3)" letter-spacing="1" text-anchor="middle">JOHANNESBURG</text>
+            <!-- Arcs connecting cities -->
+            <path d="M283,270 Q360,220 462,298" fill="none" stroke="rgba(10,112,112,.2)" stroke-width="1" stroke-dasharray="5 4"/>
+            <path d="M265,292 Q330,250 462,298" fill="none" stroke="rgba(10,112,112,.15)" stroke-width="1" stroke-dasharray="5 4"/>
+            <path d="M462,298 Q480,345 535,355" fill="none" stroke="rgba(192,154,60,.25)" stroke-width="1" stroke-dasharray="5 4"/>
+            <path d="M388,400 Q460,390 535,355" fill="none" stroke="rgba(192,154,60,.2)" stroke-width="1" stroke-dasharray="5 4"/>
+            <path d="M283,270 Q310,340 388,400" fill="none" stroke="rgba(10,112,112,.12)" stroke-width="1" stroke-dasharray="5 4"/>
+            <path d="M462,298 Q440,350 388,400" fill="none" stroke="rgba(10,112,112,.12)" stroke-width="1" stroke-dasharray="5 4"/>
+            <!-- Season label -->
+            <text x="240" y="460" font-family="'DM Mono',monospace" font-size="8" fill="rgba(255,255,255,.1)" letter-spacing="2">SEASON ONE · SEP 2026 – APR 2027</text>
+          </svg>
         </div>
-        <div class="prog-bottom">
-          <div class="prog-stats">
-            <div><div class="pstat-val">1,100<sup style="font-size:14px;color:var(--teal);">+</sup></div><div class="pstat-lbl">Annual Delegates</div></div>
-            <div><div class="pstat-val">5</div><div class="pstat-lbl">Cities</div></div>
-            <div><div class="pstat-val">$2T<sup style="font-size:14px;color:var(--teal);">+</sup></div><div class="pstat-lbl">AUM in Room</div></div>
-          </div>
-          <div class="prog-providers">
-            <span class="prog-provider">Invitation Only</span>
-            <span class="prog-provider">Sep – Apr</span>
-            <span class="prog-provider">Ministerial Speakers</span>
-          </div>
-          <div style="display:flex;flex-direction:column;gap:10px;margin-top:4px;">
-            <a href="mailto:admin@philanthropicfoundation.net?subject=African Circuit Enquiry" style="display:inline-flex;align-items:center;gap:10px;padding:11px 18px;border:1px solid rgba(10,112,112,.35);color:var(--teal);text-decoration:none;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;transition:all .2s;" onmouseover="this.style.background='rgba(10,112,112,.07)'" onmouseout="this.style.background='transparent'">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-              Enquire About Access →
-            </a>
-            <div style="display:inline-flex;align-items:center;gap:8px;padding:7px 12px;border:1px solid rgba(10,112,112,.15);background:var(--cream);">
-              <div style="width:6px;height:6px;border-radius:50%;background:var(--teal);flex-shrink:0;"></div>
-              <span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;color:#8A9BA8;text-transform:uppercase;">By introduction or application only</span>
+        <div class="ps-content">
+          <div class="ps-eyebrow"><span class="ps-dot ps-dot-teal"></span>Financial Conferences · Pan-African · 2026–2028</div>
+          <h3 class="ps-title">The African<br>Circuit</h3>
+          <p class="ps-desc">Invitation-only. Five cities. One season. The only pan-African financial conference circuit originating from Africa itself — bringing together fund managers, DFI limited partners, government ministers, UHNWI principals, and institutional investors across Mauritius, Nairobi, Lagos, Accra, and Johannesburg. Access is by introduction or application only.</p>
+          <div class="ps-stats">
+            <div class="ps-stat">
+              <div class="ps-stat-val" style="color:var(--teal2);">1,100+</div>
+              <div class="ps-stat-lbl">Annual Delegates</div>
+            </div>
+            <div class="ps-stat-div"></div>
+            <div class="ps-stat">
+              <div class="ps-stat-val">5</div>
+              <div class="ps-stat-lbl">Cities</div>
+            </div>
+            <div class="ps-stat-div"></div>
+            <div class="ps-stat">
+              <div class="ps-stat-val">$2T+</div>
+              <div class="ps-stat-lbl">AUM in Room</div>
             </div>
           </div>
+          <div class="ps-tags">
+            <span class="ps-tag">Invitation Only</span>
+            <span class="ps-tag">Sep – Apr</span>
+            <span class="ps-tag">Ministerial Speakers</span>
+            <span class="ps-tag">DFI Limited Partners</span>
+            <span class="ps-tag">Deal Rooms</span>
+          </div>
+          <div class="ps-cities">
+            <span class="ps-city">Mauritius</span>
+            <span class="ps-city-sep">·</span>
+            <span class="ps-city">Nairobi</span>
+            <span class="ps-city-sep">·</span>
+            <span class="ps-city">Lagos</span>
+            <span class="ps-city-sep">·</span>
+            <span class="ps-city">Accra</span>
+            <span class="ps-city-sep">·</span>
+            <span class="ps-city">Johannesburg</span>
+          </div>
+          <div class="ps-actions">
+            <a href="https://theafricancircuit.com/" target="_blank" rel="noopener" class="ps-cta ps-cta-teal">
+              Visit Circuit Site
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+            <a href="#contact" class="ps-cta-ghost">Enquire About Access →</a>
+          </div>
         </div>
+        <div class="ps-panel-num" aria-hidden="true">02</div>
       </div>
 
       <!-- RIVER HUB -->
-      <div class="prog-card">
-        <div class="prog-top">
-          <div class="prog-stripe" style="background:linear-gradient(90deg,var(--teal),var(--gold));"></div>
-          <div class="prog-tag" style="color:var(--teal);">Technical Assistance Facility · Capacity Building · Est. 2026</div>
-          <div class="prog-title">River Hub</div>
-          <div class="prog-desc">The Philanthropic Foundation's permanent Capacity Building Centre at River House, Tamarin, Mauritius — operating as the TAF Operating Entity for TAP Fund 1 under the TAF Operating Agreement. River Hub delivers practitioner-grade training in blended finance, ESG, and African capital markets to finance professionals across Africa and the Indian Ocean, while serving as the primary venue for TAF workshops, project preparation, and stakeholder convenings across the Fund's investment universe. Open to professionals worldwide across 50 sessions each season.</div>
+      <div class="ps-panel" id="panel-river">
+        <div class="ps-bg ps-bg-river" aria-hidden="true">
+          <div class="ps-bg-grid"></div>
+          <div class="ps-bg-glow ps-glow-river"></div>
+          <svg class="ps-bg-svg" viewBox="-60 0 600 600" preserveAspectRatio="xMaxYMid meet" aria-hidden="true">
+            <!-- Session timetable grid -->
+            <!-- Track labels (columns) -->
+            <text x="290" y="72" font-family="'DM Mono',monospace" font-size="7.5" fill="rgba(13,144,144,.5)" letter-spacing="1.5" text-anchor="middle">BLENDED FIN.</text>
+            <text x="370" y="72" font-family="'DM Mono',monospace" font-size="7.5" fill="rgba(192,154,60,.4)" letter-spacing="1.5" text-anchor="middle">ESG</text>
+            <text x="450" y="72" font-family="'DM Mono',monospace" font-size="7.5" fill="rgba(13,144,144,.4)" letter-spacing="1.5" text-anchor="middle">CAPITAL MKT</text>
+            <text x="530" y="72" font-family="'DM Mono',monospace" font-size="7.5" fill="rgba(255,255,255,.2)" letter-spacing="1.5" text-anchor="middle">LEADERSHIP</text>
+            <!-- Row labels (months) -->
+            <text x="248" y="108" font-family="'DM Mono',monospace" font-size="7" fill="rgba(255,255,255,.2)" letter-spacing="1" text-anchor="end">MAY 26</text>
+            <text x="248" y="168" font-family="'DM Mono',monospace" font-size="7" fill="rgba(255,255,255,.2)" letter-spacing="1" text-anchor="end">JUL 26</text>
+            <text x="248" y="228" font-family="'DM Mono',monospace" font-size="7" fill="rgba(255,255,255,.2)" letter-spacing="1" text-anchor="end">SEP 26</text>
+            <text x="248" y="288" font-family="'DM Mono',monospace" font-size="7" fill="rgba(255,255,255,.2)" letter-spacing="1" text-anchor="end">NOV 26</text>
+            <text x="248" y="348" font-family="'DM Mono',monospace" font-size="7" fill="rgba(255,255,255,.2)" letter-spacing="1" text-anchor="end">JAN 27</text>
+            <text x="248" y="408" font-family="'DM Mono',monospace" font-size="7" fill="rgba(255,255,255,.2)" letter-spacing="1" text-anchor="end">MAR 27</text>
+            <text x="248" y="468" font-family="'DM Mono',monospace" font-size="7" fill="rgba(255,255,255,.2)" letter-spacing="1" text-anchor="end">MAY 27</text>
+            <!-- Grid lines -->
+            <line x1="255" y1="80" x2="255" y2="490" stroke="rgba(255,255,255,.05)" stroke-width="1"/>
+            <line x1="255" y1="80" x2="560" y2="80" stroke="rgba(255,255,255,.05)" stroke-width="1"/>
+            <!-- Session blocks — scattered fills to suggest a populated timetable -->
+            <!-- Col 1: Blended Finance (teal) -->
+            <rect x="258" y="84"  width="62" height="48" fill="rgba(10,112,112,.18)" stroke="rgba(10,112,112,.3)" stroke-width=".5"/>
+            <rect x="258" y="144" width="62" height="48" fill="rgba(10,112,112,.12)" stroke="rgba(10,112,112,.2)" stroke-width=".5"/>
+            <rect x="258" y="264" width="62" height="48" fill="rgba(10,112,112,.18)" stroke="rgba(10,112,112,.3)" stroke-width=".5"/>
+            <rect x="258" y="384" width="62" height="48" fill="rgba(10,112,112,.14)" stroke="rgba(10,112,112,.25)" stroke-width=".5"/>
+            <rect x="258" y="444" width="62" height="48" fill="rgba(10,112,112,.18)" stroke="rgba(10,112,112,.3)" stroke-width=".5"/>
+            <!-- Col 2: ESG (gold) -->
+            <rect x="338" y="84"  width="62" height="48" fill="rgba(192,154,60,.12)" stroke="rgba(192,154,60,.25)" stroke-width=".5"/>
+            <rect x="338" y="204" width="62" height="48" fill="rgba(192,154,60,.16)" stroke="rgba(192,154,60,.3)" stroke-width=".5"/>
+            <rect x="338" y="324" width="62" height="48" fill="rgba(192,154,60,.12)" stroke="rgba(192,154,60,.2)" stroke-width=".5"/>
+            <rect x="338" y="444" width="62" height="48" fill="rgba(192,154,60,.15)" stroke="rgba(192,154,60,.25)" stroke-width=".5"/>
+            <!-- Col 3: Capital Markets (teal lighter) -->
+            <rect x="418" y="144" width="62" height="48" fill="rgba(10,112,112,.1)"  stroke="rgba(10,112,112,.2)" stroke-width=".5"/>
+            <rect x="418" y="264" width="62" height="48" fill="rgba(10,112,112,.14)" stroke="rgba(10,112,112,.25)" stroke-width=".5"/>
+            <rect x="418" y="384" width="62" height="48" fill="rgba(10,112,112,.1)"  stroke="rgba(10,112,112,.2)" stroke-width=".5"/>
+            <!-- Col 4: Leadership (white ghost) -->
+            <rect x="498" y="84"  width="62" height="48" fill="rgba(255,255,255,.04)" stroke="rgba(255,255,255,.1)" stroke-width=".5"/>
+            <rect x="498" y="324" width="62" height="48" fill="rgba(255,255,255,.04)" stroke="rgba(255,255,255,.08)" stroke-width=".5"/>
+            <rect x="498" y="444" width="62" height="48" fill="rgba(255,255,255,.03)" stroke="rgba(255,255,255,.07)" stroke-width=".5"/>
+            <!-- HRDC badge bottom -->
+            <rect x="258" y="510" width="170" height="22" fill="rgba(192,154,60,.06)" stroke="rgba(192,154,60,.15)" stroke-width=".5"/>
+            <text x="343" y="525" font-family="'DM Mono',monospace" font-size="7.5" fill="rgba(192,154,60,.4)" letter-spacing="2" text-anchor="middle">75% HRDC REFUND ELIGIBLE</text>
+            <!-- 50 sessions label -->
+            <text x="560" y="300" font-family="'EB Garamond',serif" font-size="10" fill="rgba(255,255,255,.1)" text-anchor="middle" transform="rotate(-90,560,300)">50 SESSIONS · SEASON ONE</text>
+          </svg>
         </div>
-        <div class="prog-bottom">
-          <div class="prog-stats">
-            <div><div class="pstat-val">50</div><div class="pstat-lbl">Sessions / Season</div></div>
-            <div><div class="pstat-val">4</div><div class="pstat-lbl">Curriculum Tracks</div></div>
-            <div><div class="pstat-val">30</div><div class="pstat-lbl">Per Session</div></div>
-          </div>
-          <div class="prog-providers">
-            <span class="prog-provider">TAF Operating Entity</span>
-            <span class="prog-provider">HRDC Eligible</span>
-            <span class="prog-provider">Hybrid Delivery</span>
-          </div>
-          <div style="display:flex;flex-direction:column;gap:10px;margin-top:4px;">
-            <a href="https://riverhub.africa/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:10px;padding:11px 18px;border:1px solid rgba(10,112,112,.35);color:var(--teal);text-decoration:none;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;transition:all .2s;" onmouseover="this.style.background='rgba(10,112,112,.07)'" onmouseout="this.style.background='transparent'">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 4 10 15 15 0 0 1-4 10 15 15 0 0 1-4-10 15 15 0 0 1 4-10z"/></svg>
-              Visit River Hub →
-            </a>
-            <div style="display:inline-flex;align-items:center;gap:8px;padding:7px 12px;border:1px solid rgba(10,112,112,.15);background:var(--cream);">
-              <div style="width:6px;height:6px;border-radius:50%;background:var(--teal);flex-shrink:0;"></div>
-              <span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;color:#8A9BA8;text-transform:uppercase;">riverhub.africa</span>
+        <div class="ps-content">
+          <div class="ps-eyebrow"><span class="ps-dot ps-dot-river"></span>Technical Assistance Facility · Capacity Building · Est. 2026</div>
+          <h3 class="ps-title">River Hub</h3>
+          <p class="ps-desc">The Foundation's permanent Capacity Building Centre at River House, Tamarin, Mauritius — operating as the TAF Operating Entity for TAP Fund 1. River Hub delivers practitioner-grade training in blended finance, ESG, and African capital markets to finance professionals across Africa and the Indian Ocean across 50 sessions each season.</p>
+          <div class="ps-stats">
+            <div class="ps-stat">
+              <div class="ps-stat-val" style="color:var(--teal2);">50</div>
+              <div class="ps-stat-lbl">Sessions / Season</div>
+            </div>
+            <div class="ps-stat-div"></div>
+            <div class="ps-stat">
+              <div class="ps-stat-val">4</div>
+              <div class="ps-stat-lbl">Curriculum Tracks</div>
+            </div>
+            <div class="ps-stat-div"></div>
+            <div class="ps-stat">
+              <div class="ps-stat-val">Rs 5K</div>
+              <div class="ps-stat-lbl">Net After HRDC</div>
             </div>
           </div>
+          <div class="ps-tags">
+            <span class="ps-tag">TAF Operating Entity</span>
+            <span class="ps-tag">HRDC Eligible</span>
+            <span class="ps-tag">Hybrid Delivery</span>
+            <span class="ps-tag">Tamarin · Mauritius</span>
+          </div>
+          <div class="ps-actions">
+            <a href="https://riverhub.africa/" target="_blank" rel="noopener" class="ps-cta ps-cta-teal">
+              Visit River Hub
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+            <a href="#contact" class="ps-cta-ghost">Enquire →</a>
+          </div>
         </div>
+        <div class="ps-panel-num" aria-hidden="true">03</div>
       </div>
 
       <!-- NATURESHIELD -->
-      <div class="prog-card">
-        <div class="prog-top">
-          <div class="prog-stripe" style="background:linear-gradient(90deg,#0A7070,#2A9D6A);"></div>
-          <div class="prog-tag" style="color:var(--teal);">ESG Advisory Bureau · SPV Under Foundation · Est. 2025</div>
-          <div class="prog-title">NatureShield</div>
-          <div class="prog-desc">The Philanthropic Foundation's ESG structuring and advisory bureau — operating as a dedicated SPV that delivers real ESG measurement, reporting, and climate transition services to African businesses, event organisers, and project developers. NatureShield produces verified GHG baseline reports, supports ISSB transition planning, and is building the African Emission Factor Database — the first region-specific emissions dataset calibrated for African grid infrastructure and supply chains.</div>
+      <div class="ps-panel" id="panel-nature">
+        <div class="ps-bg ps-bg-nature" aria-hidden="true">
+          <div class="ps-bg-grid"></div>
+          <div class="ps-bg-glow ps-glow-nature"></div>
+          <svg class="ps-bg-svg" viewBox="-80 0 600 600" preserveAspectRatio="xMaxYMid meet" aria-hidden="true">
+            <!-- GHG Protocol Scope rings -->
+            <!-- Scope 3 — outer -->
+            <circle cx="460" cy="280" r="200" fill="rgba(42,157,106,.03)" stroke="rgba(42,157,106,.1)" stroke-width="1"/>
+            <text x="460" y="76" font-family="'DM Mono',monospace" font-size="8" fill="rgba(42,157,106,.3)" letter-spacing="2" text-anchor="middle">SCOPE 3</text>
+            <text x="460" y="89" font-family="'DM Mono',monospace" font-size="7" fill="rgba(42,157,106,.18)" letter-spacing="1" text-anchor="middle">VALUE CHAIN</text>
+            <!-- Scope 2 — middle -->
+            <circle cx="460" cy="280" r="130" fill="rgba(10,112,112,.05)" stroke="rgba(10,112,112,.15)" stroke-width="1"/>
+            <text x="460" y="146" font-family="'DM Mono',monospace" font-size="8" fill="rgba(13,144,144,.4)" letter-spacing="2" text-anchor="middle">SCOPE 2</text>
+            <text x="460" y="159" font-family="'DM Mono',monospace" font-size="7" fill="rgba(13,144,144,.22)" letter-spacing="1" text-anchor="middle">PURCHASED ENERGY</text>
+            <!-- Scope 1 — inner -->
+            <circle cx="460" cy="280" r="65" fill="rgba(42,157,106,.08)" stroke="rgba(42,157,106,.25)" stroke-width="1"/>
+            <text x="460" y="268" font-family="'DM Mono',monospace" font-size="9" fill="rgba(42,157,106,.55)" letter-spacing="2" text-anchor="middle">SCOPE 1</text>
+            <text x="460" y="283" font-family="'DM Mono',monospace" font-size="7" fill="rgba(42,157,106,.32)" letter-spacing="1" text-anchor="middle">DIRECT</text>
+            <text x="460" y="296" font-family="'DM Mono',monospace" font-size="7" fill="rgba(42,157,106,.32)" letter-spacing="1" text-anchor="middle">EMISSIONS</text>
+            <!-- Radiating measurement lines (emission factor rays) -->
+            <line x1="460" y1="215" x2="460" y2="80"  stroke="rgba(42,157,106,.08)" stroke-width="1"/>
+            <line x1="516" y1="232" x2="572" y2="172" stroke="rgba(42,157,106,.06)" stroke-width="1"/>
+            <line x1="540" y1="280" x2="620" y2="280" stroke="rgba(42,157,106,.06)" stroke-width="1"/>
+            <line x1="516" y1="328" x2="572" y2="388" stroke="rgba(42,157,106,.05)" stroke-width="1"/>
+            <line x1="460" y1="345" x2="460" y2="480" stroke="rgba(42,157,106,.06)" stroke-width="1"/>
+            <line x1="404" y1="328" x2="348" y2="388" stroke="rgba(42,157,106,.05)" stroke-width="1"/>
+            <line x1="380" y1="280" x2="300" y2="280" stroke="rgba(10,112,112,.06)" stroke-width="1"/>
+            <line x1="404" y1="232" x2="348" y2="172" stroke="rgba(10,112,112,.05)" stroke-width="1"/>
+            <!-- Grid factor annotation -->
+            <text x="300" y="278" font-family="'DM Mono',monospace" font-size="7" fill="rgba(255,255,255,.15)" letter-spacing="1" text-anchor="end">MAURITIUS GRID</text>
+            <text x="300" y="290" font-family="'DM Mono',monospace" font-size="7" fill="rgba(255,255,255,.15)" letter-spacing="1" text-anchor="end">0.585 kgCO₂e/kWh</text>
+            <!-- GHG Protocol badge -->
+            <rect x="258" y="460" width="135" height="40" fill="rgba(42,157,106,.05)" stroke="rgba(42,157,106,.15)" stroke-width=".5"/>
+            <text x="325" y="476" font-family="'DM Mono',monospace" font-size="7.5" fill="rgba(42,157,106,.4)" letter-spacing="1.5" text-anchor="middle">GHG PROTOCOL</text>
+            <text x="325" y="491" font-family="'DM Mono',monospace" font-size="7" fill="rgba(42,157,106,.25)" letter-spacing="1" text-anchor="middle">CORPORATE STANDARD</text>
+            <!-- ISSB S2 badge -->
+            <rect x="403" y="460" width="100" height="40" fill="rgba(10,112,112,.05)" stroke="rgba(10,112,112,.15)" stroke-width=".5"/>
+            <text x="453" y="476" font-family="'DM Mono',monospace" font-size="7.5" fill="rgba(13,144,144,.4)" letter-spacing="1.5" text-anchor="middle">ISSB S2</text>
+            <text x="453" y="491" font-family="'DM Mono',monospace" font-size="7" fill="rgba(13,144,144,.25)" letter-spacing="1" text-anchor="middle">TRANSITION READY</text>
+          </svg>
         </div>
-        <div class="prog-bottom">
-          <div class="prog-stats">
-            <div><div class="pstat-val">2</div><div class="pstat-lbl">GHG Reports</div></div>
-            <div><div class="pstat-val">ISSB</div><div class="pstat-lbl">Transition Ready</div></div>
-            <div><div class="pstat-val">AFR</div><div class="pstat-lbl">Emission Factors</div></div>
-          </div>
-          <div class="prog-providers">
-            <span class="prog-provider">GHG Protocol</span>
-            <span class="prog-provider">ISSB S2</span>
-            <span class="prog-provider">SUNREF Eligible</span>
-          </div>
-          <div style="display:flex;flex-direction:column;gap:10px;margin-top:4px;">
-            <a href="https://natureshield.africa/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:10px;padding:11px 18px;border:1px solid rgba(10,112,112,.35);color:var(--teal);text-decoration:none;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;transition:all .2s;" onmouseover="this.style.background='rgba(10,112,112,.07)'" onmouseout="this.style.background='transparent'">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 4 10 15 15 0 0 1-4 10 15 15 0 0 1-4-10 15 15 0 0 1 4-10z"/></svg>
-              Visit NatureShield →
-            </a>
-            <div style="display:inline-flex;align-items:center;gap:8px;padding:7px 12px;border:1px solid rgba(10,112,112,.15);background:var(--cream);">
-              <div style="width:6px;height:6px;border-radius:50%;background:var(--teal);flex-shrink:0;"></div>
-              <span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;color:#8A9BA8;text-transform:uppercase;">natureshield.africa</span>
+        <div class="ps-content">
+          <div class="ps-eyebrow"><span class="ps-dot ps-dot-nature"></span>ESG Advisory Bureau · SPV Under Foundation · Est. 2025</div>
+          <h3 class="ps-title">NatureShield</h3>
+          <p class="ps-desc">The Foundation's ESG structuring and advisory bureau — delivering GHG measurement, ISSB transition planning, and Environmental Impact Assessment services to African businesses, event organisers, and project developers. Building the African Emission Factor Database — the first region-specific emissions dataset calibrated for African grid infrastructure and supply chains.</p>
+          <div class="ps-stats">
+            <div class="ps-stat">
+              <div class="ps-stat-val" style="color:#2A9D6A;">2</div>
+              <div class="ps-stat-lbl">GHG Reports Live</div>
+            </div>
+            <div class="ps-stat-div"></div>
+            <div class="ps-stat">
+              <div class="ps-stat-val">ISSB</div>
+              <div class="ps-stat-lbl">S2 Transition Ready</div>
+            </div>
+            <div class="ps-stat-div"></div>
+            <div class="ps-stat">
+              <div class="ps-stat-val">AFR</div>
+              <div class="ps-stat-lbl">Emission Factors</div>
             </div>
           </div>
+          <div class="ps-tags">
+            <span class="ps-tag">GHG Protocol</span>
+            <span class="ps-tag">ISSB S2</span>
+            <span class="ps-tag">SUNREF Eligible</span>
+            <span class="ps-tag">EIA Services</span>
+            <span class="ps-tag">African Grid Data</span>
+          </div>
+          <div class="ps-actions">
+            <a href="https://natureshield.africa/" target="_blank" rel="noopener" class="ps-cta ps-cta-nature">
+              Visit NatureShield
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+            <a href="#contact" class="ps-cta-ghost">ESG Enquiry →</a>
+          </div>
         </div>
+        <div class="ps-panel-num" aria-hidden="true">04</div>
       </div>
 
-    </div>
-  </div>
+    </div><!-- /ps-stage -->
+  </div><!-- /ps-shell -->
 </section>
+
+<style>
+/* ── SHELL ── */
+.ps-shell{
+  display:grid;
+  grid-template-columns:320px 1fr;
+  min-height:680px;
+  margin-top:52px;
+  position:relative;
+  overflow:hidden;
+}
+
+/* ── LEFT RAIL ── */
+.ps-rail{
+  background:var(--ink);
+  display:flex;
+  flex-direction:column;
+  padding:0;
+  position:relative;
+  z-index:2;
+}
+.ps-tab{
+  display:flex;
+  align-items:center;
+  gap:16px;
+  padding:28px 28px;
+  background:none;
+  border:none;
+  border-bottom:1px solid rgba(255,255,255,.05);
+  cursor:pointer;
+  text-align:left;
+  position:relative;
+  transition:background .25s;
+  width:100%;
+}
+.ps-tab::before{
+  content:'';
+  position:absolute;
+  left:0;top:0;bottom:0;
+  width:2px;
+  background:transparent;
+  transition:background .25s;
+}
+.ps-tab.active{background:rgba(255,255,255,.04);}
+.ps-tab.active::before{background:var(--gold);}
+.ps-tab:hover:not(.active){background:rgba(255,255,255,.02);}
+.ps-tab-num{
+  font-family:'DM Mono',monospace;
+  font-size:9px;
+  letter-spacing:2px;
+  color:rgba(255,255,255,.18);
+  flex-shrink:0;
+  transition:color .25s;
+}
+.ps-tab.active .ps-tab-num{color:var(--gold);}
+.ps-tab-inner{flex:1;min-width:0;}
+.ps-tab-label{
+  display:block;
+  font-family:'EB Garamond',serif;
+  font-size:18px;
+  color:rgba(255,255,255,.45);
+  line-height:1.2;
+  transition:color .25s;
+}
+.ps-tab.active .ps-tab-label{color:#fff;}
+.ps-tab:hover:not(.active) .ps-tab-label{color:rgba(255,255,255,.7);}
+.ps-tab-sub{
+  display:block;
+  font-family:'DM Mono',monospace;
+  font-size:9px;
+  letter-spacing:1.5px;
+  color:rgba(255,255,255,.2);
+  text-transform:uppercase;
+  margin-top:4px;
+  transition:color .25s;
+}
+.ps-tab.active .ps-tab-sub{color:rgba(255,255,255,.4);}
+.ps-tab-arrow{
+  font-size:14px;
+  color:rgba(255,255,255,.12);
+  flex-shrink:0;
+  transition:color .25s, transform .25s;
+}
+.ps-tab.active .ps-tab-arrow{color:var(--gold);transform:none;}
+.ps-tab:hover .ps-tab-arrow{color:rgba(255,255,255,.35);}
+
+/* flywheel note */
+.ps-flywheel{
+  margin-top:auto;
+  padding:28px;
+  border-top:1px solid rgba(255,255,255,.05);
+  display:flex;
+  align-items:center;
+  gap:16px;
+}
+.ps-flywheel span{
+  font-family:'DM Mono',monospace;
+  font-size:9px;
+  letter-spacing:1.5px;
+  color:rgba(255,255,255,.2);
+  text-transform:uppercase;
+  line-height:1.7;
+}
+.ps-fly-ring{
+  animation:flyRing 4s linear infinite;
+  transform-origin:40px 40px;
+}
+@keyframes flyRing{
+  0%{stroke-dashoffset:188;}
+  100%{stroke-dashoffset:0;}
+}
+
+/* ── STAGE ── */
+.ps-stage{
+  position:relative;
+  overflow:hidden;
+  background:var(--ink2);
+}
+
+/* ── PANEL ── */
+.ps-panel{
+  position:absolute;
+  inset:0;
+  display:flex;
+  align-items:center;
+  opacity:0;
+  pointer-events:none;
+  transition:opacity .5s ease;
+  overflow:hidden;
+}
+.ps-panel.active{
+  opacity:1;
+  pointer-events:all;
+  position:relative;
+}
+
+/* ── BACKGROUNDS ── */
+.ps-bg{
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+}
+.ps-bg-grid{
+  position:absolute;inset:0;
+  background-image:
+    linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);
+  background-size:60px 60px;
+}
+.ps-bg-glow{
+  position:absolute;
+  width:600px;height:600px;
+  border-radius:50%;
+  right:-150px;top:-100px;
+  filter:blur(120px);
+  opacity:.18;
+}
+.ps-glow-gold{background:var(--gold);}
+.ps-glow-teal{background:var(--teal);}
+.ps-glow-river{background:radial-gradient(circle,var(--teal) 0%,var(--gold) 100%);}
+.ps-glow-nature{background:#2A9D6A;}
+.ps-bg-svg{
+  position:absolute;
+  inset:0;
+  width:100%;height:100%;
+  opacity:1;
+}
+
+/* ── CONTENT ── */
+.ps-content{
+  position:relative;
+  z-index:2;
+  padding:52px 60px;
+  max-width:600px;
+}
+/* Right-side vignette so SVG artwork fades before hitting content */
+.ps-stage::after{
+  content:'';
+  position:absolute;
+  top:0;right:0;bottom:0;
+  width:38%;
+  background:linear-gradient(90deg, transparent 0%, rgba(8,19,28,.55) 60%, rgba(8,19,28,.82) 100%);
+  pointer-events:none;
+  z-index:1;
+}
+.ps-eyebrow{
+  display:flex;align-items:center;gap:10px;
+  font-family:'DM Mono',monospace;
+  font-size:10px;letter-spacing:2.5px;
+  color:rgba(255,255,255,.4);
+  text-transform:uppercase;
+  margin-bottom:20px;
+}
+.ps-dot{
+  width:6px;height:6px;border-radius:50%;flex-shrink:0;
+}
+.ps-dot-gold{background:var(--gold);}
+.ps-dot-teal{background:var(--teal2);}
+.ps-dot-river{background:var(--teal2);}
+.ps-dot-nature{background:#2A9D6A;}
+
+.ps-title{
+  font-family:'EB Garamond',serif;
+  font-size:clamp(36px,4.5vw,62px);
+  font-weight:400;
+  color:#fff;
+  line-height:1.05;
+  letter-spacing:-.02em;
+  margin-bottom:20px;
+}
+.ps-desc{
+  font-size:15px;
+  font-weight:300;
+  color:rgba(255,255,255,.58);
+  line-height:1.85;
+  max-width:540px;
+  margin-bottom:32px;
+}
+
+/* stats row */
+.ps-stats{
+  display:flex;
+  align-items:center;
+  gap:0;
+  margin-bottom:28px;
+  padding:24px 0;
+  border-top:1px solid rgba(255,255,255,.07);
+  border-bottom:1px solid rgba(255,255,255,.07);
+}
+.ps-stat{min-width:110px;padding:0 20px;}
+.ps-stat:first-child{padding-left:0;}
+.ps-stat-val{
+  font-family:'EB Garamond',serif;
+  font-size:30px;
+  color:#fff;
+  line-height:1;
+}
+.ps-stat-lbl{
+  font-family:'DM Mono',monospace;
+  font-size:9px;letter-spacing:2px;
+  color:rgba(255,255,255,.3);
+  text-transform:uppercase;
+  margin-top:5px;
+}
+.ps-stat-div{
+  width:1px;height:40px;
+  background:rgba(255,255,255,.08);
+  flex-shrink:0;
+}
+
+/* tags */
+.ps-tags{
+  display:flex;flex-wrap:wrap;gap:7px;
+  margin-bottom:28px;
+}
+.ps-tag{
+  font-family:'DM Mono',monospace;
+  font-size:9px;letter-spacing:1.5px;
+  text-transform:uppercase;
+  color:rgba(255,255,255,.4);
+  border:1px solid rgba(255,255,255,.1);
+  padding:5px 12px;
+}
+
+/* cities strip */
+.ps-cities{
+  display:flex;align-items:center;flex-wrap:wrap;gap:8px;
+  margin-bottom:28px;
+  font-family:'DM Mono',monospace;
+  font-size:10px;letter-spacing:2px;
+  text-transform:uppercase;
+}
+.ps-city{color:rgba(255,255,255,.55);}
+.ps-city-sep{color:rgba(255,255,255,.15);}
+
+/* CTAs */
+.ps-actions{display:flex;align-items:center;gap:24px;flex-wrap:wrap;}
+.ps-cta{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:13px 28px;
+  font-family:'DM Mono',monospace;
+  font-size:10px;letter-spacing:2px;
+  text-transform:uppercase;
+  text-decoration:none;
+  transition:all .2s;
+}
+.ps-cta-gold{
+  background:transparent;
+  border:1px solid rgba(192,154,60,.5);
+  color:var(--gold);
+}
+.ps-cta-gold:hover{background:rgba(192,154,60,.1);border-color:var(--gold);}
+.ps-cta-teal{
+  background:transparent;
+  border:1px solid rgba(10,112,112,.6);
+  color:var(--teal2);
+}
+.ps-cta-teal:hover{background:rgba(10,112,112,.12);border-color:var(--teal2);}
+.ps-cta-nature{
+  background:transparent;
+  border:1px solid rgba(42,157,106,.5);
+  color:#2A9D6A;
+}
+.ps-cta-nature:hover{background:rgba(42,157,106,.08);border-color:#2A9D6A;}
+.ps-cta-ghost{
+  font-family:'DM Mono',monospace;
+  font-size:10px;letter-spacing:2px;
+  text-transform:uppercase;
+  color:rgba(255,255,255,.35);
+  text-decoration:none;
+  border-bottom:1px solid rgba(255,255,255,.12);
+  padding-bottom:2px;
+  transition:color .2s,border-color .2s;
+}
+.ps-cta-ghost:hover{color:rgba(255,255,255,.7);border-color:rgba(255,255,255,.35);}
+
+/* large BG number */
+.ps-panel-num{
+  position:absolute;
+  right:-10px;bottom:-30px;
+  font-family:'EB Garamond',serif;
+  font-size:clamp(160px,22vw,260px);
+  font-weight:400;
+  color:rgba(255,255,255,.025);
+  line-height:1;
+  pointer-events:none;
+  user-select:none;
+  z-index:1;
+  letter-spacing:-.04em;
+}
+
+/* ── MOBILE ── */
+@media(max-width:900px){
+  .ps-shell{
+    grid-template-columns:1fr;
+    min-height:auto;
+  }
+  .ps-rail{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+  }
+  .ps-flywheel{display:none;}
+  .ps-tab{
+    padding:20px 18px;
+    border-bottom:1px solid rgba(255,255,255,.05);
+    border-right:1px solid rgba(255,255,255,.05);
+  }
+  .ps-tab-arrow{display:none;}
+  .ps-tab-label{font-size:14px;}
+  .ps-stage{min-height:600px;}
+  .ps-panel{position:absolute;inset:0;}
+  .ps-panel.active{position:absolute;}
+  .ps-stage{position:relative;min-height:600px;}
+  .ps-content{padding:36px 28px;}
+  .ps-title{font-size:clamp(30px,7vw,48px);}
+  .ps-stat-val{font-size:22px;}
+  .ps-panel-num{font-size:120px;}
+}
+@media(max-width:600px){
+  .ps-rail{grid-template-columns:1fr 1fr;}
+  .ps-tab{padding:16px 14px;}
+  .ps-tab-label{font-size:12px;}
+  .ps-tab-sub{display:none;}
+  .ps-content{padding:28px 20px;}
+  .ps-stats{flex-wrap:wrap;gap:16px;}
+  .ps-stat{padding:0 12px;min-width:80px;}
+  .ps-stat-div{display:none;}
+  .ps-actions{flex-direction:column;align-items:flex-start;gap:14px;}
+}
+
+/* reduced motion */
+@media(prefers-reduced-motion:reduce){
+  .ps-panel{transition:none;}
+  .ps-fly-ring{animation:none;}
+}
+</style>
+
+<script>
+(function(){
+  const tabs = document.querySelectorAll('.ps-tab');
+  const panels = document.querySelectorAll('.ps-panel');
+
+  function activate(prog){
+    tabs.forEach(t=>{
+      const on = t.dataset.prog === prog;
+      t.classList.toggle('active', on);
+      t.setAttribute('aria-selected', on);
+    });
+    panels.forEach(p=>{
+      const on = p.id === 'panel-'+prog;
+      p.classList.toggle('active', on);
+    });
+  }
+
+  tabs.forEach(tab=>{
+    tab.addEventListener('click', ()=> activate(tab.dataset.prog));
+  });
+})();
+</script>
 
 
 <!-- NETWORK -->
